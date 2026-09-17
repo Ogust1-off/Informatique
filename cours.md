@@ -180,8 +180,8 @@ ErrorName
 cond_1 = 5**2 < 2**5
 cond_2 = 36 ==89
 print(cond_1, cond_2)
+RETOURNE: True False
 ```
-RETURN: True False
 **Exercice:** demander année naissance user si majeur True else False
 ```python
 a=int(input("année de naissance "))
@@ -197,7 +197,7 @@ print(f"Majeur? {cond}")
 ```python
 cond=(56>8)and(6!=9)
 print(cond)
-RETURN: True
+RETOURNE: True
 ```
 
 **Exercice:** Generation de la personne
@@ -257,9 +257,9 @@ else:
     action_n
 ```
 
-**Exercice:** Test de divisibilité
+**Exercice:** Test de divisibilité de 2 à 9
 ```python
-Nop
+Instruction pas très claire mais c'est simple si l'instruction est claire
 ```
 
 ### 2.4 Instruction match-case
@@ -281,7 +281,7 @@ match x:
         print("x vaut 2")
 ```
 
-**Exercice:** prog qui demande: Dans le langage Python, quelle opération est associée au symbole \*\*?  
+**Exercice:** prog qui demande: Dans le langage Python, quelle opération est associée au symbole `**`?  
 ```python
 print("Dans le langage Python, quelle opération est associée au symbole **?\nA. division\nB. multiplication\nC. puissance\nD. division euclidienne\n")
 rep=input("Saisir la lettre de votre réponse: ")
@@ -311,8 +311,7 @@ Exemple:
 for i in range(4)
     print(i)
 ```
-`range(n)`: entier de 0 à n-1
-`range(m,n)`: entier de m à n-1 
+`range(n)`: entier de 0 à n-1 - `range(m,n)`: entier de m à n-1 
 
 **Exercice:** Somme de 1 à 2026 de k/2 et Produit de 1 à 20 de k^2
 ```python
