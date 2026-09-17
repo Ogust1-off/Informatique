@@ -1,10 +1,12 @@
 # Informatique S3 - Cours Python
+
+# Séquence 1: "Premiers pas en Python"
 ## 1 Base
 ### 1.1 Variable identifiant et affectation
-DEF: Une __variable__ c’est l’association d’un __identifiant__  à un objet stocké en mémoire
-Cette opération d’association est appelée __affectation__ (=) (a=1 b=2)
+DEF: Une **variable** c’est l’association d’un **identifiant**  à un objet stocké en mémoire
+Cette opération d’association est appelée **affectation** (`=`) (`a=1 b=2`)
 Attention: 
-1) (=) n’est pas symétrique! (~~1=a~~ NON!)
+1) (`=`) n’est pas symétrique! (~~1=a~~ NON!)
 2) mise à jour des var
             
 **Exercice:**
@@ -14,49 +16,58 @@ b=2
 ```
 Pour inverser les deux:
 ```python
- c=a
+c=a
 a=b
 b=c
 ```
 
 Remarque: 
-1) Bien choisir l'identifiant des var (s, somme)
-2) Identifiants admissibles (pas de @#...)(on ne commence pas par un nbr)
+1. Bien choisir l'identifiant des var (s, somme)
+2. Identifiants admissibles (pas de `@`,`#`, ...)(on ne commence pas par un nombre)
             
 ### 1.2 Commentaire
-en python # pour une ligne et """ pour un § """
+en python `#` pour une ligne et `"""` pour un § `"""`
 
 ### 1.3 Entrée/Sortie
-Affichage: print()
+Affichage: `print()`
 
 Multi-affichage:
-    a=1
-    b=2
-    c=3
-    print(a,b,c)
-    SORTIE: 1 2 3
+```python
+a=1
+b=2
+c=3
+print(a,b,c)
+RETOURNE: 1 2 3
+```
 
-Affichage de chaine de carctére: print("Hello World!")
+Affichage de chaîne de caractère: `print("Hello World!")`
 
-Requete user: input()
+Requête user: `input()`
 
-Attention: input renvoie ___toujours___ une chaine de caractere
+Attention: input renvoie **toujours** une chaine de caractère
 
 Exemple:
-        name=input("Quelle est votre nom")
-        print(name)
+```python
+name=input("Quelle est votre nom")
+print(name)
+```
 
 ## 2 Types et opérations
-DEF: En .py chaque obj à un __type__. Il indique la nature de l'obj manipuler et les __operation__ que l'on peur lui appliquer.
+DEF: En python chaque obj a un **type**. Il indique la nature de l'obj manipulé et les **operation** que l'on peut lui appliquer.
 
-fonction type: print(type("Hello World")) -> str
+fonction type: `print(type("Hello World"))` -> str
 
 ### 2.1 Nombres
 
 - int: entier relatif
 - float: nbr décimaux
 - complex: avec j pour i en variable
-    EX: z= 3+4j print(z.real, z.imag)
+
+Exemple:
+```python
+z= 3+4j
+print(z.real, z.imag)
+```
 
 Opération arithmétique:
 ```
@@ -77,10 +88,12 @@ a//b -> 4 en int
 a%b -> 1 en int
 ```
 
-Opération affectations
+**Opération affectations:**
 incrémentation, décrémentation
-    a+=1
-    b-=2
+```
+a+=1
+b-=2
+```
 
 **Exercice:** Bob à 4 note: 10, 15, 13, 8 Moyenne:
 ```python
@@ -284,12 +297,12 @@ match rep:
 ```
 
 ## 3 Boucles
-- for: on sait combien de fois itérer
-- while: itérer suivant une condition
+- `for`: on sait combien de fois itérer
+- `while`: itérer suivant une condition
 
-###3.1 Boucle for
+### 3.1 Boucle for
 ```python
-For element iterable:
+for element iterable:
     Instruction
 ```
 
@@ -298,8 +311,8 @@ Exemple:
 for i in range(4)
     print(i)
 ```
-range(n): entier de 0 à n-1
-range(m,n): entier de m à n-1 
+`range(n)`: entier de 0 à n-1
+`range(m,n)`: entier de m à n-1 
 
 **Exercice:** Somme de 1 à 2026 de k/2 et Produit de 1 à 20 de k^2
 ```python
