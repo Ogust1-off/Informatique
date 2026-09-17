@@ -252,7 +252,7 @@ if condition:
     action_1
 elif condition2:
     action_2
-...
+# ... autant de blocs elif que nécessaire
 else:
     action_n
 ```
