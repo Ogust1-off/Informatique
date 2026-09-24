@@ -1,144 +1,169 @@
-# Informatique S3 - Cours Python
+# Informatique S3 — Cours Python
 
-# Séquence 1: "Premiers pas en Python"
-## 1 Base
-### 1.1 Variable identifiant et affectation
-DEF: Une **variable** c’est l’association d’un **identifiant**  à un objet stocké en mémoire
-Cette opération d’association est appelée **affectation** (`=`) (`a=1 b=2`)
-Attention: 
-1) (`=`) n’est pas symétrique! (~~1=a~~ NON!)
-2) mise à jour des var
+# Séquence 1 — Premiers pas en Python
+## 1. Bases
+### 1.1 Variable, identifiant et affectation
+**Définition :** Une **variable** est l'association d'un **identifiant** à un objet stocké en mémoire.
+Cette opération d'association est appelée **affectation** (`=`).
+Exemple : `a = 1` et `b = 2`.
+
+> **Attention :**
+> 1. (`=`) n'est pas symétrique : `1 = a` est impossible.
+> 2. L'opérateur `=` permet également la mise à jour d'une variable.
             
-**Exercice:**
+**Exercice :** Attribuer une valeur à la variable `a` et une autre à la variable `b`.
 ```python
-a=1
-b=2
+a = 1
+b = 2
 ```
-Pour inverser les deux:
+Pour inverser les deux variables :
 ```python
-c=a
-a=b
-b=c
+c = a
+a = b
+b = c
 ```
 
-Remarque: 
-1. Bien choisir l'identifiant des var (s, somme)
-2. Identifiants admissibles (pas de `@`,`#`, ...)(on ne commence pas par un nombre)
+> **Remarque :**
+> 1. Bien choisir l'identifiant des variables (`s`, `somme`, etc.).
+> 2. Un identifiant doit respecter certaines règles : il ne peut pas contenir certains caractères (`@`, `#`, etc.) et ne peut pas commencer par un nombre.
             
 ### 1.2 Commentaire
-en python `#` pour une ligne et `"""` pour un § `"""`
+En Python, on utilise `#` pour écrire un commentaire sur une ligne.
+Un commentaire peut également être placé après du code sur la même ligne.
+On peut aussi utiliser `"""` pour une chaîne de caractères multilignes. On peut parfois l'utiliser comme un commentaire, mais ce n'est pas techniquement un commentaire.
+
+**Exemple :**
+```python
+# commentaire d'une ligne
+a = 1  # commentaire après du code
+"""
+Chaîne de caractères
+sur plusieurs lignes
+"""
+```
 
 ### 1.3 Entrée/Sortie
-Affichage: `print()`
+Affichage : `print()`
 
 Multi-affichage:
 ```python
-a=1
-b=2
-c=3
-print(a,b,c)
-RETOURNE: 1 2 3
+a = 1
+b = 2
+c = 3
+print(a, b, c)
+# RETOURNE : 1 2 3
 ```
 
-Affichage de chaîne de caractère: `print("Hello World!")`
+Affichage de chaîne de caractères : `print("Hello World!")`
 
-Requête user: `input()`
+Saisie utilisateur : `input()`
 
-Attention: input renvoie **toujours** une chaine de caractère
+> **Attention :** `input()` renvoie **toujours** une chaîne de caractères.
 
-Exemple:
+Exemple :
 ```python
-name=input("Quelle est votre nom")
+name = input("Quel est votre nom ? ")
 print(name)
 ```
 
 ## 2 Types et opérations
-DEF: En python chaque obj a un **type**. Il indique la nature de l'obj manipulé et les **operation** que l'on peut lui appliquer.
+**Définition :** En Python, chaque objet possède un **type**. Il indique la nature de l'objet manipulé et les **opérations** que l'on peut lui appliquer.
 
-fonction type: `print(type("Hello World"))` -> str
+Fonction `type():
+```python
+print(type("Hello World"))
+# RETOURNE : str
+```
 
 ### 2.1 Nombres
 
-- int: entier relatif
-- float: nbr décimaux
-- complex: avec j pour i en variable
+- `int`: entier relatif
+- `float`: nombres décimaux
+- `complex`: nombre complexe, avec `j` pour représenter la partie imaginaire (identique au i en maths)
 
-Exemple:
+Exemple :
 ```python
 z= 3+4j
 print(z.real, z.imag)
 ```
 
-Opération arithmétique:
+Opérations arithmétiques:
 ```
 + addition
-- sous
+- soustraction
 * multiplication
 ** puissance
-/ div
-// division eucli..
-% modulo (rest de la div eucli)
+/ division
+// division euclidienne
+% modulo (reste de la division euclidienne)
 ```
 
-**Exercice:**
+**Exercice :**
 ```python
-a,b=21,5
+a, b = 21, 5
 a/b -> 4.2 en float
 a//b -> 4 en int
 a%b -> 1 en int
 ```
 
-**Opération affectations:**
+**Opérations d'affectation :**
 incrémentation, décrémentation
 ```
-a+=1
-b-=2
+a += 1
+b -= 2
 ```
 
-**Exercice:** Bob à 4 note: 10, 15, 13, 8 Moyenne:
+**Exercice :** Bob a 4 notes : 10, 15, 13 et 8. Calculer sa moyenne.
 ```python
-moy=10
-moy+=15
-moy+=13
-moy+=8
-moy/=4
+moy = 10
+moy += 15
+moy += 13
+moy += 8
+moy /= 4
 print(moy)
-RETOURNE: 11.5
+# RETOURNE : 11.5
 ```
         
 ### 2.2 Booléens
-bool -> True, False
+`bool` -> `True`, `False`
 
-opération de comparaison:
+Opérations de comparaisons:
+| Opérateur | Signification       |
+| --------- | ------------------- |
+| `==`      | égal à              |
+| `<`       | inférieur à         |
+| `>`       | supérieur à         |
+| `<=`      | inférieur ou égal à |
+| `>=`      | supérieur ou égal à |
+| `!=`      | différent de        |
 
-| == | égale à |
-| < | inf |
-| > | sup |
-| <= | inf égal |
-| >= | sup égal |
-| != | dif de |
 
-**Exercice:**
+**Exercice :**
 ```
-a,b -> True,False
-a==b ->False
-a!=b ->True
+a, b = True, False
+a == b  # False
+a != b  # True
 ```
         
-### 2.3 Chaînes de caractère, conversion de type et f-strings
-type -> 'str'
-concaténation: fusion de 2 chaine de str -> +
+### 2.3 Chaînes de caractères, conversion de type et f-strings
+Type d'une chaîne de caractères: 'str'
+concaténation: assemblage de deux chaînes de caractères avec `+`
 
-**Exemple:**
+Exemple :
 ```python
 txt1="Hello"
 space=" "
 txt2="World"
 print(txt1+space+txt2)
 ```
-fonctionne aussi en +=
+La concaténation fonctionne également avec `+=`
+**Exemple personnel :**
+```python
+txt = "Hello"
+txt += " World"
+```
 
-conversion de type: conerttie le contenue du () en truc de devant
+Conversion de type : convertit une valeur dans le type souhaité.
 ```python
 int()
 float()
@@ -146,64 +171,68 @@ complex()
 str()
 ```
 
-**Exemple:**
+Exemple :
 ```python
-age=20
+age = 20
 print("J'ai "+str(age)+" ans")
 ```
 ```python
-age=20.0
-print(f"J'ai {age:.0f} ans") -> J'ai 20 ans
+age = 20.0
+print(f"J'ai {age:.0f} ans")
+# RETOURNE : J'ai 20 ans
 ```
 
-**Exercice:**
+**Exercice :**
 ```python
-p = float(input("Ton poids (kg)?"))
-t = float(input("Ta taille (m)?"))
+p = float(input("Ton poids (kg)? "))
+t = float(input("Ta taille (m)? "))
 print(f"Ton imc est: {p/(t**2)}")
 ```
 
-## 3 Debogage
-### 3.1 Reflexe
-Lire l'erreur et la comprendre
-verifier la syntaxe du code
-help()
-google
+## 3 Débogage
+### 3.1 Réflexes
+- Lire l'erreur et essayer de la comprendre.
+- Vérifier la syntaxe du code.
+- Utiliser `help()`.
+- Rechercher sur Google.
 
 ### 3.2 Erreurs courantes
-ErrorSyntax
-ErrorName
+- `SyntaxError`
+- `NameError`
 
-# Séquence 2: Logique, tests conditionnels et boucles
+# Séquence 2 — Logique, tests conditionnels et boucles
 ## 1 Logique
 ### 1.1 Conditions logiques
 ```python
 cond_1 = 5**2 < 2**5
 cond_2 = 36 ==89
 print(cond_1, cond_2)
-RETOURNE: True False
+# RETOURNE : True False
 ```
-**Exercice:** demander année naissance user si majeur True else False
+**Exercice :** Demander l'année de naissance de l'utilisateur et déterminer s'il est majeur (`True`) ou non (`False`).
 ```python
-a=int(input("année de naissance "))
-calc=2026-a
+a=int(input("Année de naissance: "))
+calc=2026-a #Pour l'année 2026
 cond=calc>=18
 print(f"Majeur? {cond}")
 ```
 
-### 1.2 Opérateur logiques
-| and | ET |p and q |
-|  or|  OU|p or q  |
-| not |  NON| not p |
+### 1.2 Opérateurs logiques
+| Opérateur | Signification | Exemple   |
+| --------- | ------------- | --------- |
+| `and`     | ET            | `p and q` |
+| `or`      | OU            | `p or q`  |
+| `not`     | NON           | `not p`   |
+
 ```python
 cond=(56>8)and(6!=9)
 print(cond)
-RETOURNE: True
+# RETOURNE : True
 ```
 
-**Exercice:** Generation de la personne
+**Exercice :** Donner la génération de la personne en fonction de son année de naissance.
 ```python
-a=int(input("année de naissance "))
+a=int(input("Année de naissance: "))
 cond1=a>=1965 and a<=1980
 cond2=a>=1981 and a<=1996
 cond3=a>=1997 and a<=2010
@@ -211,9 +240,9 @@ print(f"genX? {cond1}\ngenY? {cond2}\ngenZ? {cond3}")
 ```
 
 ## 2 Tests conditionnels
-**Remarque**:
-* séparateur :
-- indentation
+> **Remarque :**
+> - Le séparateur `:` est placé après la condition.
+> - L'indentation indique les actions à effectuer lorsque la condition est vérifiée.
 
 ### 2.1 Instruction if
 ```python
@@ -221,9 +250,9 @@ if condition:
     instructions
 ```
 
-**Exercice:** Re-test de majorité
+**Exercice :** Re-test de majorité
 ```python
-age=2026-int(input("année de naissance "))
+age=2026-int(input("Année de naissance: "))
 if age<18:
     print("Mineur")
 if age>=18:
@@ -238,10 +267,10 @@ else:
     action_2
 ```
  
-**Exercice:** paire ou impaire
+**Exercice :** paire ou impaire
 ```python
-number=int(input("Choisir un nombre "))
-if (number%2)==0:
+number=int(input("Choisir un nombre: "))
+if number%2==0:
     print(f"Le nombre {number} est pair")
 else:
     print(f"Le nombre {number} est impair")
@@ -251,16 +280,16 @@ else:
 ```python
 if condition:
     action_1
-elif condition2:
+elif condition_2:
     action_2
 # ... autant de blocs elif que nécessaire
 else:
     action_n
 ```
 
-**Exercice:** Test de divisibilité de 2 à 9
+**Exercice :** Test de divisibilité de 2 à 9
 ```python
-Instruction pas très claire mais c'est simple si l'instruction est claire
+Instruction pas très claire, mais c'est simple à faire si l'instruction est claire.
 ```
 
 ### 2.4 Instruction match-case
@@ -272,7 +301,7 @@ match element:
         action_2
 ```
 
-Exemple:
+Exemple :
 ```python
 x=2
 match x:
@@ -282,7 +311,7 @@ match x:
         print("x vaut 2")
 ```
 
-**Exercice:** prog qui demande: Dans le langage Python, quelle opération est associée au symbole `**`?  
+**Exercice :** Programme qui demande quelle opération est associée au symbole `** en Python.
 ```python
 print("Dans le langage Python, quelle opération est associée au symbole **?\nA. division\nB. multiplication\nC. puissance\nD. division euclidienne\n")
 rep=input("Saisir la lettre de votre réponse: ")
@@ -292,34 +321,34 @@ match rep:
     case "B":
         print("FAUX")
     case "C":
-        print("TU A TROUVER LA BONNE REPONSE")
+        print("TU AS TROUVÉ LA BONNE REPONSE")
     case "D":
         print("FAUX")
 ```
 
 ## 3 Boucles
-- `for`: on sait combien de fois itérer
-- `while`: itérer suivant une condition
+- `for`: parcourt les éléments d'un itérable.
+- `while`: répète des instructions tant qu'une condition est vraie.
 
-### 3.1 Boucle for
+### 3.1 Boucle `for`
 ```python
-for element iterable:
+for element in iterable:
     Instruction
 ```
 
-Exemple:
+Exemple :
 ```python
-for i in range(4)
+for i in range(4):
     print(i)
 ```
 `range(n)`: entier de 0 à n-1 - `range(m,n)`: entier de m à n-1 
 
-**Exercice:** Somme de 1 à 2026 de k/2 et Produit de 1 à 20 de k^2
+**Exercice :** Somme de 1 à 2026 de k/2 et Produit de 1 à 20 de k^2
 ```python
-sum=0
+somme=0
 for i in range(1,2027):
-    sum+=(i/2)
-print(sum)
+    somme+=(i/2)
+print(somme)
 ```
 et
 ```python
@@ -329,96 +358,104 @@ for i in range(1,21):
 print(prod)
 ```
 
-On peut aussi l'écrire sous forme de liste:
+On peut également parcourir directement une liste :
 ```python
 for i in [1,2,3]:
     print(i)
-RETOURNE:
-1
-2
-3
+# RETOURNE :
+# 1
+# 2
+# 3
 ```
 ```python
 for c in "hello":
-     print(c)
-RETOURNE:
-h
-e
-l
-l
-o
+    print(c)
+# RETOURNE :
+# h
+# e
+# l
+# l
+# o
 ```
 
 ### 3.2 Boucle while
 ```python
 while condition:
-     Instruction
+    instruction
 ```
 
-Exemple:
+Exemple :
 ```python
 i=0
 while i<4:
-     print(i)
-     i+=1
+    print(i)
+    i+=1
 ``` 
+> **Attention :** il faut veiller à ce que la condition finisse par devenir fausse afin d'éviter une boucle infinie. (Ajout personnel)
 
-**Exercice:** calcule PGCD
+**Exercice :** calcule PGCD
 ```python
 dividande=int(input("Saisir un dividende: "))
 diviseur=int(input("Saisir un diviseur: "))
 a=dividande
 b=diviseur
 r=dividande
-while r!=0:
-    r=a%b
-    a=b
-    b=r
-    print(a)
+while r != 0:
+    r = a % b
+    a = b
+    b = r
+
 print(f"{a} est le PGCD")
 ```
 
-# Séquence 3: Liste
+# Séquence 3 — Listes
 
-## 1 Liste
+## 1. Création d'une liste
 ```python
 L=[1,2,3,4]
 print(L)
-RETOURNE: [1,2,3,4]
+# RETOURNE : [1,2,3,4]
 ```
 ou
 ```python
 L=["Hello",25,True,0]
 ```
 
-Les listes possèdent leur propre type: `list` et donc la fonction de conversion associer: `list()`
+Les listes possèdent leur propre type : `list`.
+La fonction de conversion associée est `list()`.
 ```python
 L=list("Hello")
 print(L)
-RETOURNE: ['H', 'e', 'l', 'l', 'o']
+# RETOURNE : ['H', 'e', 'l', 'l', 'o']
 ```
 
 ```python
 print(list(range(5)))
-RETOURNE: [0,1,2,3,4]
+# RETOURNE : [0,1,2,3,4]
 ```
 
-Format par compression
+Compréhension de liste (Écriture par compression dans le cours)
 ```python
 L=[i for i in range(5)]
 print(L)
-``` 
+```
+Une compréhension de liste permet de créer une liste à partir d'un itérable. 
 
-Librairie `random` importation: `import random`
-`random.randint(m,n)` renvoie un nombre aléatoire entre m et n
+**Génération de nombres aléatoires:**
+En Python on utilise la librairie `random`
+Pour utiliser le module `random` :
+```python
+import random
+```
+`random.randint(m, n)` renvoie un entier aléatoire compris entre `m` et `n`, bornes incluses.
 
-**Exercice:** générer et afficher une liste qui affiche des 20 entiers aléatoire entre 0 et 10
+**Exercice :** Générer et afficher une liste de 20 entiers aléatoires compris entre 0 et 10.
 ```python
 import random
 liste=[random.randint(0,10) for i in range(20)]
 print(liste)
 ```
-*correction perso avec des truc pas vue:*
+*Correction personnelle avec des notions non vues en cours :*
 ```python
 import random
 liste=[]
@@ -428,32 +465,46 @@ print(liste)
 ```
 
 ### 1.1 Parcours d'une liste
-Taille: `len()`
+Taille d'une liste : `len()`
 
-`[12,32,76,98,15]' 12: indice 0, 32: indice 1, ... , 15: indice 4. MAIS AUSSI: 15: indice -1, 98: indice -2, ..., 12: indice -5.
+Pour la liste `[12, 32, 76, 98, 15]` :
 
-`L[i]` pour le nombre d'indice i d'une liste L
+- `12` → indice `0`
+- `32` → indice `1`
+- `76` → indice `2`
+- `98` → indice `3`
+- `15` → indice `4`
+
+Mais il est également possible d'utiliser des indices négatifs :
+
+- `15` → indice `-1`
+- `98` → indice `-2`
+- `76` → indice `-3`
+- `32` → indice `-4`
+- `12` → indice `-5`
+
+`L[i]` permet d'accéder à l'élément d'indice `i` de la liste `L`.
 
 ```python
 L=[12,32,76,98,15]
 print(L[1],L[-4])
-RETOURNE: 32, 32
+# RETOURNE : 32, 32
 ```
 
-**ATTENTION**:
-1) élément ≠ indice
-2) indexation croisante vas de 0 a len(L)-1
+> **Attention :**
+> 1. Un élément ≠ un indice.
+> 2. L'indexation croissante va de `0` à `len(L) - 1`.
 
-**Exercice:** Demander a un utilisateur un nombre, créer une liste qui va de 0 au nombre de l'utilisateur, faire la somme de tous les termes de la suite.
+**Exercice :** Demander à l'utilisateur un nombre, créer une liste allant de `0` à ce nombre, puis calculer la somme de tous les éléments de la liste.
 ```python
-nombre=int(input("Choisire un nombre "))
+nombre=int(input("Choisir un nombre "))
 liste=[]
 
-#Ma version
+# Ma version
 """for i in range (nombre):
     liste.append(i)
 """
-#Version cours
+#Version avec les éléments vus en cours
 liste=[i for i in range(nombre)]
 
 somme=0
@@ -464,85 +515,92 @@ print(f"La somme de 0 à {nombre} est: {somme}")
 ```
 
 ### 1.2 Opérations sur les listes
-Concaténation: `+`
+Concaténation : `+`
 ```python
 L1=[1,2,3]
 L2=[1,5,6]
 print(L1+L2)
-RETOURNE: [1,2,3,1,5,6]
+# RETOURNE : [1,2,3,1,5,6]
 ```
+La concaténation permet d'assembler deux listes.
 
+Répétition d'une liste : `*`
 ```python
 print([1]*20)
-RETOURNE: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+# RETOURNE : [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 ```
 
-`L1==L2': si L1 exactement égale a L2 on revoie `True` sinon `False`
+Comparaison : `==`
+`L1 == L2` renvoie `True` si les deux listes sont égales, sinon `False`.
+*Deux listes sont égales si elles contiennent les mêmes éléments dans le même ordre.*
 
-Copie: `L.copy()`
-Exemple:
+Copie : `L.copy()`
+Exemple :
 ```python
 L=[1,2,3]
 M1=L
 M2=L.copy()
 L[0]=100
 print(M1,M2)
-RETOURNE: [100, 2, 3] [1, 2, 3]
+# RETOURNE : [100, 2, 3] [1, 2, 3]
 ```
+> - `M1 = L` : `M1` et `L` désignent la même liste.
+> - `M2 = L.copy()` : `M2` est une copie de `L`.
+> Ainsi, modifier `L` modifie également `M1`, mais pas `M2`.
 
-**Exercice:** Afficher la suite de Fibonacci dans un liste de 0 a 19 (Fn+2=Fn+1+Fn, ∀n)
+**Exercice :** Afficher les 20 premiers termes de la suite de Fibonacci, de `F₀` à `F₁₉`, avec `Fₙ₊₂ = Fₙ₊₁ + Fₙ ∀n`.
 ```python
 liste=[0,1]
-somme=0
 
 #Ma version
 """
 for i in range(2,20):
     liste.append(liste[i-1]+liste[i-2])
 """
-#Version avec les truc du cours
+#Version utilisant uniquement les notions vues en cours :
 for n in range(18):
     liste=liste+[liste[n+1]+liste[n]]
 
 print(liste)
-RETOURNE: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181]
+# RETOURNE : [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181]
 ```
 
 ### 1.3 Modification de listes
-
+La modification d'un élément se fait en utilisant son indice.
 ```python
 L=["h","e","l","l","o"]
 L[1]="a"
 print(L)
-RETOURNE: ['h', 'a', 'l', 'l', 'o']
+# RETOURNE : ['h', 'a', 'l', 'l', 'o']
 ```
 
-Ajout d'éléments:
-`append(élement)`, `insert(indice,élément)`
+Ajout d'éléments :
+- `append(élément)` : ajoute un élément à la fin de la liste.
+- `insert(indice, élément)` : ajoute un élément à l'indice indiqué.
 
-Exemple:
+Exemple :
 ```python
 L=["h","e","l","l","o"]
 L.append("!")
 L.insert(2,"e")
 print(L)
-RETOURNE: ['h', 'e', 'e', 'l', 'l', 'o', '!']
+# RETOURNE : ['h', 'e', 'e', 'l', 'l', 'o', '!']
 ```
 
-**Exercice:** Testeur de palindrome
+**Exercice :** Testeur de palindrome
 ```python
 mot=input("Saisir un mot en minuscule: ")
-listeMot=[]
+listeMot = []
 for i in mot:
     listeMot.append(i) # Transformation du mot en une liste avec chaque caractère indépendant
-palindrome=True
+palindrome = True
 
 for j in range(len(mot)//2):
-    if listeMot[j]!=listeMot[-(j+1)]: #Comparaison des caractères : 1er avec le dernier, 2e avec l'avant-dernier, ... avec la méthode des indices croissants et décroissants
+    if listeMot[j] != listeMot[-(j+1)]: #Comparaison des caractères : 1er avec le dernier, 2e avec l'avant-dernier, ... avec la méthode des indices croissants et décroissants
         palindrome=False
         # On pourrait rajouter un break pour sortir immédiatement de la boucle quand on sait que ce n'est pas un palindrome.
 
-if palindrome==True:
+if palindrome == True:
     print(f"Le mot {mot} est un palindrome.")
 else:
     print(f"Le mot {mot} n'est pas un palindrome.")
