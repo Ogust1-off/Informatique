@@ -198,7 +198,7 @@ print(f"Ton imc est: {p/(t**2)}")
 - Rechercher sur Google votre message d'erreur.
 
 ### 3.2 Erreurs courantes
-- `SyntaxError`: apparaît quand le code est mal écrit: oublie de parenthèse, de tabulation, de frappe, ...
+- `SyntaxError`: apparaît quand le code est mal écrit: oublie de parenthèse, de tabulation, de frappe dans du code (print("Hello Wolrd") n'est pas une erreur), ...
 - `NameError`: apparaît par exemple quand une variable n'est pas définit, ...
 
 # Séquence 2 — Logique, tests conditionnels et boucles
@@ -302,7 +302,7 @@ elif nombre%7==0:
 else:
     print(f"{nombre} n'est pas divisible par 2, 3, 5, 7")
 ```
-> **Note :** si on choisit `6` on remarque que le programme affiche uniquement que `6 est divisible par 2` et non par 3. En effet quand le programme trouve une condition qui est vérifiée, il ne vérifie pas les autres. Autrement dit pour 6 il s'arrête à divisible par 2. Pour cela il faudrait utiliser des `if` a la place des `elif` pour verifier chaque condition. Il faudrait aussi remplacer/supprimer le `else` car il se trouverait à la fin de la dernière boucle.
+> **Note personnelle :** si on choisit `6` on remarque que le programme affiche uniquement que `6 est divisible par 2` et non par 3. En effet quand le programme trouve une condition qui est vérifiée, il ne vérifie pas les autres. Autrement dit pour 6 il s'arrête à divisible par 2. Pour cela il faudrait utiliser des `if` a la place des `elif` pour verifier chaque condition. Il faudrait aussi remplacer/supprimer le `else` car il se trouverait à la fin de la dernière boucle.
 
 ### 2.4 Instruction match-case
 Similaire à `if`-`elif`-`else`. On sort de la boucle dès qu'une condition est remplie.
@@ -329,6 +329,7 @@ Pour tester des conditions avec des opérateurs de comparaison, la syntaxe chang
 ```python
 case x if x < 2:
 ```
+On peut aussi utiliser `case _:` qui agit un peut comme le `else` (Ajout personnel)
 
 
 **Exercice :** Programme qui demande quelle opération est associée au symbole `** en Python.
@@ -414,14 +415,15 @@ while i < 4:
     i += 1
 ``` 
 > **Attention :** il faut veiller à ce que la condition finisse par devenir fausse afin d'éviter une boucle infinie. (Ajout personnel)
+> `break` permet de quitter une boucle. (Ajout personnel)
 
 **Exercice :** calcule PGCD
 ```python
-dividande=int(input("Saisir un dividende: "))
+dividende=int(input("Saisir un dividende: "))
 diviseur=int(input("Saisir un diviseur: "))
-a=dividande
+a=dividende
 b=diviseur
-r=dividande
+r=dividende
 while r != 0:
     r = a % b
     a = b
