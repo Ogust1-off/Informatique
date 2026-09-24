@@ -198,8 +198,8 @@ print(f"Ton imc est: {p/(t**2)}")
 - Rechercher sur Google votre message d'erreur.
 
 ### 3.2 Erreurs courantes
-- `SyntaxError`: apparaît quand le code est mal écrit: oublie de parenthèse, de tabulation, de frappe dans du code (print("Hello Wolrd") n'est pas une erreur), ...
-- `NameError`: apparaît par exemple quand une variable n'est pas définit, ...
+- `SyntaxError`: apparaît quand le code est mal écrit: oubli de parenthèse, de tabulation, de frappe dans le code (print("Hello Wolrd") n'est pas une erreur), ...
+- `NameError`: apparaît par exemple quand une variable n'est pas définie, ...
 
 # Séquence 2 — Logique, tests conditionnels et boucles
 ## 1. Logique
@@ -302,7 +302,7 @@ elif nombre%7==0:
 else:
     print(f"{nombre} n'est pas divisible par 2, 3, 5, 7")
 ```
-> **Note personnelle :** si on choisit `6` on remarque que le programme affiche uniquement que `6 est divisible par 2` et non par 3. En effet quand le programme trouve une condition qui est vérifiée, il ne vérifie pas les autres. Autrement dit pour 6 il s'arrête à divisible par 2. Pour cela il faudrait utiliser des `if` a la place des `elif` pour verifier chaque condition. Il faudrait aussi remplacer/supprimer le `else` car il se trouverait à la fin de la dernière boucle.
+> **Note personnelle :** si on choisit `6` on remarque que le programme affiche uniquement que `6 est divisible par 2` et non par 3. En effet quand le programme trouve une condition qui est vérifiée, il ne vérifie pas les autres. Autrement dit pour 6 il s'arrête à divisible par 2. Pour cela il faudrait utiliser des `if` a la place des `elif` pour vérifier chaque condition. Il faudrait aussi remplacer/supprimer le `else` car il se trouverait à la fin de la dernière boucle.
 
 ### 2.4 Instruction match-case
 Similaire à `if`-`elif`-`else`. On sort de la boucle dès qu'une condition est remplie.
@@ -329,7 +329,7 @@ Pour tester des conditions avec des opérateurs de comparaison, la syntaxe chang
 ```python
 case x if x < 2:
 ```
-On peut aussi utiliser `case _:` qui agit un peut comme le `else` (Ajout personnel)
+On peut aussi utiliser `case _:` qui agit un peu comme le `else` (Ajout personnel)
 
 
 **Exercice :** Programme qui demande quelle opération est associée au symbole `** en Python.
@@ -362,7 +362,8 @@ Exemple :
 for i in range(4):
     print(i)
 ```
-`range(n)`: entier de 0 à n-1 - `range(m, n)`: entier de m à n-1 
+`range(n)`: entier de 0 à n-1 - `range(m, n)`: entier de m à n-1
+`range(m, n, p)`: on va de l'entier `m` à n-1 avec un pas de `p` (Ajout personnel)
 
 **Exercice :** Somme de 1 à 2026 de k/2 et Produit de 1 à 20 de k^2
 ```python
@@ -400,6 +401,10 @@ for c in "hello":
 # l
 # o
 ```
+Ajout personnel: on peut aussi parcourir deux listes (ou plus) à la fois avec `zip`:
+```python
+for i, j in zip(liste1, liste2):
+``` 
 
 ### 3.2 Boucle while
 ```python
@@ -417,7 +422,7 @@ while i < 4:
 > **Attention :** il faut veiller à ce que la condition finisse par devenir fausse afin d'éviter une boucle infinie. (Ajout personnel)
 > `break` permet de quitter une boucle. (Ajout personnel)
 
-**Exercice :** calcule PGCD
+**Exercice :** Calcul du PGCD
 ```python
 dividende=int(input("Saisir un dividende: "))
 diviseur=int(input("Saisir un diviseur: "))
