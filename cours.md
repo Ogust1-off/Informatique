@@ -287,10 +287,21 @@ else:
     action_n
 ```
 
-**Exercice :** Test de divisibilité de 2 à 9
+**Exercice :** Test de divisibilité de 2 à 7 d'un nombre entier choisi par l'utilisateur
 ```python
-Instruction pas très claire, mais c'est simple à faire si l'instruction est claire.
+nombre=int(input("Choisir un nombre entier: "))
+if nombre%2==0:
+    print(f"{nombre} est divisible par 2")
+elif nombre%3==0:
+    print(f"{nombre} est divisible par 3")
+elif nombre%5==0:
+    print(f"{nombre} est divisible par 5")
+elif nombre%7==0:
+    print(f"{nombre} est divisible par 7")
+else:
+    print(f"{nombre} n'est pas divisible par 2, 3, 5, 7")
 ```
+> **Note :** si on choisit `6` on remarque que le programme affiche uniquement que `6 est divisible par 2` et non par 3. En effet quand le programme trouve une condition qui est vérifiée, il ne vérifie pas les autres. Autrement dit pour 6 il s'arrête à divisible par 2. Pour cela il faudrait utiliser des `if` a la place des `elif` pour verifier chaque condition. Il faudrait aussi remplacer/supprimer le `else` car il se trouverait à la fin de la dernière boucle.
 
 ### 2.4 Instruction match-case
 ```python
