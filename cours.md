@@ -168,6 +168,7 @@ Conversion de type : convertit une valeur dans le type souhaité.
 int()
 float()
 complex()
+bool()
 str()
 ```
 
@@ -193,12 +194,12 @@ print(f"Ton imc est: {p/(t**2)}")
 ### 3.1 Réflexes
 - Lire l'erreur et essayer de la comprendre.
 - Vérifier la syntaxe du code.
-- Utiliser `help()`.
-- Rechercher sur Google.
+- Utiliser `help()`. [Par exemple `help(print)' renvoie la documentation sur la fonction `print()`]
+- Rechercher sur Google votre message d'erreur.
 
 ### 3.2 Erreurs courantes
-- `SyntaxError`
-- `NameError`
+- `SyntaxError`: apparaît quand le code est mal écrit: oublie de parenthèse, de tabulation, de frappe, ...
+- `NameError`: apparaît par exemple quand une variable n'est pas définit, ...
 
 # Séquence 2 — Logique, tests conditionnels et boucles
 ## 1. Logique
@@ -304,12 +305,14 @@ else:
 > **Note :** si on choisit `6` on remarque que le programme affiche uniquement que `6 est divisible par 2` et non par 3. En effet quand le programme trouve une condition qui est vérifiée, il ne vérifie pas les autres. Autrement dit pour 6 il s'arrête à divisible par 2. Pour cela il faudrait utiliser des `if` a la place des `elif` pour verifier chaque condition. Il faudrait aussi remplacer/supprimer le `else` car il se trouverait à la fin de la dernière boucle.
 
 ### 2.4 Instruction match-case
+Similaire à `if`-`elif`-`else`. On sort de la boucle dès qu'une condition est remplie.
 ```python
 match element:
     case valeur_1:
         action_1
     case valeur_2:
         action_2
+    # ... autant de blocs case que nécessaire 
 ```
 
 Exemple :
@@ -320,7 +323,13 @@ match x:
         print("x vaut 1")
     case 2:
         print("x vaut 2")
+# RETOURNE : x vaut 2
 ```
+Pour tester des conditions avec des opérateurs de comparaison, la syntaxe change légèrement et il faut utiliser un `if`.
+```python
+case x if x < 2:
+```
+
 
 **Exercice :** Programme qui demande quelle opération est associée au symbole `** en Python.
 ```python
@@ -352,7 +361,7 @@ Exemple :
 for i in range(4):
     print(i)
 ```
-`range(n)`: entier de 0 à n-1 - `range(m,n)`: entier de m à n-1 
+`range(n)`: entier de 0 à n-1 - `range(m, n)`: entier de m à n-1 
 
 **Exercice :** Somme de 1 à 2026 de k/2 et Produit de 1 à 20 de k^2
 ```python
@@ -360,6 +369,7 @@ somme=0
 for i in range(1,2027):
     somme+=(i/2)
 print(somme)
+# RETOURNE : 1026675.5
 ```
 et
 ```python
@@ -367,6 +377,7 @@ prod=1
 for i in range(1,21):
     prod*=i**2
 print(prod)
+# RETOURNE : 5919012181389927685417441689600000000
 ```
 
 On peut également parcourir directement une liste :
