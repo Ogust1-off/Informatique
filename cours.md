@@ -102,7 +102,8 @@ moy+=15
 moy+=13
 moy+=8
 moy/=4
-print(moy) -> retourne (11.5)
+print(moy)
+RETOURNE: 11.5
 ```
         
 ### 2.2 Booléens
@@ -332,7 +333,7 @@ On peut aussi l'écrire sous forme de liste:
 ```python
 for i in [1,2,3]:
     print(i)
-RETOURE:
+RETOURNE:
 1
 2
 3
@@ -340,7 +341,7 @@ RETOURE:
 ```python
 for c in "hello":
      print(c)
-RETOURE:
+RETOURNE:
 h
 e
 l
@@ -375,4 +376,174 @@ while r!=0:
     b=r
     print(a)
 print(f"{a} est le PGCD")
+```
+
+# Séquence 3: Liste
+
+## 1 Liste
+```python
+L=[1,2,3,4]
+print(L)
+RETOURNE: [1,2,3,4]
+```
+ou
+```python
+L=["Hello",25,True,0]
+```
+
+Les listes possèdent leur propre type: `list` et donc la fonction de conversion associer: `list()`
+```python
+L=list("Hello")
+print(L)
+RETOURNE: ['H', 'e', 'l', 'l', 'o']
+```
+
+```python
+print(list(range(5)))
+RETOURNE: [0,1,2,3,4]
+```
+
+Format par compression
+```python
+L=[i for i in range(5)]
+print(L)
+``` 
+
+Librairie `random` importation: `import random`
+`random.randint(m,n)` renvoie un nombre aléatoire entre m et n
+
+**Exercice:** générer et afficher une liste qui affiche des 20 entiers aléatoire entre 0 et 10
+```python
+import random
+liste=[random.randint(0,10) for i in range(20)]
+print(liste)
+```
+*correction perso avec des truc pas vue:*
+```python
+import random
+liste=[]
+for i in range(20):
+    liste.append(random.randint(0,10))
+print(liste)
+```
+
+### 1.1 Parcours d'une liste
+Taille: `len()`
+
+`[12,32,76,98,15]' 12: indice 0, 32: indice 1, ... , 15: indice 4. MAIS AUSSI: 15: indice -1, 98: indice -2, ..., 12: indice -5.
+
+`L[i]` pour le nombre d'indice i d'une liste L
+
+```python
+L=[12,32,76,98,15]
+print(L[1],L[-4])
+RETOURNE: 32, 32
+```
+
+**ATTENTION**:
+1) élément ≠ indice
+2) indexation croisante vas de 0 a len(L)-1
+
+**Exercice:** Demander a un utilisateur un nombre, créer une liste qui va de 0 au nombre de l'utilisateur, faire la somme de tous les termes de la suite.
+```python
+nombre=int(input("Choisire un nombre "))
+liste=[]
+
+#Ma version
+"""for i in range (nombre):
+    liste.append(i)
+"""
+#Version cours
+liste=[i for i in range(nombre)]
+
+somme=0
+for i in range (len(liste)):
+    somme+=liste[i]
+
+print(f"La somme de 0 à {nombre} est: {somme}")
+```
+
+### 1.2 Opérations sur les listes
+Concaténation: `+`
+```python
+L1=[1,2,3]
+L2=[1,5,6]
+print(L1+L2)
+RETOURNE: [1,2,3,1,5,6]
+```
+
+```python
+print([1]*20)
+RETOURNE: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+```
+
+`L1==L2': si L1 exactement égale a L2 on revoie `True` sinon `False`
+
+Copie: `L.copy()`
+Exemple:
+```python
+L=[1,2,3]
+M1=L
+M2=L.copy()
+L[0]=100
+print(M1,M2)
+RETOURNE: [100, 2, 3] [1, 2, 3]
+```
+
+**Exercice:** Afficher la suite de Fibonacci dans un liste de 0 a 19 (Fn+2=Fn+1+Fn, ∀n)
+```python
+liste=[0,1]
+somme=0
+
+#Ma version
+"""
+for i in range(2,20):
+    liste.append(liste[i-1]+liste[i-2])
+"""
+#Version avec les truc du cours
+for n in range(18):
+    liste=liste+[liste[n+1]+liste[n]]
+
+print(liste)
+RETOURNE: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181]
+```
+
+### 1.3 Modification de listes
+
+```python
+L=["h","e","l","l","o"]
+L[1]="a"
+print(L)
+RETOURNE: ['h', 'a', 'l', 'l', 'o']
+```
+
+Ajout d'éléments:
+`append(élement)`, `insert(indice,élément)`
+
+Exemple:
+```python
+L=["h","e","l","l","o"]
+L.append("!")
+L.insert(2,"e")
+print(L)
+RETOURNE: ['h', 'e', 'e', 'l', 'l', 'o', '!']
+```
+
+**Exercice:** Testeur de palindrome
+```python
+mot=input("Saisir un mot en minuscule: ")
+listeMot=[]
+for i in mot:
+    listeMot.append(i) # Transformation du mot en une liste avec chaque caractère indépendant
+palindrome=True
+
+for j in range(len(mot)//2):
+    if listeMot[j]!=listeMot[-(j+1)]: #Comparaison des caractères : 1er avec le dernier, 2e avec l'avant-dernier, ... avec la méthode des indices croissants et décroissants
+        palindrome=False
+        # On pourrait rajouter un break pour sortir immédiatement de la boucle quand on sait que ce n'est pas un palindrome.
+
+if palindrome==True:
+    print(f"Le mot {mot} est un palindrome.")
+else:
+    print(f"Le mot {mot} n'est pas un palindrome.")
 ```
