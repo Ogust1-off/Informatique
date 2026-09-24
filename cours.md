@@ -69,7 +69,7 @@ print(name)
 ## 2 Types et opérations
 **Définition :** En Python, chaque objet possède un **type**. Il indique la nature de l'objet manipulé et les **opérations** que l'on peut lui appliquer.
 
-Fonction `type():
+Fonction `type()`:
 ```python
 print(type("Hello World"))
 # RETOURNE : str
@@ -387,9 +387,9 @@ while condition:
 Exemple :
 ```python
 i=0
-while i<4:
+while i < 4:
     print(i)
-    i+=1
+    i += 1
 ``` 
 > **Attention :** il faut veiller à ce que la condition finisse par devenir fausse afin d'éviter une boucle infinie. (Ajout personnel)
 
@@ -441,8 +441,8 @@ print(L)
 ```
 Une compréhension de liste permet de créer une liste à partir d'un itérable. 
 
-**Génération de nombres aléatoires:**
-En Python on utilise la librairie `random`
+**Génération de nombres aléatoires :**
+En Python, on utilise la librairie `random`
 Pour utiliser le module `random` :
 ```python
 import random
@@ -517,8 +517,8 @@ print(f"La somme de 0 à {nombre} est: {somme}")
 ### 1.2 Opérations sur les listes
 Concaténation : `+`
 ```python
-L1=[1,2,3]
-L2=[1,5,6]
+L1=[1, 2, 3]
+L2=[1, 5, 6]
 print(L1+L2)
 # RETOURNE : [1,2,3,1,5,6]
 ```
@@ -537,7 +537,7 @@ Comparaison : `==`
 Copie : `L.copy()`
 Exemple :
 ```python
-L=[1,2,3]
+L=[1, 2, 3]
 M1=L
 M2=L.copy()
 L[0]=100
