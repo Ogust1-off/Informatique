@@ -66,7 +66,7 @@ name = input("Quel est votre nom ? ")
 print(name)
 ```
 
-## 2 Types et opérations
+## 2. Types et opérations
 **Définition :** En Python, chaque objet possède un **type**. Il indique la nature de l'objet manipulé et les **opérations** que l'on peut lui appliquer.
 
 Fonction `type()`:
@@ -189,7 +189,7 @@ t = float(input("Ta taille (m)? "))
 print(f"Ton imc est: {p/(t**2)}")
 ```
 
-## 3 Débogage
+## 3. Débogage
 ### 3.1 Réflexes
 - Lire l'erreur et essayer de la comprendre.
 - Vérifier la syntaxe du code.
@@ -201,7 +201,7 @@ print(f"Ton imc est: {p/(t**2)}")
 - `NameError`
 
 # Séquence 2 — Logique, tests conditionnels et boucles
-## 1 Logique
+## 1. Logique
 ### 1.1 Conditions logiques
 ```python
 cond_1 = 5**2 < 2**5
@@ -239,7 +239,7 @@ cond3=a>=1997 and a<=2010
 print(f"genX? {cond1}\ngenY? {cond2}\ngenZ? {cond3}")
 ```
 
-## 2 Tests conditionnels
+## 2. Tests conditionnels
 > **Remarque :**
 > - Le séparateur `:` est placé après la condition.
 > - L'indentation indique les actions à effectuer lorsque la condition est vérifiée.
@@ -326,7 +326,7 @@ match rep:
         print("FAUX")
 ```
 
-## 3 Boucles
+## 3. Boucles
 - `for`: parcourt les éléments d'un itérable.
 - `while`: répète des instructions tant qu'une condition est vraie.
 
