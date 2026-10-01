@@ -841,37 +841,25 @@ print(L)
 ```
 
 ### 3.1 Tri par sélection
-58.3  0.2  1  53  500  10.4
-  ↘    ↖
-0.2  58.3  1  53  500  10.4
-       ↘   ↖
-0.2  1  58.3  53  500  10.4
+
+$$
+\begin{array}{cccccc}
+\boxed{58.3} & \boxed{0.2} & \boxed{1} & \boxed{53} & \boxed{500} & \boxed{10.4}\\[8pt]
+& \downarrow & & & & \\[-2pt]
+\boxed{0.2} & \boxed{58.3} & \boxed{1} & \boxed{53} & \boxed{500} & \boxed{10.4}\\[8pt]
+& & \downarrow & & & \\[-2pt]
+\boxed{0.2} & \boxed{1} & \boxed{58.3} & \boxed{53} & \boxed{500} & \boxed{10.4}
+\end{array}
+$$
 
 ### 3.2 Tri par insertion
 
-58.3  0.2  1  53  500  10.4
- ↑     ↖
-0.2  58.3  1  53  500  10.4
-      ↑     ↖
-0.2  1     58.3  53  500  10.4
-         ↑    ↖
-0.2  1  53  58.3  500  10.4
-                     ↑    ↖
-0.2  1  53  58.3  10.4  500
-
-
 $$
-\begin{array}{|c|c|c|c|c|c|}
-\hline
-58.3 & 0.2 & 1 & 5.3 & 500 & 10.4 \\
-\hline
-\end{array}
-\quad
-\longrightarrow
-\quad
-\begin{array}{|c|c|c|c|c|c|}
-\hline
-0.2 & 58.3 & 1 & 5.3 & 500 & 10.4 \\
-\hline
+\begin{array}{cccccc}
+\boxed{58.3} & \boxed{0.2} & \boxed{1} & \boxed{53} & \boxed{500} & \boxed{10.4}\\[8pt]
+& \downarrow & & & & \\[-2pt]
+\boxed{0.2} & \boxed{58.3} & \boxed{1} & \boxed{53} & \boxed{500} & \boxed{10.4}\\[8pt]
+& & \downarrow & & & \\[-2pt]
+\boxed{0.2} & \boxed{1} & \boxed{58.3} & \boxed{53} & \boxed{500} & \boxed{10.4}
 \end{array}
 $$
