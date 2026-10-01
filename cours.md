@@ -943,23 +943,16 @@ flowchart TB
 
 **Principe :** on compare deux éléments voisins. S'ils sont dans le mauvais ordre, on les échange. On répète le parcours jusqu'à ce qu'il n'y ait plus d'échange.
 
-Le **tri à bulles** consiste à comparer deux éléments voisins.
-S'ils sont dans le mauvais ordre, ils sont échangés.
-
 À chaque passage, le plus grand élément de la partie non triée
 remonte progressivement vers la droite jusqu'à atteindre sa position définitive.
 
-- 🔴 **Rouge** : les deux éléments actuellement comparés
-- 🔵 **Bleu** : éléments définitivement triés
-- ⚪ **Gris** : éléments qui ne sont pas actuellement comparés
-
-> **À noter :** le tri à bulles fonctionne correctement, mais il est
-> relativement peu efficace pour de grandes listes. Il effectue beaucoup
-> de comparaisons et d'échanges. Sa complexité est de $O(n^2)$ dans
-> le cas général.
+> **À noter :** le tri à bulles fonctionne correctement, mais il est relativement peu efficace pour de grandes listes. Il effectue beaucoup de comparaisons et d'échanges. Sa complexité est de $O(n^2)$ dans le cas général.
 
 <details>
 <summary>Voir le déroulement du tri à bulles</summary>
+- 🔴 **Rouge** : les deux éléments actuellement comparés
+- 🔵 **Bleu** : éléments définitivement triés
+- ⚪ **Gris** : éléments qui ne sont pas actuellement comparés
 
 ```mermaid
 flowchart TB
