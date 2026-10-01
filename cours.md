@@ -619,6 +619,7 @@ print(L)
 **Exercice :** Testeur de palindrome
 ```python
 mot=input("Saisir un mot en minuscule: ")
+# On pourrais utiliser .lower pour mettre le texte dans le même classe.
 listeMot = []
 for i in mot:
     listeMot.append(i) # Transformation du mot en une liste avec chaque caractère indépendant
@@ -633,4 +634,101 @@ if palindrome == True:
     print(f"Le mot {mot} est un palindrome.")
 else:
     print(f"Le mot {mot} n'est pas un palindrome.")
+```
+
+**Elements en plus :**
+```python
+L = [1, 2, 3]
+sum(L)
+# RETOURNE : 6
+```
+```python
+list(range(0, 21, 2))
+# RETOURNE : [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+```
+
+Enlever un élément d'une liste:
+- `pop(indice)` : supprime l'élément à la fin à l'indice choisie.
+- `remove(élément)` : supprime le premier élément verifier de la liste.
+
+Exemple :
+```python
+L=["h","e","l","l","o"]
+L.pop(2)
+print(L)
+# RETOURNE : ['h', 'e', 'l', 'o']
+```
+```python
+L=["h","e","l","l","o"]
+L.remove("l")
+print(L)
+# RETOURNE : ['h', 'e', 'l', 'o']
+```
+
+**Exercice :** Crée une liste de 1 à 100 et appliquer le crible d'Eratosthène pour enlever les éléments non premiers.
+```python
+Liste=[]
+for i in range (101):
+    Liste.append(i)
+
+j=0
+while j<len(Liste):
+    if(Liste[j]%2==0 or Liste[j]%3==0 or Liste[j]%5==0 or Liste[j]%7==0 or Liste[j]%11==0):
+        Liste.pop(j)
+    else:
+        j+=1
+
+print(Liste)
+# RETOURNE : [1, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
+```
+
+### 1.4 Sous-listes et listes de listes
+
+**Sous-liste :**
+`L[i: j]`: extrait une sous-liste de `L` entre l'indice `i` et `j-1`
+`L[:j]`: extrait une sous-liste de `L` entre l'indice 0 et `j-1`
+`L[i:]`: extrait une sous-liste de `L` entre l'indice i et `len(L)-1`
+
+Exemple :
+```python
+L = [4, 6, 7, 3, 1, 8]
+print(L[2:5])
+# RETOURNE : [7, 3, 1]
+```
+```python
+L = [4, 6, 7, 3, 1, 8]
+print(L[:5])
+# RETOURNE : [4, 6, 7, 3, 1]
+```
+```python
+L = [4, 6, 7, 3, 1, 8]
+print(L[2:])
+# RETOURNE : [7, 3, 1, 8]
+```
+```python
+L = [4, 6, 7, 3, 1, 8]
+print(L[:])
+# RETOURNE : [4, 6, 7, 3, 1, 8]
+```
+
+**Liste de liste :**
+```python
+L = [1, 2, [1, 2]]
+print(L[2])
+# RETOURNE : [1, 2]
+```
+Pour une matrice A=
+$$
+\begin{pmatrix}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9
+\end{pmatrix}
+$$
+
+On écrit:
+```python
+A=[[1,2,3],
+   [4,5,6],
+   [7,8,9]]
 ```
