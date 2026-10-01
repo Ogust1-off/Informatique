@@ -941,7 +941,7 @@ flowchart TB
 
 ### 3.3 Tri à bulles (Ajout personnel)
 
-## 3.3 Tri à bulles
+**Principe :** on compare deux éléments voisins. S'ils sont dans le mauvais ordre, on les échange. On répète le parcours jusqu'à ce qu'il n'y ait plus d'échange.
 
 Le **tri à bulles** consiste à comparer deux éléments voisins.
 S'ils sont dans le mauvais ordre, ils sont échangés.
@@ -1081,7 +1081,7 @@ end
 
 subgraph S22["Comparaison : 0.2 < 1 → pas d'échange"]
 direction LR
-s22a["0.2"]:::selected --- s22b["1"]:::selected --- s22c["10.4"]:::unsorted --- s22d["53"]:::sorted --- s22e["58.3"]:::sorted --- s22f["500"]:::sorted
+s22a["0.2"]:::selected --- s22b["1"]:::selected --- s22c["10.4"]:::sorted --- s22d["53"]:::sorted --- s22e["58.3"]:::sorted --- s22f["500"]:::sorted
 end
 
 subgraph S23["Après le passage : 1 et 0.2 sont trié"]
@@ -1120,5 +1120,3 @@ S22 --> S23
 S23 --> S24
 ```
 </details>
-
-**Principe :** on compare deux éléments voisins. S'ils sont dans le mauvais ordre, on les échange. On répète le parcours jusqu'à ce qu'il n'y ait plus d'échange.
