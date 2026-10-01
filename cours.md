@@ -685,9 +685,9 @@ print(Liste)
 ### 1.4 Sous-listes et listes de listes
 
 **Sous-liste :**
-`L[i: j]`: extrait une sous-liste de `L` entre l'indice `i` et `j-1`
-`L[:j]`: extrait une sous-liste de `L` entre l'indice 0 et `j-1`
-`L[i:]`: extrait une sous-liste de `L` entre l'indice i et `len(L)-1`
+- `L[i: j]`: extrait une sous-liste de `L` entre l'indice `i` et `j-1`
+- `L[:j]`: extrait une sous-liste de `L` entre l'indice 0 et `j-1`
+- `L[i:]`: extrait une sous-liste de `L` entre l'indice i et `len(L)-1`
 
 Exemple :
 ```python
@@ -776,8 +776,8 @@ print(indice)
 
 ### 2.2 Recherche min-max
 
-`min()` affiche le minimum de la liste
-`max()` affiche le maximum de la liste
+- `min()` affiche le minimum de la liste
+- `max()` affiche le maximum de la liste
 
 ```python
 L=[0.2,1,5.3,500,104,58,3]
@@ -800,9 +800,9 @@ print(max)
 
 ## 3. Algorithmes de tri
 
-`sorted()`: trie une liste dans l'ordre croissant sans modifier l'ordre original
-`.sort()`: trie directement la liste original dans l'ordre croissant
-`reverse=True`: permet de trier dans l'ordre décroissant
+- `sorted()`: trie une liste dans l'ordre croissant sans modifier l'ordre original
+- `.sort()`: trie directement la liste original dans l'ordre croissant
+- `reverse=True`: permet de trier dans l'ordre décroissant
 
 ```python
 L=[4,0,12,56.8,22.1,98.12,89,127,12,400]
@@ -831,7 +831,7 @@ print(L)
 # RETOURNE : [400, 127, 98.12, 89, 56.8, 22.1, 12, 12, 4, 0]
 ```
 
-`.reverse()`: permet d'inverser le sense de la liste
+- `.reverse()`: permet d'inverser le sense de la liste
 
 ```python
 L=[4,0,12,56.8,22.1,98.12,89,127,12,400]
