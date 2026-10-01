@@ -938,17 +938,25 @@ flowchart TB
 ```
 **Principe :** on prend l'élément suivant et on l'insère à la bonne position dans la partie déjà triée.
 
-### 3.3 Tri à bulles (Ajout personnel)
+### 3.3 Tri à bulles
 
-Le **tri à bulles** consiste à comparer les éléments deux à deux, côte à côte.
-Si les deux éléments sont dans le mauvais ordre, ils sont échangés.
+Le **tri à bulles** consiste à comparer deux éléments voisins.
+S'ils sont dans le mauvais ordre, ils sont échangés.
+
+On répète ces comparaisons jusqu'à ce que toute la liste soit triée.
 
 À chaque passage, le plus grand élément de la partie non triée
-« remonte » vers la droite.
+« remonte » progressivement vers la droite, comme une bulle.
 
-- 🔴 **Rouge** : éléments actuellement comparés
-- 🔵 **Bleu** : éléments déjà triés
+- 🔴 **Rouge** : les deux éléments actuellement comparés
+- 🔵 **Bleu** : éléments définitivement triés
 - ⚪ **Gris** : éléments qui restent à traiter
+
+> **À noter :** le tri à bulles fonctionne correctement, mais il est
+> généralement peu efficace car il effectue beaucoup de comparaisons
+> et d'échanges. Sa complexité est de $O(n^2)$ dans le cas général.
+> Il est donc surtout intéressant pour comprendre le principe des algorithmes
+> de tri plutôt que pour trier de grandes quantités de données.
 
 ```mermaid
 flowchart TB
@@ -958,79 +966,111 @@ classDef sorted fill:#dbeafe,stroke:#2563eb,color:#111827;
 classDef selected fill:#fecaca,stroke:#dc2626,color:#111827;
 classDef unsorted fill:#f3f4f6,stroke:#9ca3af,color:#111827;
 
+%% ─────────────── LISTE INITIALE ───────────────
+
 subgraph ETAPE0["Liste initiale"]
 direction LR
 e0_0["58.3"]:::normal --- e0_1["0.2"]:::normal --- e0_2["1"]:::normal --- e0_3["53"]:::normal --- e0_4["500"]:::normal --- e0_5["10.4"]:::normal
 end
 
-subgraph ETAPE1["Échange : 58.3 > 0.2"]
+%% ─────────────── PASSAGE 1 ───────────────
+
+subgraph ETAPE1["Comparaison : 58.3 > 0.2 → échange"]
 direction LR
 e1_0["0.2"]:::normal --- e1_1["58.3"]:::selected --- e1_2["1"]:::selected --- e1_3["53"]:::unsorted --- e1_4["500"]:::unsorted --- e1_5["10.4"]:::unsorted
 end
 
-subgraph ETAPE2["Échange : 58.3 > 1"]
+subgraph ETAPE2["Comparaison : 58.3 > 1 → échange"]
 direction LR
 e2_0["0.2"]:::normal --- e2_1["1"]:::normal --- e2_2["58.3"]:::selected --- e2_3["53"]:::selected --- e2_4["500"]:::unsorted --- e2_5["10.4"]:::unsorted
 end
 
-subgraph ETAPE3["Échange : 58.3 > 53"]
+subgraph ETAPE3["Comparaison : 58.3 > 53 → échange"]
 direction LR
 e3_0["0.2"]:::normal --- e3_1["1"]:::normal --- e3_2["53"]:::normal --- e3_3["58.3"]:::selected --- e3_4["500"]:::selected --- e3_5["10.4"]:::unsorted
 end
 
-subgraph ETAPE4["Pas d'échange : 58.3 < 500"]
+subgraph ETAPE4["Comparaison : 58.3 < 500 → pas d'échange"]
 direction LR
 e4_0["0.2"]:::normal --- e4_1["1"]:::normal --- e4_2["53"]:::normal --- e4_3["58.3"]:::normal --- e4_4["500"]:::selected --- e4_5["10.4"]:::selected
 end
 
-subgraph ETAPE5["Échange : 500 > 10.4 → 500 est trié"]
+subgraph ETAPE5["Comparaison : 500 > 10.4 → échange"]
 direction LR
-e5_0["0.2"]:::normal --- e5_1["1"]:::normal --- e5_2["53"]:::normal --- e5_3["58.3"]:::normal --- e5_4["10.4"]:::normal --- e5_5["500"]:::sorted
+e5_0["0.2"]:::normal --- e5_1["1"]:::normal --- e5_2["53"]:::normal --- e5_3["58.3"]:::normal --- e5_4["10.4"]:::selected --- e5_5["500"]:::sorted
 end
 
-subgraph ETAPE6["Pas d'échange : 0.2 < 1"]
+%% ─────────────── PASSAGE 2 ───────────────
+
+subgraph ETAPE6["Passage 2 : 500 est maintenant trié"]
 direction LR
 e6_0["0.2"]:::selected --- e6_1["1"]:::selected --- e6_2["53"]:::unsorted --- e6_3["58.3"]:::unsorted --- e6_4["10.4"]:::unsorted --- e6_5["500"]:::sorted
 end
 
-subgraph ETAPE7["Pas d'échange : 1 < 53"]
+subgraph ETAPE7["Comparaison : 0.2 < 1 → pas d'échange"]
 direction LR
-e7_0["0.2"]:::normal --- e7_1["1"]:::selected --- e7_2["53"]:::selected --- e7_3["58.3"]:::unsorted --- e7_4["10.4"]:::unsorted --- e7_5["500"]:::sorted
+e7_0["0.2"]:::selected --- e7_1["1"]:::selected --- e7_2["53"]:::unsorted --- e7_3["58.3"]:::unsorted --- e7_4["10.4"]:::unsorted --- e7_5["500"]:::sorted
 end
 
-subgraph ETAPE8["Pas d'échange : 53 < 58.3"]
+subgraph ETAPE8["Comparaison : 1 < 53 → pas d'échange"]
 direction LR
-e8_0["0.2"]:::normal --- e8_1["1"]:::normal --- e8_2["53"]:::selected --- e8_3["58.3"]:::selected --- e8_4["10.4"]:::unsorted --- e8_5["500"]:::sorted
+e8_0["0.2"]:::normal --- e8_1["1"]:::selected --- e8_2["53"]:::selected --- e8_3["58.3"]:::unsorted --- e8_4["10.4"]:::unsorted --- e8_5["500"]:::sorted
 end
 
-subgraph ETAPE9["Échange : 58.3 > 10.4 → 58.3 est trié"]
+subgraph ETAPE9["Comparaison : 53 < 58.3 → pas d'échange"]
 direction LR
-e9_0["0.2"]:::normal --- e9_1["1"]:::normal --- e9_2["53"]:::normal --- e9_3["10.4"]:::normal --- e9_4["58.3"]:::sorted --- e9_5["500"]:::sorted
+e9_0["0.2"]:::normal --- e9_1["1"]:::normal --- e9_2["53"]:::selected --- e9_3["58.3"]:::selected --- e9_4["10.4"]:::unsorted --- e9_5["500"]:::sorted
 end
 
-subgraph ETAPE10["Pas d'échange : 0.2 < 1"]
+subgraph ETAPE10["Comparaison : 58.3 > 10.4 → échange"]
 direction LR
-e10_0["0.2"]:::selected --- e10_1["1"]:::selected --- e10_2["53"]:::unsorted --- e10_3["10.4"]:::unsorted --- e10_4["58.3"]:::sorted --- e10_5["500"]:::sorted
+e10_0["0.2"]:::normal --- e10_1["1"]:::normal --- e10_2["53"]:::normal --- e10_3["10.4"]:::normal --- e10_4["58.3"]:::sorted --- e10_5["500"]:::sorted
 end
 
-subgraph ETAPE11["Pas d'échange : 1 < 53"]
+%% ─────────────── PASSAGE 3 ───────────────
+
+subgraph ETAPE11["Passage 3 : 58.3 est maintenant trié"]
 direction LR
-e11_0["0.2"]:::normal --- e11_1["1"]:::selected --- e11_2["53"]:::selected --- e11_3["10.4"]:::unsorted --- e11_4["58.3"]:::sorted --- e11_5["500"]:::sorted
+e11_0["0.2"]:::selected --- e11_1["1"]:::selected --- e11_2["53"]:::unsorted --- e11_3["10.4"]:::unsorted --- e11_4["58.3"]:::sorted --- e11_5["500"]:::sorted
 end
 
-subgraph ETAPE12["Échange : 53 > 10.4 → 53 est trié"]
+subgraph ETAPE12["Comparaison : 0.2 < 1 → pas d'échange"]
 direction LR
-e12_0["0.2"]:::normal --- e12_1["1"]:::normal --- e12_2["10.4"]:::normal --- e12_3["53"]:::sorted --- e12_4["58.3"]:::sorted --- e12_5["500"]:::sorted
+e12_0["0.2"]:::selected --- e12_1["1"]:::selected --- e12_2["53"]:::unsorted --- e12_3["10.4"]:::unsorted --- e12_4["58.3"]:::sorted --- e12_5["500"]:::sorted
 end
 
-subgraph ETAPE13["Pas d'échange : 0.2 < 1"]
+subgraph ETAPE13["Comparaison : 1 < 53 → pas d'échange"]
 direction LR
-e13_0["0.2"]:::selected --- e13_1["1"]:::selected --- e13_2["10.4"]:::unsorted --- e13_3["53"]:::sorted --- e13_4["58.3"]:::sorted --- e13_5["500"]:::sorted
+e13_0["0.2"]:::normal --- e13_1["1"]:::selected --- e13_2["53"]:::selected --- e13_3["10.4"]:::unsorted --- e13_4["58.3"]:::sorted --- e13_5["500"]:::sorted
 end
 
-subgraph ETAPE14["Pas d'échange : 1 < 10.4 → liste triée"]
+subgraph ETAPE14["Comparaison : 53 > 10.4 → échange"]
 direction LR
-e14_0["0.2"]:::sorted --- e14_1["1"]:::sorted --- e14_2["10.4"]:::sorted --- e14_3["53"]:::sorted --- e14_4["58.3"]:::sorted --- e14_5["500"]:::sorted
+e14_0["0.2"]:::normal --- e14_1["1"]:::normal --- e14_2["10.4"]:::normal --- e14_3["53"]:::sorted --- e14_4["58.3"]:::sorted --- e14_5["500"]:::sorted
+end
+
+%% ─────────────── PASSAGE 4 ───────────────
+
+subgraph ETAPE15["Passage 4 : 53 est maintenant trié"]
+direction LR
+e15_0["0.2"]:::selected --- e15_1["1"]:::selected --- e15_2["10.4"]:::unsorted --- e15_3["53"]:::sorted --- e15_4["58.3"]:::sorted --- e15_5["500"]:::sorted
+end
+
+subgraph ETAPE16["Comparaison : 0.2 < 1 → pas d'échange"]
+direction LR
+e16_0["0.2"]:::selected --- e16_1["1"]:::selected --- e16_2["10.4"]:::unsorted --- e16_3["53"]:::sorted --- e16_4["58.3"]:::sorted --- e16_5["500"]:::sorted
+end
+
+subgraph ETAPE17["Comparaison : 1 < 10.4 → pas d'échange"]
+direction LR
+e17_0["0.2"]:::normal --- e17_1["1"]:::selected --- e17_2["10.4"]:::selected --- e17_3["53"]:::sorted --- e17_4["58.3"]:::sorted --- e17_5["500"]:::sorted
+end
+
+%% ─────────────── RÉSULTAT ───────────────
+
+subgraph ETAPE18["Liste triée"]
+direction LR
+e18_0["0.2"]:::sorted --- e18_1["1"]:::sorted --- e18_2["10.4"]:::sorted --- e18_3["53"]:::sorted --- e18_4["58.3"]:::sorted --- e18_5["500"]:::sorted
 end
 
 ETAPE0 --> ETAPE1
@@ -1047,5 +1087,9 @@ ETAPE10 --> ETAPE11
 ETAPE11 --> ETAPE12
 ETAPE12 --> ETAPE13
 ETAPE13 --> ETAPE14
+ETAPE14 --> ETAPE15
+ETAPE15 --> ETAPE16
+ETAPE16 --> ETAPE17
+ETAPE17 --> ETAPE18
 ```
 **Principe :** on compare deux éléments voisins. S'ils sont dans le mauvais ordre, on les échange. On répète le parcours jusqu'à ce qu'il n'y ait plus d'échange.
