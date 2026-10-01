@@ -252,7 +252,9 @@ print(f"Ton imc est: {p/(t**2)}")
 
 <a id="seq2"></a>
 # Séquence 2 — Logique, tests conditionnels et boucles
+<a id="seq2-1"></a>
 ## 1. Logique
+<a id="seq2-1-1"></a>
 ### 1.1 Conditions logiques
 ```python
 cond_1 = 5**2 < 2**5
@@ -267,7 +269,7 @@ calc=2026-a #Pour l'année 2026
 cond=calc>=18
 print(f"Majeur? {cond}")
 ```
-
+<a id="seq2-1-2"></a>
 ### 1.2 Opérateurs logiques
 | Opérateur | Signification | Exemple   |
 | --------- | ------------- | --------- |
@@ -290,11 +292,13 @@ cond3=a>=1997 and a<=2010
 print(f"genX? {cond1}\ngenY? {cond2}\ngenZ? {cond3}")
 ```
 
+<a id="seq2-2"></a>
 ## 2. Tests conditionnels
 > **Remarque :**
 > - Le séparateur `:` est placé après la condition.
 > - L'indentation indique les actions à effectuer lorsque la condition est vérifiée.
 
+<a id="seq2-2-1"></a>
 ### 2.1 Instruction if
 ```python
 if condition:
@@ -309,7 +313,7 @@ if age<18:
 if age>=18:
     print("Majeur")
 ```
- 
+<a id="seq2-2-2"></a>
 ### 2.2 Instruction if-else
 ```python
 if condition:
@@ -326,7 +330,7 @@ if number%2==0:
 else:
     print(f"Le nombre {number} est impair")
 ```
-
+<a id="seq2-2-3"></a>
 ### 2.3 Instruction if-elif-else
 ```python
 if condition:
@@ -354,6 +358,7 @@ else:
 ```
 > **Note personnelle :** si on choisit `6` on remarque que le programme affiche uniquement que `6 est divisible par 2` et non par 3. En effet quand le programme trouve une condition qui est vérifiée, il ne vérifie pas les autres. Autrement dit pour 6 il s'arrête à divisible par 2. Pour cela il faudrait utiliser des `if` a la place des `elif` pour vérifier chaque condition. Il faudrait aussi remplacer/supprimer le `else` car il se trouverait à la fin de la dernière boucle.
 
+<a id="seq2-2-4"></a>
 ### 2.4 Instruction match-case
 Similaire à `if`-`elif`-`else`. On sort de la boucle dès qu'une condition est remplie.
 ```python
@@ -397,10 +402,12 @@ match rep:
         print("FAUX")
 ```
 
+<a id="seq2-3"></a>
 ## 3. Boucles
 - `for`: parcourt les éléments d'un itérable.
 - `while`: répète des instructions tant qu'une condition est vraie.
 
+<a id="seq2-3-1"></a>
 ### 3.1 Boucle `for`
 ```python
 for element in iterable:
@@ -455,7 +462,7 @@ Ajout personnel: on peut aussi parcourir deux listes (ou plus) à la fois avec `
 ```python
 for i, j in zip(liste1, liste2):
 ``` 
-
+<a id="seq2-3-2"></a>
 ### 3.2 Boucle while
 ```python
 while condition:
@@ -489,7 +496,7 @@ print(f"{a} est le PGCD")
 
 <a id="seq3"></a>
 # Séquence 3 — Listes
-
+<a id="seq3-1"></a>
 ## 1. Création d'une liste
 ```python
 L=[1,2,3,4]
@@ -543,7 +550,7 @@ for i in range(20):
     liste.append(random.randint(0,10))
 print(liste)
 ```
-
+<a id="seq3-1-1"></a>
 ### 1.1 Parcours d'une liste
 Taille d'une liste : `len()`
 
@@ -593,7 +600,7 @@ for i in range (len(liste)):
 
 print(f"La somme de 0 à {nombre} est: {somme}")
 ```
-
+<a id="seq3-1-2"></a>
 ### 1.2 Opérations sur les listes
 Concaténation : `+`
 ```python
@@ -644,7 +651,7 @@ for n in range(18):
 print(liste)
 # RETOURNE : [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181]
 ```
-
+<a id="seq3-1-3"></a>
 ### 1.3 Modification de listes
 La modification d'un élément se fait en utilisant son indice.
 ```python
@@ -733,6 +740,7 @@ print(Liste)
 # RETOURNE : [1, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
 ```
 
+<a id="seq3-1-4"></a>
 ### 1.4 Sous-listes et listes de listes
 
 **Sous-liste :**
@@ -801,8 +809,9 @@ L=[1,2,[3,4]]
 print(L[2:])
 # RETOURNE : [[3, 4]]
 ```
-
+<a id="seq3-2"></a>
 ## 2. Algorithmes de recherche
+<a id="seq3-2-1"></a>
 ### 2.1 Recherche d'éléments
 
 ```python
@@ -824,7 +833,7 @@ for j in range(len(Liste)):
 print(Liste)
 print(indice)
 ```
-
+<a id="seq3-2-2"></a>
 ### 2.2 Recherche min-max
 
 - `min()` affiche le minimum de la liste
@@ -848,7 +857,7 @@ print(max)
 
 # RETOURNE : 500
 ```
-
+<a id="seq3-3"></a>
 ## 3. Algorithmes de tri
 
 - `sorted()`: trie une liste dans l'ordre croissant sans modifier l'ordre original
@@ -890,7 +899,7 @@ L.reverse()
 print(L)
 # RETOURNE : [400, 12, 127, 89, 98.12, 22.1, 56.8, 12, 0, 4]
 ```
-
+<a id="seq3-3-1"></a>
 ### 3.1 Tri par sélection
 
 **Principe :** on recherche le minimum dans la partie non triée, puis on l'échange avec le premier élément de cette partie.
@@ -943,6 +952,7 @@ flowchart TB
     classDef unsorted fill:#f3f4f6,stroke:#9ca3af,color:#111827;
 ```
 
+<a id="seq3-3-2"></a>
 ### 3.2 Tri par insertion
 
 **Principe :** on prend l'élément suivant et on l'insère à la bonne position dans la partie déjà triée
@@ -989,7 +999,7 @@ flowchart TB
     classDef selected fill:#fecaca,stroke:#dc2626,color:#111827;
     classDef unsorted fill:#f3f4f6,stroke:#9ca3af,color:#111827;
 ```
-
+<a id="seq3-3-3"></a>
 ### 3.3 Tri à bulles (Ajout personnel)
 
 **Principe :** on compare deux éléments voisins. S'ils sont dans le mauvais ordre, on les échange. On répète le parcours jusqu'à ce qu'il n'y ait plus d'échange.
