@@ -1118,5 +1118,7 @@ S20 --> S21
 S21 --> S22
 S22 --> S23
 S23 --> S24
+```
 </details>
+
 **Principe :** on compare deux éléments voisins. S'ils sont dans le mauvais ordre, on les échange. On répète le parcours jusqu'à ce qu'il n'y ait plus d'échange.
