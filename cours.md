@@ -773,3 +773,69 @@ for j in range(len(Liste)):
 print(Liste)
 print(indice)
 ```
+
+### 2.2 Recherche min-max
+
+`min()` affiche le minimum de la liste
+`max()` affiche le maximum de la liste
+
+```python
+L=[0.2,1,5.3,500,104,58,3]
+print(min(L), max(L))
+# RETOURNE : 0.2 500
+```
+
+*Sans ces fonctions :* (Ajout personnel)
+```python
+max=0
+L=[0.2,1,5.3,500,104,58,3]
+for i in range(len(L)):
+    if L[i]>max:
+        max=L[i]
+
+print(max)
+
+# RETOURNE : 500
+```
+
+## 3. Algorithmes de tri
+
+`sorted()`: trie une liste dans l'ordre croissant sans modifier l'ordre original
+`.sort()`: trie directement la liste original dans l'ordre croissant
+`reverse=True`: permet de trier dans l'ordre décroissant
+
+```python
+L=[4,0,12,56.8,22.1,98.12,89,127,12,400]
+print(sorted(L))
+print(L)
+# RETOURNE : [0, 4, 12, 12, 22.1, 56.8, 89, 98.12, 127, 400]
+# [4, 0, 12, 56.8, 22.1, 98.12, 89, 127, 12, 400]
+```
+```python
+L=[4,0,12,56.8,22.1,98.12,89,127,12,400]
+L.sort()
+print(L)
+# RETOURNE : [0, 4, 12, 12, 22.1, 56.8, 89, 98.12, 127, 400]
+```
+```python
+L=[4,0,12,56.8,22.1,98.12,89,127,12,400]
+print(sorted(L, reverse=True))
+print(L)
+# RETOURNE : [400, 127, 98.12, 89, 56.8, 22.1, 12, 12, 4, 0]
+# [4, 0, 12, 56.8, 22.1, 98.12, 89, 127, 12, 400]
+```
+```python
+L=[4,0,12,56.8,22.1,98.12,89,127,12,400]
+L.sort(reverse=True)
+print(L)
+# RETOURNE : [400, 127, 98.12, 89, 56.8, 22.1, 12, 12, 4, 0]
+```
+
+`.reverse()`: permet d'inverser le sense de la liste
+
+```python
+L=[4,0,12,56.8,22.1,98.12,89,127,12,400]
+L.reverse()
+print(L)
+# RETOURNE : [400, 12, 127, 89, 98.12, 22.1, 56.8, 12, 0, 4]
+```
