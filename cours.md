@@ -941,7 +941,7 @@ flowchart TB
 
 ### 3.3 Tri à bulles (Ajout personnel)
 
-L## 3.3 Tri à bulles
+## 3.3 Tri à bulles
 
 Le **tri à bulles** consiste à comparer deux éléments voisins.
 S'ils sont dans le mauvais ordre, ils sont échangés.
@@ -1071,12 +1071,12 @@ end
 
 subgraph S20["Comparaison : 1 < 10.4 → pas d'échange"]
 direction LR
-s20a["0.2"]:::normal --- s20b["1"]:::selected --- s20c["10.4"]:::selected --- s20d["53"]:::sorted --- s20e["58.3"]:::sorted --- s20f["500"]:::sorted
+s20a["0.2"]:::sorted --- s20b["1"]:::selected --- s20c["10.4"]:::selected --- s20d["53"]:::sorted --- s20e["58.3"]:::sorted --- s20f["500"]:::sorted
 end
 
 subgraph S21["Après le passage : 10.4 est trié"]
 direction LR
-s21a["0.2"]:::normal --- s21b["1"]:::normal --- s21c["10.4"]:::sorted --- s21d["53"]:::sorted --- s21e["58.3"]:::sorted --- s21f["500"]:::sorted
+s21a["0.2"]:::sorted --- s21b["1"]:::sorted --- s21c["10.4"]:::sorted --- s21d["53"]:::sorted --- s21e["58.3"]:::sorted --- s21f["500"]:::sorted
 end
 
 subgraph S22["Liste triée"]
@@ -1107,4 +1107,5 @@ S19 --> S20
 S20 --> S21
 S21 --> S22
 ```
+</details>
 **Principe :** on compare deux éléments voisins. S'ils sont dans le mauvais ordre, on les échange. On répète le parcours jusqu'à ce qu'il n'y ait plus d'échange.
