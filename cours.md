@@ -1,5 +1,12 @@
 # Informatique S3 — Cours Python
 
+## Sommaire
+- [Séquence 1 — Premiers pas en Python](#seq1)
+- [Séquence 2 — Logique, tests conditionnels et boucles](#seq2)
+- [Séquence 3 — Listes](#seq3)
+
+
+<a id="seq1"></a>
 # Séquence 1 — Premiers pas en Python
 ## 1. Bases
 ### 1.1 Variable, identifiant et affectation
@@ -201,6 +208,7 @@ print(f"Ton imc est: {p/(t**2)}")
 - `SyntaxError`: apparaît quand le code est mal écrit: oubli de parenthèse, de tabulation, de frappe dans le code (print("Hello Wolrd") n'est pas une erreur), ...
 - `NameError`: apparaît par exemple quand une variable n'est pas définie, ...
 
+<a id="seq2"></a>
 # Séquence 2 — Logique, tests conditionnels et boucles
 ## 1. Logique
 ### 1.1 Conditions logiques
@@ -437,6 +445,7 @@ while r != 0:
 print(f"{a} est le PGCD")
 ```
 
+<a id="seq3"></a>
 # Séquence 3 — Listes
 
 ## 1. Création d'une liste
