@@ -717,14 +717,15 @@ L = [1, 2, [1, 2]]
 print(L[2])
 # RETOURNE : [1, 2]
 ```
-Pour une matrice A=
-$$
+Pour une matrice A :
+
+```math
 \begin{pmatrix}
 1 & 2 & 3 \\
 4 & 5 & 6 \\
 7 & 8 & 9
 \end{pmatrix}
-$$
+```
 
 On écrit:
 ```python
