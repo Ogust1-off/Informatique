@@ -1071,15 +1071,25 @@ end
 
 subgraph S20["Comparaison : 1 < 10.4 → pas d'échange"]
 direction LR
-s20a["0.2"]:::sorted --- s20b["1"]:::selected --- s20c["10.4"]:::selected --- s20d["53"]:::sorted --- s20e["58.3"]:::sorted --- s20f["500"]:::sorted
+s20a["0.2"]:::normal --- s20b["1"]:::selected --- s20c["10.4"]:::selected --- s20d["53"]:::sorted --- s20e["58.3"]:::sorted --- s20f["500"]:::sorted
 end
 
 subgraph S21["Après le passage : 10.4 est trié"]
 direction LR
+s21a["0.2"]:::normal --- s21b["1"]:::normal --- s21c["10.4"]:::sorted --- s21d["53"]:::sorted --- s21e["58.3"]:::sorted --- s21f["500"]:::sorted
+end
+
+subgraph S22["Comparaison : 0.2 < 1 → pas d'échange"]
+direction LR
+s19a["0.2"]:::selected --- s19b["1"]:::selected --- s19c["10.4"]:::unsorted --- s19d["53"]:::sorted --- s19e["58.3"]:::sorted --- s19f["500"]:::sorted
+end
+
+subgraph S23["Après le passage : 1 et 0.2 sont trié"]
+direction LR
 s21a["0.2"]:::sorted --- s21b["1"]:::sorted --- s21c["10.4"]:::sorted --- s21d["53"]:::sorted --- s21e["58.3"]:::sorted --- s21f["500"]:::sorted
 end
 
-subgraph S22["Liste triée"]
+subgraph S24["Liste triée"]
 direction LR
 s22a["0.2"]:::sorted --- s22b["1"]:::sorted --- s22c["10.4"]:::sorted --- s22d["53"]:::sorted --- s22e["58.3"]:::sorted --- s22f["500"]:::sorted
 end
@@ -1106,6 +1116,7 @@ S18 --> S19
 S19 --> S20
 S20 --> S21
 S21 --> S22
-```
+S22 --> S23
+S23 --> S24
 </details>
 **Principe :** on compare deux éléments voisins. S'ils sont dans le mauvais ordre, on les échange. On répète le parcours jusqu'à ce qu'il n'y ait plus d'échange.
