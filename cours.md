@@ -950,6 +950,7 @@ remonte progressivement vers la droite jusqu'à atteindre sa position définitiv
 
 <details>
 <summary>Voir le déroulement du tri à bulles</summary>
+
 - 🔴 **Rouge** : les deux éléments actuellement comparés
 - 🔵 **Bleu** : éléments définitivement triés
 - ⚪ **Gris** : éléments qui ne sont pas actuellement comparés
