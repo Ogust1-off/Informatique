@@ -888,12 +888,23 @@ flowchart TB
 ```mermaid
 flowchart TB
 
+    I1["58.3"]:::initial
+    I2["0.2"]:::initial
+    I3["1"]:::initial
+    I4["53"]:::initial
+    I5["500"]:::initial
+    I6["10.4"]:::initial
+
+    I1 --- I2 --- I3 --- I4 --- I5 --- I6
+
     A1["58.3"]:::sorted
     A2["0.2"]:::selected
     A3["1"]:::unsorted
     A4["53"]:::unsorted
     A5["500"]:::unsorted
     A6["10.4"]:::unsorted
+
+    A1 --- A2 --- A3 --- A4 --- A5 --- A6
 
     B1["0.2"]:::sorted
     B2["58.3"]:::sorted
@@ -902,6 +913,8 @@ flowchart TB
     B5["500"]:::unsorted
     B6["10.4"]:::unsorted
 
+    B1 --- B2 --- B3 --- B4 --- B5 --- B6
+
     C1["0.2"]:::sorted
     C2["1"]:::sorted
     C3["58.3"]:::sorted
@@ -909,40 +922,13 @@ flowchart TB
     C5["500"]:::unsorted
     C6["10.4"]:::unsorted
 
-    D1["0.2"]:::sorted
-    D2["1"]:::sorted
-    D3["53"]:::sorted
-    D4["58.3"]:::sorted
-    D5["500"]:::selected
-    D6["10.4"]:::unsorted
-
-    E1["0.2"]:::sorted
-    E2["1"]:::sorted
-    E3["53"]:::sorted
-    E4["58.3"]:::sorted
-    E5["500"]:::sorted
-    E6["10.4"]:::selected
-
-    F1["0.2"]:::sorted
-    F2["1"]:::sorted
-    F3["10.4"]:::sorted
-    F4["53"]:::sorted
-    F5["58.3"]:::sorted
-    F6["500"]:::sorted
-
-    A1 --- A2 --- A3 --- A4 --- A5 --- A6
-    B1 --- B2 --- B3 --- B4 --- B5 --- B6
     C1 --- C2 --- C3 --- C4 --- C5 --- C6
-    D1 --- D2 --- D3 --- D4 --- D5 --- D6
-    E1 --- E2 --- E3 --- E4 --- E5 --- E6
-    F1 --- F2 --- F3 --- F4 --- F5 --- F6
 
+    I2 --> A2
     A2 -->|"insérer"| B1
     B3 -->|"insérer"| C2
-    C4 -->|"insérer"| D3
-    D5 -->|"déjà bien placé"| E5
-    E6 -->|"insérer"| F3
 
+    classDef initial fill:#ffffff,stroke:#374151,color:#111827;
     classDef sorted fill:#dbeafe,stroke:#2563eb,color:#111827;
     classDef selected fill:#fecaca,stroke:#dc2626,color:#111827;
     classDef unsorted fill:#f3f4f6,stroke:#9ca3af,color:#111827;
