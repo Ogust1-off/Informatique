@@ -855,11 +855,13 @@ $$
 ### 3.2 Tri par insertion
 
 $$
-\begin{array}{cccccc}
-\boxed{58.3} & \boxed{0.2} & \boxed{1} & \boxed{53} & \boxed{500} & \boxed{10.4}\\[8pt]
-& \downarrow & & & & \\[-2pt]
-\boxed{0.2} & \boxed{58.3} & \boxed{1} & \boxed{53} & \boxed{500} & \boxed{10.4}\\[8pt]
-& & \downarrow & & & \\[-2pt]
+\begin{array}{c@{\quad}c@{\quad}c@{\quad}c@{\quad}c@{\quad}c}
+\boxed{58.3} & \boxed{0.2} & \boxed{1} & \boxed{53} & \boxed{500} & \boxed{10.4}
+\\[-2pt]
+& \downarrow & & & & \\[2pt]
+\boxed{0.2} & \boxed{58.3} & \boxed{1} & \boxed{53} & \boxed{500} & \boxed{10.4}
+\\[-2pt]
+&& \downarrow &&& \\[2pt]
 \boxed{0.2} & \boxed{1} & \boxed{58.3} & \boxed{53} & \boxed{500} & \boxed{10.4}
 \end{array}
 $$
