@@ -719,13 +719,14 @@ print(L[2])
 ```
 Pour une matrice A :
 
-```math
+$$
+A =
 \begin{pmatrix}
 1 & 2 & 3 \\
 4 & 5 & 6 \\
 7 & 8 & 9
 \end{pmatrix}
-```
+$$
 
 On écrit:
 ```python
