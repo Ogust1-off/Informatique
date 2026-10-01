@@ -734,3 +734,42 @@ A=[[1,2,3],
    [4,5,6],
    [7,8,9]]
 ```
+
+```python
+L=[1,2,[3,4]]
+print(L[2][0])
+# RETOURNE: 3
+```
+```python
+L=[1,2,[3,4]]
+print(L[:2])
+# RETOURNE: [1, 2]
+```
+```python
+L=[1,2,[3,4]]
+print(L[2:])
+# RETOURNE : [[3, 4]]
+```
+
+## 2. Algorithmes de recherche
+### 2.1 Recherche d'éléments
+
+```python
+print(5 in [6,5,4,3,2,1,0])
+# RETOURNE : True
+```
+
+**Exercice :** Crée une liste aléatoire de 20 éléments entre 1 et 10 et rechercher toute les occurrence du nombre `5` en stockant leur indices:
+```python
+import random
+Liste=[]
+indice=[]
+for i in range(21): Liste.append(random.randint(1,10))
+
+for j in range(len(Liste)):
+    if Liste[j]==5:
+        indice.append(j)
+
+print(Liste)
+print(indice)
+```
