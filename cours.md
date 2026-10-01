@@ -706,7 +706,7 @@ list(range(0, 21, 2))
 ```
 
 Enlever un élément d'une liste:
-- `pop(indice)` : supprime l'élément à la fin à l'indice choisie.
+- `pop(indice)` : supprime et renvoie l'élément situé à l'indice indiqué (par défaut, le dernier élément).
 - `remove(élément)` : supprime le premier élément verifier de la liste.
 
 Exemple :
@@ -902,7 +902,7 @@ print(L)
 # RETOURNE : [400, 127, 98.12, 89, 56.8, 22.1, 12, 12, 4, 0]
 ```
 
-- `.reverse()`: permet d'inverser le sense de la liste
+- `.reverse()`: permet d'inverser le sens de la liste
 
 ```python
 L=[4,0,12,56.8,22.1,98.12,89,127,12,400]
