@@ -842,6 +842,8 @@ print(L)
 
 ### 3.1 Tri par sélection
 
+**Principe :** on recherche le minimum dans la partie non triée, puis on l'échange avec le premier élément de cette partie.
+
 🔵 Partie déjà triée · 🔴 Minimum sélectionné · ⚪ Partie non triée
 
 ```mermaid
@@ -890,9 +892,9 @@ flowchart TB
     classDef unsorted fill:#f3f4f6,stroke:#9ca3af,color:#111827;
 ```
 
-**Principe :** on recherche le minimum dans la partie non triée, puis on l'échange avec le premier élément de cette partie.
-
 ### 3.2 Tri par insertion
+
+**Principe :** on prend l'élément suivant et on l'insère à la bonne position dans la partie déjà triée
 
 🔵 Partie déjà triée · 🔴 Élément à insérer · ⚪ Partie non traitée
 
@@ -936,9 +938,8 @@ flowchart TB
     classDef selected fill:#fecaca,stroke:#dc2626,color:#111827;
     classDef unsorted fill:#f3f4f6,stroke:#9ca3af,color:#111827;
 ```
-**Principe :** on prend l'élément suivant et on l'insère à la bonne position dans la partie déjà triée.
 
-### 3.3 Tri à bulles
+### 3.3 Tri à bulles (Ajout personnel)
 
 Le **tri à bulles** consiste à comparer deux éléments voisins.
 S'ils sont dans le mauvais ordre, ils sont échangés.
@@ -1076,13 +1077,18 @@ direction LR
 s17a["0.2"]:::normal --- s17b["1"]:::selected --- s17c["10.4"]:::selected --- s17d["53"]:::sorted --- s17e["58.3"]:::sorted --- s17f["500"]:::sorted
 end
 
+subgraph S18["Après le passage : 10.4 est trié"]
+direction LR
+s18a["0.2"]:::normal --- s18b["1"]:::normal --- s18c["10.4"]:::sorted --- s18d["53"]:::sorted --- s18e["58.3"]:::sorted --- s18f["500"]:::sorted
+end
+
 %% =========================================================
 %% RÉSULTAT FINAL
 %% =========================================================
 
-subgraph S18["Liste triée"]
+subgraph S19["Liste triée"]
 direction LR
-s18a["0.2"]:::sorted --- s18b["1"]:::sorted --- s18c["10.4"]:::sorted --- s18d["53"]:::sorted --- s18e["58.3"]:::sorted --- s18f["500"]:::sorted
+s19a["0.2"]:::sorted --- s19b["1"]:::sorted --- s19c["10.4"]:::sorted --- s19d["53"]:::sorted --- s19e["58.3"]:::sorted --- s19f["500"]:::sorted
 end
 
 %% =========================================================
@@ -1110,6 +1116,7 @@ S14 --> S15
 S15 --> S16
 S16 --> S17
 S17 --> S18
+S18 --> S19
 ```
 
 </details>
