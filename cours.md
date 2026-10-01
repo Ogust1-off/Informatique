@@ -883,7 +883,6 @@ flowchart TB
     classDef sorted fill:#dbeafe,stroke:#2563eb,color:#111827;
     classDef selected fill:#fecaca,stroke:#dc2626,color:#111827;
     classDef unsorted fill:#f3f4f6,stroke:#9ca3af,color:#111827;
-    subgr
 ```
 **Principe :** on recherche le minimum dans la partie non triée, puis on l'échange avec le premier élément de cette partie.
 
