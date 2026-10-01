@@ -846,37 +846,30 @@ print(L)
 
 ```mermaid
 flowchart TB
+    subgraph S0["Liste initiale"]
+        direction LR
+        A1["58.3"]:::normal --- A2["0.2"]:::normal --- A3["1"]:::normal --- A4["53"]:::normal --- A5["500"]:::normal --- A6["10.4"]:::normal
+    end
 
-    A1["58.3"]:::sorted
-    A2["0.2"]:::selected
-    A3["1"]:::unsorted
-    A4["53"]:::unsorted
-    A5["500"]:::unsorted
-    A6["10.4"]:::unsorted
+    subgraph S1["Étape 1 — minimum : 0.2"]
+        direction LR
+        B1["0.2"]:::sorted --- B2["58.3"]:::unsorted --- B3["1"]:::unsorted --- B4["53"]:::unsorted --- B5["500"]:::unsorted --- B6["10.4"]:::unsorted
+    end
 
-    B1["0.2"]:::sorted
-    B2["58.3"]:::unsorted
-    B3["1"]:::unsorted
-    B4["53"]:::unsorted
-    B5["500"]:::unsorted
-    B6["10.4"]:::unsorted
+    subgraph S2["Étape 2 — minimum : 1"]
+        direction LR
+        C1["0.2"]:::sorted --- C2["1"]:::sorted --- C3["58.3"]:::unsorted --- C4["53"]:::unsorted --- C5["500"]:::unsorted --- C6["10.4"]:::unsorted
+    end
 
-    C1["0.2"]:::sorted
-    C2["1"]:::sorted
-    C3["58.3"]:::unsorted
-    C4["53"]:::unsorted
-    C5["500"]:::unsorted
-    C6["10.4"]:::unsorted
+    subgraph S3["Étape 3 — minimum : 10.4"]
+        direction LR
+        D1["0.2"]:::sorted --- D2["1"]:::sorted --- D3["10.4"]:::sorted --- D4["53"]:::unsorted --- D5["500"]:::unsorted --- D6["58.3"]:::unsorted
+    end
 
-    A1 --- A2 --- A3 --- A4 --- A5 --- A6
-    B1 --- B2 --- B3 --- B4 --- B5 --- B6
-    C1 --- C2 --- C3 --- C4 --- C5 --- C6
+    S0 --> S1 --> S2 --> S3
 
-    A2 -->|"minimum"| B1
-    B3 -->|"minimum"| C2
-
+    classDef normal fill:#ffffff,stroke:#374151,color:#111827;
     classDef sorted fill:#dbeafe,stroke:#2563eb,color:#111827;
-    classDef selected fill:#fecaca,stroke:#dc2626,color:#111827;
     classDef unsorted fill:#f3f4f6,stroke:#9ca3af,color:#111827;
 ```
 **Principe :** on recherche le minimum dans la partie non triée, puis on l'échange avec le premier élément de cette partie.
@@ -887,50 +880,40 @@ flowchart TB
 
 ```mermaid
 flowchart TB
+    subgraph I0["Liste initiale"]
+        direction LR
+        A1["58.3"]:::normal --- A2["0.2"]:::normal --- A3["1"]:::normal --- A4["53"]:::normal --- A5["500"]:::normal --- A6["10.4"]:::normal
+    end
 
-    I1["58.3"]:::initial
-    I2["0.2"]:::initial
-    I3["1"]:::initial
-    I4["53"]:::initial
-    I5["500"]:::initial
-    I6["10.4"]:::initial
+    subgraph I1["Étape 1 — insérer 0.2"]
+        direction LR
+        B1["0.2"]:::sorted --- B2["58.3"]:::sorted --- B3["1"]:::unsorted --- B4["53"]:::unsorted --- B5["500"]:::unsorted --- B6["10.4"]:::unsorted
+    end
 
-    I1 --- I2 --- I3 --- I4 --- I5 --- I6
+    subgraph I2["Étape 2 — insérer 1"]
+        direction LR
+        C1["0.2"]:::sorted --- C2["1"]:::sorted --- C3["58.3"]:::sorted --- C4["53"]:::unsorted --- C5["500"]:::unsorted --- C6["10.4"]:::unsorted
+    end
 
-    A1["58.3"]:::sorted
-    A2["0.2"]:::selected
-    A3["1"]:::unsorted
-    A4["53"]:::unsorted
-    A5["500"]:::unsorted
-    A6["10.4"]:::unsorted
+    subgraph I3["Étape 3 — insérer 53"]
+        direction LR
+        D1["0.2"]:::sorted --- D2["1"]:::sorted --- D3["53"]:::sorted --- D4["58.3"]:::sorted --- D5["500"]:::unsorted --- D6["10.4"]:::unsorted
+    end
 
-    A1 --- A2 --- A3 --- A4 --- A5 --- A6
+    subgraph I4["Étape 4 — 500 est déjà bien placé"]
+        direction LR
+        E1["0.2"]:::sorted --- E2["1"]:::sorted --- E3["53"]:::sorted --- E4["58.3"]:::sorted --- E5["500"]:::sorted --- E6["10.4"]:::unsorted
+    end
 
-    B1["0.2"]:::sorted
-    B2["58.3"]:::sorted
-    B3["1"]:::selected
-    B4["53"]:::unsorted
-    B5["500"]:::unsorted
-    B6["10.4"]:::unsorted
+    subgraph I5["Étape 5 — insérer 10.4"]
+        direction LR
+        F1["0.2"]:::sorted --- F2["1"]:::sorted --- F3["10.4"]:::sorted --- F4["53"]:::sorted --- F5["58.3"]:::sorted --- F6["500"]:::sorted
+    end
 
-    B1 --- B2 --- B3 --- B4 --- B5 --- B6
+    I0 --> I1 --> I2 --> I3 --> I4 --> I5
 
-    C1["0.2"]:::sorted
-    C2["1"]:::sorted
-    C3["58.3"]:::sorted
-    C4["53"]:::selected
-    C5["500"]:::unsorted
-    C6["10.4"]:::unsorted
-
-    C1 --- C2 --- C3 --- C4 --- C5 --- C6
-
-    I2 --> A2
-    A2 -->|"insérer"| B1
-    B3 -->|"insérer"| C2
-
-    classDef initial fill:#ffffff,stroke:#374151,color:#111827;
+    classDef normal fill:#ffffff,stroke:#374151,color:#111827;
     classDef sorted fill:#dbeafe,stroke:#2563eb,color:#111827;
-    classDef selected fill:#fecaca,stroke:#dc2626,color:#111827;
     classDef unsorted fill:#f3f4f6,stroke:#9ca3af,color:#111827;
 ```
 **Principe :** on prend l'élément suivant et on l'insère à la bonne position dans la partie déjà triée.
