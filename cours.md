@@ -938,24 +938,7 @@ flowchart TB
 ```
 **Principe :** on prend l'élément suivant et on l'insère à la bonne position dans la partie déjà triée.
 
-### 3.3 Tri à bulles
-
-Le **tri à bulles** consiste à comparer deux éléments voisins.
-S'ils sont dans le mauvais ordre, ils sont échangés.
-
-À chaque passage, le plus grand élément de la partie non triée
-remonte vers la droite jusqu'à atteindre sa position définitive.
-
-- 🔴 **Rouge** : les deux éléments actuellement comparés
-- 🔵 **Bleu** : éléments définitivement triés
-- ⚪ **Gris** : éléments qui ne sont pas actuellement comparés
-
-> **À noter :** le tri à bulles fonctionne correctement, mais il est
-> relativement peu efficace pour de grandes listes. Il effectue beaucoup
-> de comparaisons et d'échanges. Sa complexité est de $O(n^2)$ dans le
-> cas général.
-
-<details>
+#<details>
 <summary>Voir le déroulement du tri à bulles</summary>
 
 ```mermaid
@@ -981,17 +964,17 @@ end
 
 subgraph S1["Comparaison : 58.3 > 0.2 → échange"]
 direction LR
-s1a["0.2"]:::normal --- s1b["58.3"]:::selected --- s1c["1"]:::selected --- s1d["53"]:::unsorted --- s1e["500"]:::unsorted --- s1f["10.4"]:::unsorted
+s1a["58.3"]:::selected --- s1b["0.2"]:::selected --- s1c["1"]:::unsorted --- s1d["53"]:::unsorted --- s1e["500"]:::unsorted --- s1f["10.4"]:::unsorted
 end
 
 subgraph S2["Comparaison : 58.3 > 1 → échange"]
 direction LR
-s2a["0.2"]:::normal --- s2b["1"]:::normal --- s2c["58.3"]:::selected --- s2d["53"]:::selected --- s2e["500"]:::unsorted --- s2f["10.4"]:::unsorted
+s2a["0.2"]:::normal --- s2b["58.3"]:::selected --- s2c["1"]:::selected --- s2d["53"]:::unsorted --- s2e["500"]:::unsorted --- s2f["10.4"]:::unsorted
 end
 
 subgraph S3["Comparaison : 58.3 > 53 → échange"]
 direction LR
-s3a["0.2"]:::normal --- s3b["1"]:::normal --- s3c["53"]:::normal --- s3d["58.3"]:::selected --- s3e["500"]:::selected --- s3f["10.4"]:::unsorted
+s3a["0.2"]:::normal --- s3b["1"]:::normal --- s3c["58.3"]:::selected --- s3d["53"]:::selected --- s3e["500"]:::unsorted --- s3f["10.4"]:::unsorted
 end
 
 subgraph S4["Comparaison : 58.3 < 500 → pas d'échange"]
@@ -1077,7 +1060,7 @@ s17a["0.2"]:::normal --- s17b["1"]:::selected --- s17c["10.4"]:::selected --- s1
 end
 
 %% =========================================================
-%% RÉSULTAT
+%% LISTE FINALE
 %% =========================================================
 
 subgraph S18["Liste triée"]
@@ -1107,6 +1090,6 @@ S14 --> S15
 S15 --> S16
 S16 --> S17
 S17 --> S18
-
+</details>
 ```
 **Principe :** on compare deux éléments voisins. S'ils sont dans le mauvais ordre, on les échange. On répète le parcours jusqu'à ce qu'il n'y ait plus d'échange.
