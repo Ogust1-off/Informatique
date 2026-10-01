@@ -937,3 +937,49 @@ flowchart TB
     classDef unsorted fill:#f3f4f6,stroke:#9ca3af,color:#111827;
 ```
 **Principe :** on prend l'élément suivant et on l'insère à la bonne position dans la partie déjà triée.
+
+### 3.3 Tri à bulles (Ajout personnel)
+
+🔵 Partie déjà triée · 🔴 Éléments comparés · ⚪ Partie non traitée
+
+```mermaid
+flowchart TB
+
+    subgraph B0["Liste initiale"]
+        direction LR
+        A1["58.3"]:::normal --- A2["0.2"]:::normal --- A3["1"]:::normal --- A4["53"]:::normal --- A5["500"]:::normal --- A6["10.4"]:::normal
+    end
+
+    subgraph B1["Étape 1 — comparer 58.3 et 0.2 → échange"]
+        direction LR
+        C1["0.2"]:::unsorted --- C2["58.3"]:::selected --- C3["1"]:::unsorted --- C4["53"]:::unsorted --- C5["500"]:::unsorted --- C6["10.4"]:::unsorted
+    end
+
+    subgraph B2["Étape 2 — comparer 58.3 et 1 → échange"]
+        direction LR
+        D1["0.2"]:::unsorted --- D2["1"]:::unsorted --- D3["58.3"]:::selected --- D4["53"]:::unsorted --- D5["500"]:::unsorted --- D6["10.4"]:::unsorted
+    end
+
+    subgraph B3["Étape 3 — comparer 58.3 et 53 → échange"]
+        direction LR
+        E1["0.2"]:::unsorted --- E2["1"]:::unsorted --- E3["53"]:::unsorted --- E4["58.3"]:::selected --- E5["500"]:::unsorted --- E6["10.4"]:::unsorted
+    end
+
+    subgraph B4["Étape 4 — comparer 58.3 et 500 → aucun échange"]
+        direction LR
+        F1["0.2"]:::unsorted --- F2["1"]:::unsorted --- F3["53"]:::unsorted --- F4["58.3"]:::selected --- F5["500"]:::unsorted --- F6["10.4"]:::unsorted
+    end
+
+    subgraph B5["Étape 5 — comparer 500 et 10.4 → échange"]
+        direction LR
+        G1["0.2"]:::unsorted --- G2["1"]:::unsorted --- G3["53"]:::unsorted --- G4["58.3"]:::unsorted --- G5["10.4"]:::unsorted --- G6["500"]:::sorted
+    end
+
+    B0 --> B1 --> B2 --> B3 --> B4 --> B5
+
+    classDef normal fill:#ffffff,stroke:#374151,color:#111827;
+    classDef sorted fill:#dbeafe,stroke:#2563eb,color:#111827;
+    classDef selected fill:#fecaca,stroke:#dc2626,color:#111827;
+    classDef unsorted fill:#f3f4f6,stroke:#9ca3af,color:#111827;
+```
+**Principe :** on compare deux éléments voisins. S'ils sont dans le mauvais ordre, on les échange. On répète le parcours jusqu'à ce qu'il n'y ait plus d'échange.
