@@ -860,14 +860,18 @@ flowchart TD
 
 ### 3.2 Tri par insertion
 
-$$
-\begin{array}{c@{\quad}c@{\quad}c@{\quad}c@{\quad}c@{\quad}c}
-\boxed{58.3} & \boxed{0.2} & \boxed{1} & \boxed{53} & \boxed{500} & \boxed{10.4}
-\\[-2pt]
-& \downarrow & & & & \\[2pt]
-\boxed{0.2} & \boxed{58.3} & \boxed{1} & \boxed{53} & \boxed{500} & \boxed{10.4}
-\\[-2pt]
-&& \downarrow &&& \\[2pt]
-\boxed{0.2} & \boxed{1} & \boxed{58.3} & \boxed{53} & \boxed{500} & \boxed{10.4}
-\end{array}
-$$
+```mermaid
+flowchart TD
+    A["[58.3 | 0.2 | 1 | 53 | 500 | 10.4]"]
+    B["[0.2 | 58.3 | 1 | 53 | 500 | 10.4]"]
+    C["[0.2 | 1 | 58.3 | 53 | 500 | 10.4]"]
+    D["[0.2 | 1 | 53 | 58.3 | 500 | 10.4]"]
+    E["[0.2 | 1 | 53 | 58.3 | 500 | 10.4]"]
+    F["[0.2 | 1 | 10.4 | 53 | 58.3 | 500]"]
+
+    A -->|"insérer 0.2"| B
+    B -->|"insérer 1"| C
+    C -->|"insérer 53"| D
+    D -->|"insérer 500"| E
+    E -->|"insérer 10.4"| F
+```
