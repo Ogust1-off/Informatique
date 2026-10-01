@@ -2,13 +2,21 @@
 
 ## Sommaire
 - [Séquence 1 — Premiers pas en Python](#seq1)
+	- [1. Bases](#seq1-1)
+		- [1.1 Variable, identifiant et affectation](#seq1-1-1)
+		- [1.2 Commentaire](#seq1-1-2)
+		- [1.3 Entrée/Sortie](#seq1-1-3)
+	- [2. Types et opérations](#seq1-2)
+		- [2.1 Nombres](#seq1-2-1)
 - [Séquence 2 — Logique, tests conditionnels et boucles](#seq2)
 - [Séquence 3 — Listes](#seq3)
 
 
 <a id="seq1"></a>
 # Séquence 1 — Premiers pas en Python
+<a id="seq1-1"></a>
 ## 1. Bases
+<a id="seq1-1-1"></a>
 ### 1.1 Variable, identifiant et affectation
 **Définition :** Une **variable** est l'association d'un **identifiant** à un objet stocké en mémoire.
 Cette opération d'association est appelée **affectation** (`=`).
@@ -33,7 +41,8 @@ b = c
 > **Remarque :**
 > 1. Bien choisir l'identifiant des variables (`s`, `somme`, etc.).
 > 2. Un identifiant doit respecter certaines règles : il ne peut pas contenir certains caractères (`@`, `#`, etc.) et ne peut pas commencer par un nombre.
-            
+          
+<a id="seq1-1-2"></a>  
 ### 1.2 Commentaire
 En Python, on utilise `#` pour écrire un commentaire sur une ligne.
 Un commentaire peut également être placé après du code sur la même ligne.
@@ -49,6 +58,7 @@ sur plusieurs lignes
 """
 ```
 
+<a id="seq1-1-2"></a>
 ### 1.3 Entrée/Sortie
 Affichage : `print()`
 
@@ -72,7 +82,7 @@ Exemple :
 name = input("Quel est votre nom ? ")
 print(name)
 ```
-
+<a id="seq1-2"></a>
 ## 2. Types et opérations
 **Définition :** En Python, chaque objet possède un **type**. Il indique la nature de l'objet manipulé et les **opérations** que l'on peut lui appliquer.
 
