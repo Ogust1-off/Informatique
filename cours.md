@@ -938,7 +938,24 @@ flowchart TB
 ```
 **Principe :** on prend l'élément suivant et on l'insère à la bonne position dans la partie déjà triée.
 
-#<details>
+### 3.3 Tri à bulles
+
+Le **tri à bulles** consiste à comparer deux éléments voisins.
+S'ils sont dans le mauvais ordre, ils sont échangés.
+
+À chaque passage, le plus grand élément de la partie non triée
+remonte progressivement vers la droite jusqu'à atteindre sa position définitive.
+
+- 🔴 **Rouge** : les deux éléments actuellement comparés
+- 🔵 **Bleu** : éléments définitivement triés
+- ⚪ **Gris** : éléments qui ne sont pas actuellement comparés
+
+> **À noter :** le tri à bulles fonctionne correctement, mais il est
+> relativement peu efficace pour de grandes listes. Il effectue beaucoup
+> de comparaisons et d'échanges. Sa complexité est de $O(n^2)$ dans le
+> cas général.
+
+<details>
 <summary>Voir le déroulement du tri à bulles</summary>
 
 ```mermaid
@@ -1060,7 +1077,7 @@ s17a["0.2"]:::normal --- s17b["1"]:::selected --- s17c["10.4"]:::selected --- s1
 end
 
 %% =========================================================
-%% LISTE FINALE
+%% RÉSULTAT FINAL
 %% =========================================================
 
 subgraph S18["Liste triée"]
@@ -1078,18 +1095,23 @@ S2 --> S3
 S3 --> S4
 S4 --> S5
 S5 --> S6
+
 S6 --> S7
 S7 --> S8
 S8 --> S9
 S9 --> S10
 S10 --> S11
+
 S11 --> S12
 S12 --> S13
 S13 --> S14
 S14 --> S15
+
 S15 --> S16
 S16 --> S17
 S17 --> S18
+```
+
 </details>
 ```
 **Principe :** on compare deux éléments voisins. S'ils sont dans le mauvais ordre, on les échange. On répète le parcours jusqu'à ce qu'il n'y ait plus d'échange.
