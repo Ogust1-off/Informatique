@@ -867,23 +867,29 @@ flowchart TB
         D1["0.2"]:::sorted --- D2["1"]:::sorted --- D3["10.4"]:::selected --- D4["53"]:::unsorted --- D5["500"]:::unsorted --- D6["58.3"]:::unsorted
     end
 
-    subgraph S4["Étape 4 — rechercher le minimum : 53 → échange avec 53"]
+    subgraph S4["Étape 4 — rechercher le minimum : 53 → déjà bien placé"]
         direction LR
         E1["0.2"]:::sorted --- E2["1"]:::sorted --- E3["10.4"]:::sorted --- E4["53"]:::selected --- E5["500"]:::unsorted --- E6["58.3"]:::unsorted
     end
 
-    subgraph S5["Étape 5 — le dernier élément est automatiquement placé"]
+    subgraph S5["Étape 5 — rechercher le minimum : 58.3 → échange avec 500"]
         direction LR
-        F1["0.2"]:::sorted --- F2["1"]:::sorted --- F3["10.4"]:::sorted --- F4["53"]:::sorted --- F5["58.3"]:::sorted --- F6["500"]:::sorted
+        F1["0.2"]:::sorted --- F2["1"]:::sorted --- F3["10.4"]:::sorted --- F4["53"]:::sorted --- F5["58.3"]:::selected --- F6["500"]:::unsorted
     end
 
-    S0 --> S1 --> S2 --> S3 --> S4 --> S5
+    subgraph SF["Liste triée"]
+        direction LR
+        G1["0.2"]:::sorted --- G2["1"]:::sorted --- G3["10.4"]:::sorted --- G4["53"]:::sorted --- G5["58.3"]:::sorted --- G6["500"]:::sorted
+    end
+
+    S0 --> S1 --> S2 --> S3 --> S4 --> S5 --> SF
 
     classDef normal fill:#ffffff,stroke:#374151,color:#111827;
     classDef sorted fill:#dbeafe,stroke:#2563eb,color:#111827;
     classDef selected fill:#fecaca,stroke:#dc2626,color:#111827;
     classDef unsorted fill:#f3f4f6,stroke:#9ca3af,color:#111827;
 ```
+
 **Principe :** on recherche le minimum dans la partie non triée, puis on l'échange avec le premier élément de cette partie.
 
 ### 3.2 Tri par insertion
