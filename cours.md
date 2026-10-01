@@ -8,8 +8,36 @@
 		- [1.3 Entrée/Sortie](#seq1-1-3)
 	- [2. Types et opérations](#seq1-2)
 		- [2.1 Nombres](#seq1-2-1)
+		- [2.2 Booléens](#seq1-2-2)
+		- [2.3 Chaînes de caractères, conversion de type et f-strings](#seq1-2-3)
+	- [3. Débogage](#seq1-3)
+		- [3.1 Réflexes](#seq1-3-1)
+		- [3.2 Erreurs courantes](#seq1-3-1)
 - [Séquence 2 — Logique, tests conditionnels et boucles](#seq2)
+	- [1. Logique](#seq2-1)
+		- [1.1 Conditions logiques](#seq2-1-1)
+		- [1.2 Opérateurs logiques](#seq2-1-2)
+	- [2. Tests conditionnels](#seq2-2)
+		- [2.1 Instruction if](#seq2-2-1)
+		- [2.2 Instruction if-else](#seq2-2-2)
+		- [2.3 Instruction if-elif-else](#seq2-2-3)
+		- [2.4 Instruction match-case](#seq2-2-3)
+	- [3. Boucles](#seq2-3)
+		- [3.1 Boucle for](#seq2-3-1)
+		- [3.2 Boucle while](#seq2-3-2)
 - [Séquence 3 — Listes](#seq3)
+	- [1. Création d'une liste](#seq3-1)
+		- [1.1 Parcours d'une liste](#seq3-1-1)
+		- [1.2 Opérations sur les listes](#seq3-1-2)
+		- [1.3 Modification de listes](#seq3-1-3)
+		- [1.4 Sous-listes et listes de listes](#seq3-1-4)
+	- [2. Algorithmes de recherche](#seq3-2)
+		- [2.1 Recherche d'éléments](#seq3-2-1)
+		- [2.2 Recherche min-max](#seq3-2-2)
+	- [3. Algorithmes de tri](#seq3-3)
+		- [3.1 Tri par sélection](#seq3-3-1)
+		- [3.2 Tri par insertion](#seq3-3-2)
+		- [3.3 Tri à bulles (Ajout personnel)](#seq3-3-3)
 
 
 <a id="seq1"></a>
@@ -141,7 +169,7 @@ moy /= 4
 print(moy)
 # RETOURNE : 11.5
 ```
-        
+<a id="seq1-2-2"></a>
 ### 2.2 Booléens
 `bool` -> `True`, `False`
 
@@ -162,7 +190,7 @@ a, b = True, False
 a == b  # False
 a != b  # True
 ```
-        
+<a id="seq1-2-3"></a>
 ### 2.3 Chaînes de caractères, conversion de type et f-strings
 Type d'une chaîne de caractères: 'str'
 concaténation: assemblage de deux chaînes de caractères avec `+`
@@ -208,13 +236,16 @@ t = float(input("Ta taille (m)? "))
 print(f"Ton imc est: {p/(t**2)}")
 ```
 
+<a id="seq1-3"></a>
 ## 3. Débogage
+<a id="seq1-3-1"></a>
 ### 3.1 Réflexes
 - Lire l'erreur et essayer de la comprendre.
 - Vérifier la syntaxe du code.
 - Utiliser `help()`. [Par exemple `help(print)' renvoie la documentation sur la fonction `print()`]
 - Rechercher sur Google votre message d'erreur.
 
+<a id="seq1-3-2"></a>
 ### 3.2 Erreurs courantes
 - `SyntaxError`: apparaît quand le code est mal écrit: oubli de parenthèse, de tabulation, de frappe dans le code (print("Hello Wolrd") n'est pas une erreur), ...
 - `NameError`: apparaît par exemple quand une variable n'est pas définie, ...
