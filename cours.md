@@ -938,48 +938,165 @@ flowchart TB
 ```
 **Principe :** on prend l'élément suivant et on l'insère à la bonne position dans la partie déjà triée.
 
-### 3.3 Tri à bulles (Ajout personnel)
+### 3.3 Tri à bulles
 
-🔵 Partie déjà triée · 🔴 Éléments comparés · ⚪ Partie non traitée
+Le **tri à bulles** consiste à comparer les éléments deux à deux, côte à côte.
+Si les deux éléments sont dans le mauvais ordre, ils sont échangés.
+
+À chaque passage, le plus grand élément de la partie non triée
+« remonte » vers la droite, comme une bulle.
+
+- 🔴 **Rouge** : éléments actuellement comparés
+- 🔵 **Bleu** : éléments déjà triés
+- ⚪ **Gris** : éléments qui restent à traiter
 
 ```mermaid
 flowchart TB
 
-    subgraph B0["Liste initiale"]
-        direction LR
-        A1["58.3"]:::normal --- A2["0.2"]:::normal --- A3["1"]:::normal --- A4["53"]:::normal --- A5["500"]:::normal --- A6["10.4"]:::normal
-    end
+classDef normal fill:#ffffff,stroke:#374151,color:#111827;
+classDef sorted fill:#dbeafe,stroke:#2563eb,color:#111827;
+classDef selected fill:#fecaca,stroke:#dc2626,color:#111827;
+classDef unsorted fill:#f3f4f6,stroke:#9ca3af,color:#111827;
 
-    subgraph B1["Étape 1 — comparer 58.3 et 0.2 → échange"]
-        direction LR
-        C1["0.2"]:::unsorted --- C2["58.3"]:::selected --- C3["1"]:::unsorted --- C4["53"]:::unsorted --- C5["500"]:::unsorted --- C6["10.4"]:::unsorted
-    end
+%% ─────────────── INITIAL ───────────────
 
-    subgraph B2["Étape 2 — comparer 58.3 et 1 → échange"]
-        direction LR
-        D1["0.2"]:::unsorted --- D2["1"]:::unsorted --- D3["58.3"]:::selected --- D4["53"]:::unsorted --- D5["500"]:::unsorted --- D6["10.4"]:::unsorted
-    end
+subgraph B0["Liste initiale"]
+direction LR
+A0["58.3"]:::normal --- A1["0.2"]:::normal --- A2["1"]:::normal --- A3["53"]:::normal --- A4["500"]:::normal --- A5["10.4"]:::normal
+end
 
-    subgraph B3["Étape 3 — comparer 58.3 et 53 → échange"]
-        direction LR
-        E1["0.2"]:::unsorted --- E2["1"]:::unsorted --- E3["53"]:::unsorted --- E4["58.3"]:::selected --- E5["500"]:::unsorted --- E6["10.4"]:::unsorted
-    end
+%% ─────────────── PASSAGE 1 ───────────────
 
-    subgraph B4["Étape 4 — comparer 58.3 et 500 → aucun échange"]
-        direction LR
-        F1["0.2"]:::unsorted --- F2["1"]:::unsorted --- F3["53"]:::unsorted --- F4["58.3"]:::selected --- F5["500"]:::unsorted --- F6["10.4"]:::unsorted
-    end
+subgraph B1["Passage 1 : comparer les éléments voisins"]
+direction LR
+B10["58.3"]:::selected --- B11["0.2"]:::selected --- B12["1"]:::unsorted --- B13["53"]:::unsorted --- B14["500"]:::unsorted --- B15["10.4"]:::unsorted
+end
 
-    subgraph B5["Étape 5 — comparer 500 et 10.4 → échange"]
-        direction LR
-        G1["0.2"]:::unsorted --- G2["1"]:::unsorted --- G3["53"]:::unsorted --- G4["58.3"]:::unsorted --- G5["10.4"]:::unsorted --- G6["500"]:::sorted
-    end
+B0 --> B1
 
-    B0 --> B1 --> B2 --> B3 --> B4 --> B5
+subgraph B2["Échange : 58.3 > 0.2"]
+direction LR
+C20["0.2"]:::normal --- C21["58.3"]:::selected --- C22["1"]:::selected --- C23["53"]:::unsorted --- C24["500"]:::unsorted --- C25["10.4"]:::unsorted
+end
 
-    classDef normal fill:#ffffff,stroke:#374151,color:#111827;
-    classDef sorted fill:#dbeafe,stroke:#2563eb,color:#111827;
-    classDef selected fill:#fecaca,stroke:#dc2626,color:#111827;
-    classDef unsorted fill:#f3f4f6,stroke:#9ca3af,color:#111827;
+B1 --> B2
+
+subgraph B3["Échange : 58.3 > 1"]
+direction LR
+D30["0.2"]:::normal --- D31["1"]:::normal --- D32["58.3"]:::selected --- D33["53"]:::selected --- D34["500"]:::unsorted --- D35["10.4"]:::unsorted
+end
+
+B2 --> B3
+
+subgraph B4["Échange : 58.3 > 53"]
+direction LR
+E40["0.2"]:::normal --- E41["1"]:::normal --- E42["53"]:::normal --- E43["58.3"]:::selected --- E44["500"]:::selected --- E45["10.4"]:::unsorted
+end
+
+B3 --> B4
+
+subgraph B5["Pas d'échange : 58.3 < 500"]
+direction LR
+F50["0.2"]:::normal --- F51["1"]:::normal --- F52["53"]:::normal --- F53["58.3"]:::normal --- F54["500"]:::selected --- F55["10.4"]:::selected
+end
+
+B4 --> B5
+
+subgraph B6["Échange : 500 > 10.4 → 500 remonte"]
+direction LR
+G60["0.2"]:::normal --- G61["1"]:::normal --- G62["53"]:::normal --- G63["58.3"]:::normal --- G64["10.4"]:::normal --- G65["500"]:::sorted
+end
+
+B5 --> B6
+
+%% ─────────────── PASSAGE 2 ───────────────
+
+subgraph B7["Passage 2 : 500 est déjà trié"]
+direction LR
+H70["0.2"]:::selected --- H71["1"]:::selected --- H72["53"]:::unsorted --- H73["58.3"]:::unsorted --- H74["10.4"]:::unsorted --- H75["500"]:::sorted
+end
+
+B6 --> B7
+
+subgraph B8["Pas d'échange : 0.2 < 1"]
+direction LR
+I80["0.2"]:::selected --- I81["1"]:::selected --- I82["53"]:::unsorted --- I83["58.3"]:::unsorted --- I84["10.4"]:::unsorted --- I85["500"]:::sorted
+end
+
+B7 --> B8
+
+subgraph B9["Pas d'échange : 1 < 53"]
+direction LR
+J90["0.2"]:::normal --- J91["1"]:::selected --- J92["53"]:::selected --- J93["58.3"]:::unsorted --- J94["10.4"]:::unsorted --- J95["500"]:::sorted
+end
+
+B8 --> B9
+
+subgraph B10["Pas d'échange : 53 < 58.3"]
+direction LR
+K100["0.2"]:::normal --- K101["1"]:::normal --- K102["53"]:::selected --- K103["58.3"]:::selected --- K104["10.4"]:::unsorted --- K105["500"]:::sorted
+end
+
+B9 --> B10
+
+subgraph B11["Échange : 58.3 > 10.4"]
+direction LR
+L110["0.2"]:::normal --- L111["1"]:::normal --- L112["53"]:::normal --- L113["10.4"]:::normal --- L114["58.3"]:::sorted --- L115["500"]:::sorted
+end
+
+B10 --> B11
+
+%% ─────────────── PASSAGE 3 ───────────────
+
+subgraph B12["Passage 3 : 58.3 rejoint la partie triée"]
+direction LR
+M120["0.2"]:::selected --- M121["1"]:::selected --- M122["53"]:::unsorted --- M123["10.4"]:::unsorted --- M124["58.3"]:::sorted --- M125["500"]:::sorted
+end
+
+B11 --> B12
+
+subgraph B13["Pas d'échange : 0.2 < 1"]
+direction LR
+N130["0.2"]:::selected --- N131["1"]:::selected --- N132["53"]:::unsorted --- N133["10.4"]:::unsorted --- N134["58.3"]:::sorted --- N135["500"]:::sorted
+end
+
+B12 --> B13
+
+subgraph B14["Pas d'échange : 1 < 53"]
+direction LR
+O140["0.2"]:::normal --- O141["1"]:::selected --- O142["53"]:::selected --- O143["10.4"]:::unsorted --- O144["58.3"]:::sorted --- O145["500"]:::sorted
+end
+
+B13 --> B14
+
+subgraph B15["Échange : 53 > 10.4"]
+direction LR
+P150["0.2"]:::normal --- P151["1"]:::normal --- P152["10.4"]:::normal --- P153["53"]:::sorted --- P154["58.3"]:::sorted --- P155["500"]:::sorted
+end
+
+B14 --> B15
+
+%% ─────────────── PASSAGE 4 ───────────────
+
+subgraph B16["Passage 4 : dernière vérification"]
+direction LR
+Q160["0.2"]:::selected --- Q161["1"]:::selected --- Q162["10.4"]:::unsorted --- Q163["53"]:::sorted --- Q164["58.3"]:::sorted --- Q165["500"]:::sorted
+end
+
+B15 --> B16
+
+subgraph B17["Pas d'échange : 0.2 < 1"]
+direction LR
+R170["0.2"]:::selected --- R171["1"]:::selected --- R172["10.4"]:::unsorted --- R173["53"]:::sorted --- R174["58.3"]:::sorted --- R175["500"]:::sorted
+end
+
+B16 --> B17
+
+subgraph B18["Pas d'échange : 1 < 10.4 → liste triée"]
+direction LR
+S180["0.2"]:::sorted --- S181["1"]:::sorted --- S182["10.4"]:::sorted --- S183["53"]:::sorted --- S184["58.3"]:::sorted --- S185["500"]:::sorted
+end
+
+B17 --> B18
 ```
 **Principe :** on compare deux éléments voisins. S'ils sont dans le mauvais ordre, on les échange. On répète le parcours jusqu'à ce qu'il n'y ait plus d'échange.
