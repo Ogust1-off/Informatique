@@ -842,21 +842,24 @@ print(L)
 
 ### 3.1 Tri par sélection
 
-🟦 = partie triée · 🟥 = minimum sélectionné · ⬜ = partie non triée
+> 🟦 Partie triée · 🟥 Minimum sélectionné · ⬜ Partie non triée
 
 ```mermaid
 flowchart TD
-    A["🟦 58.3 | 🟥 0.2 | ⬜ 1 | ⬜ 53 | ⬜ 500 | ⬜ 10.4"]
-    B["🟦 0.2 | 🟦 58.3 | ⬜ 1 | ⬜ 53 | ⬜ 500 | ⬜ 10.4"]
-    C["🟦 0.2 | 🟦 1 | 🟦 58.3 | ⬜ 53 | ⬜ 500 | ⬜ 10.4"]
-    D["🟦 0.2 | 🟦 1 | 🟦 10.4 | 🟦 53 | ⬜ 500 | ⬜ 58.3"]
-    E["🟦 0.2 | 🟦 1 | 🟦 10.4 | 🟦 53 | 🟦 58.3 | 🟦 500"]
+    A["58.3 | 0.2 | 1 | 53 | 500 | 10.4"]
+    B["0.2 | 58.3 | 1 | 53 | 500 | 10.4"]
+    C["0.2 | 1 | 58.3 | 53 | 500 | 10.4"]
+    D["0.2 | 1 | 10.4 | 53 | 500 | 58.3"]
+    E["0.2 | 1 | 10.4 | 53 | 58.3 | 500"]
 
-    A -->|"0.2 = minimum → échange"| B
-    B -->|"1 = minimum → échange"| C
-    C -->|"10.4 = minimum → échange"| D
-    D -->|"53 = minimum → déjà en place"| E
-``
+    A -->|"0.2 est le minimum → échange avec 58.3"| B
+    B -->|"1 est le minimum restant → échange avec 58.3"| C
+    C -->|"10.4 est le minimum restant → échange avec 58.3"| D
+    D -->|"53 est le minimum restant → déjà bien placé"| E
+
+    classDef step fill:#f3f4f6,stroke:#9ca3af,color:#111827;
+    class A,B,C,D,E step;
+```
 
 ### 3.2 Tri par insertion
 
@@ -864,16 +867,19 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    A["🟦 58.3 | 🟥 0.2 | ⬜ 1 | ⬜ 53 | ⬜ 500 | ⬜ 10.4"]
-    B["🟦 0.2 | 🟦 58.3 | 🟥 1 | ⬜ 53 | ⬜ 500 | ⬜ 10.4"]
-    C["🟦 0.2 | 🟦 1 | 🟦 58.3 | 🟥 53 | ⬜ 500 | ⬜ 10.4"]
-    D["🟦 0.2 | 🟦 1 | 🟦 53 | 🟦 58.3 | 🟥 500 | ⬜ 10.4"]
-    E["🟦 0.2 | 🟦 1 | 🟦 53 | 🟦 58.3 | 🟦 500 | 🟥 10.4"]
-    F["🟦 0.2 | 🟦 1 | 🟦 10.4 | 🟦 53 | 🟦 58.3 | 🟦 500"]
+    A["58.3 | 0.2 | 1 | 53 | 500 | 10.4"]
+    B["0.2 | 58.3 | 1 | 53 | 500 | 10.4"]
+    C["0.2 | 1 | 58.3 | 53 | 500 | 10.4"]
+    D["0.2 | 1 | 53 | 58.3 | 500 | 10.4"]
+    E["0.2 | 1 | 53 | 58.3 | 500 | 10.4"]
+    F["0.2 | 1 | 10.4 | 53 | 58.3 | 500"]
 
-    A -->|"insérer 0.2"| B
-    B -->|"insérer 1"| C
-    C -->|"insérer 53"| D
-    D -->|"500 reste en place"| E
-    E -->|"insérer 10.4"| F
+    A -->|"Insérer 0.2 dans la partie triée"| B
+    B -->|"Insérer 1 dans la partie triée"| C
+    C -->|"Insérer 53 dans la partie triée"| D
+    D -->|"500 est déjà bien placé"| E
+    E -->|"Insérer 10.4 dans la partie triée"| F
+
+    classDef step fill:#f3f4f6,stroke:#9ca3af,color:#111827;
+    class A,B,C,D,E,F step;
 ```
