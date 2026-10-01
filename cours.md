@@ -842,44 +842,109 @@ print(L)
 
 ### 3.1 Tri par sélection
 
-> 🟦 Partie triée · 🟥 Minimum sélectionné · ⬜ Partie non triée
+🟦 Partie déjà triée · 🟥 Minimum sélectionné · ⬜ Partie non triée
 
 ```mermaid
-flowchart TD
-    A["58.3 | 0.2 | 1 | 53 | 500 | 10.4"]
-    B["0.2 | 58.3 | 1 | 53 | 500 | 10.4"]
-    C["0.2 | 1 | 58.3 | 53 | 500 | 10.4"]
-    D["0.2 | 1 | 10.4 | 53 | 500 | 58.3"]
-    E["0.2 | 1 | 10.4 | 53 | 58.3 | 500"]
+flowchart TB
 
-    A -->|"0.2 est le minimum → échange avec 58.3"| B
-    B -->|"1 est le minimum restant → échange avec 58.3"| C
-    C -->|"10.4 est le minimum restant → échange avec 58.3"| D
-    D -->|"53 est le minimum restant → déjà bien placé"| E
+    A1["58.3"]:::sorted
+    A2["0.2"]:::selected
+    A3["1"]:::unsorted
+    A4["53"]:::unsorted
+    A5["500"]:::unsorted
+    A6["10.4"]:::unsorted
 
-    classDef step fill:#f3f4f6,stroke:#9ca3af,color:#111827;
-    class A,B,C,D,E step;
+    B1["0.2"]:::sorted
+    B2["58.3"]:::unsorted
+    B3["1"]:::unsorted
+    B4["53"]:::unsorted
+    B5["500"]:::unsorted
+    B6["10.4"]:::unsorted
+
+    C1["0.2"]:::sorted
+    C2["1"]:::sorted
+    C3["58.3"]:::unsorted
+    C4["53"]:::unsorted
+    C5["500"]:::unsorted
+    C6["10.4"]:::unsorted
+
+    A1 --- A2 --- A3 --- A4 --- A5 --- A6
+    B1 --- B2 --- B3 --- B4 --- B5 --- B6
+    C1 --- C2 --- C3 --- C4 --- C5 --- C6
+
+    A2 -->|"minimum"| B1
+    B3 -->|"minimum"| C2
+
+    classDef sorted fill:#dbeafe,stroke:#2563eb,color:#111827;
+    classDef selected fill:#fecaca,stroke:#dc2626,color:#111827;
+    classDef unsorted fill:#f3f4f6,stroke:#9ca3af,color:#111827;
 ```
+**Principe :** on recherche le minimum dans la partie non triée, puis on l'échange avec le premier élément de cette partie.
 
 ### 3.2 Tri par insertion
 
-🟦 = partie triée · 🟥 = élément à insérer · ⬜ = partie non traitée
+🟦 Partie déjà triée · 🟥 Élément à insérer · ⬜ Partie non traitée
 
 ```mermaid
-flowchart TD
-    A["58.3 | 0.2 | 1 | 53 | 500 | 10.4"]
-    B["0.2 | 58.3 | 1 | 53 | 500 | 10.4"]
-    C["0.2 | 1 | 58.3 | 53 | 500 | 10.4"]
-    D["0.2 | 1 | 53 | 58.3 | 500 | 10.4"]
-    E["0.2 | 1 | 53 | 58.3 | 500 | 10.4"]
-    F["0.2 | 1 | 10.4 | 53 | 58.3 | 500"]
+flowchart TB
 
-    A -->|"Insérer 0.2 dans la partie triée"| B
-    B -->|"Insérer 1 dans la partie triée"| C
-    C -->|"Insérer 53 dans la partie triée"| D
-    D -->|"500 est déjà bien placé"| E
-    E -->|"Insérer 10.4 dans la partie triée"| F
+    A1["58.3"]:::sorted
+    A2["0.2"]:::selected
+    A3["1"]:::unsorted
+    A4["53"]:::unsorted
+    A5["500"]:::unsorted
+    A6["10.4"]:::unsorted
 
-    classDef step fill:#f3f4f6,stroke:#9ca3af,color:#111827;
-    class A,B,C,D,E,F step;
+    B1["0.2"]:::sorted
+    B2["58.3"]:::sorted
+    B3["1"]:::selected
+    B4["53"]:::unsorted
+    B5["500"]:::unsorted
+    B6["10.4"]:::unsorted
+
+    C1["0.2"]:::sorted
+    C2["1"]:::sorted
+    C3["58.3"]:::sorted
+    C4["53"]:::selected
+    C5["500"]:::unsorted
+    C6["10.4"]:::unsorted
+
+    D1["0.2"]:::sorted
+    D2["1"]:::sorted
+    D3["53"]:::sorted
+    D4["58.3"]:::sorted
+    D5["500"]:::selected
+    D6["10.4"]:::unsorted
+
+    E1["0.2"]:::sorted
+    E2["1"]:::sorted
+    E3["53"]:::sorted
+    E4["58.3"]:::sorted
+    E5["500"]:::sorted
+    E6["10.4"]:::selected
+
+    F1["0.2"]:::sorted
+    F2["1"]:::sorted
+    F3["10.4"]:::sorted
+    F4["53"]:::sorted
+    F5["58.3"]:::sorted
+    F6["500"]:::sorted
+
+    A1 --- A2 --- A3 --- A4 --- A5 --- A6
+    B1 --- B2 --- B3 --- B4 --- B5 --- B6
+    C1 --- C2 --- C3 --- C4 --- C5 --- C6
+    D1 --- D2 --- D3 --- D4 --- D5 --- D6
+    E1 --- E2 --- E3 --- E4 --- E5 --- E6
+    F1 --- F2 --- F3 --- F4 --- F5 --- F6
+
+    A2 -->|"insérer"| B1
+    B3 -->|"insérer"| C2
+    C4 -->|"insérer"| D3
+    D5 -->|"déjà bien placé"| E5
+    E6 -->|"insérer"| F3
+
+    classDef sorted fill:#dbeafe,stroke:#2563eb,color:#111827;
+    classDef selected fill:#fecaca,stroke:#dc2626,color:#111827;
+    classDef unsorted fill:#f3f4f6,stroke:#9ca3af,color:#111827;
 ```
+**Principe :** on prend l'élément suivant et on l'insère à la bonne position dans la partie déjà triée.
