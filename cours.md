@@ -242,7 +242,7 @@ print(f"Ton imc est: {p/(t**2)}")
 ### 3.1 Réflexes
 - Lire l'erreur et essayer de la comprendre.
 - Vérifier la syntaxe du code.
-- Utiliser `help()`. [Par exemple `help(print)' renvoie la documentation sur la fonction `print()`]
+- Utiliser `help()`. [Par exemple `help(print)` renvoie la documentation sur la fonction `print()`]
 - Rechercher sur Google votre message d'erreur.
 
 <a id="seq1-3-2"></a>
@@ -725,19 +725,30 @@ print(L)
 
 **Exercice :** Crée une liste de 1 à 100 et appliquer le crible d'Eratosthène pour enlever les éléments non premiers.
 ```python
-Liste=[]
-for i in range (101):
-    Liste.append(i)
+liste=[]
+for i in range (2,101):
+    liste.append(i)
+# Ou: Liste = [i for i in range(2, 101)]
 
-j=0
-while j<len(Liste):
-    if(Liste[j]%2==0 or Liste[j]%3==0 or Liste[j]%5==0 or Liste[j]%7==0 or Liste[j]%11==0):
-        Liste.pop(j)
-    else:
-        j+=1
+i = 0
+while i < len(liste):
+    p = liste[i]
+    
+    # On s'arrête si le nombre testé dépasse la racine carrée de 100 (10)
+    if p > 10:
+        break
+        
+    j = i + 1
+    while j < len(liste):
+        # Si un nombre plus grand est un multiple de p, on le supprime
+        if liste[j] % p == 0:
+            liste.pop(j)
+        else:
+            j += 1
+    i += 1
 
-print(Liste)
-# RETOURNE : [1, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
+print(liste)
+# RETOURNE : [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
 ```
 
 <a id="seq3-1-4"></a>
@@ -824,7 +835,7 @@ print(5 in [6,5,4,3,2,1,0])
 import random
 Liste=[]
 indice=[]
-for i in range(21): Liste.append(random.randint(1,10))
+for i in range(20): Liste.append(random.randint(1,10))
 
 for j in range(len(Liste)):
     if Liste[j]==5:
