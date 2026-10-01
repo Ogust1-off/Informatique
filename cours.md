@@ -1081,17 +1081,17 @@ end
 
 subgraph S22["Comparaison : 0.2 < 1 → pas d'échange"]
 direction LR
-s19a["0.2"]:::selected --- s19b["1"]:::selected --- s19c["10.4"]:::unsorted --- s19d["53"]:::sorted --- s19e["58.3"]:::sorted --- s19f["500"]:::sorted
+s22a["0.2"]:::selected --- s22b["1"]:::selected --- s22c["10.4"]:::unsorted --- s22d["53"]:::sorted --- s22e["58.3"]:::sorted --- s22f["500"]:::sorted
 end
 
 subgraph S23["Après le passage : 1 et 0.2 sont trié"]
 direction LR
-s21a["0.2"]:::sorted --- s21b["1"]:::sorted --- s21c["10.4"]:::sorted --- s21d["53"]:::sorted --- s21e["58.3"]:::sorted --- s21f["500"]:::sorted
+s23a["0.2"]:::sorted --- s23b["1"]:::sorted --- s23c["10.4"]:::sorted --- s23d["53"]:::sorted --- s23e["58.3"]:::sorted --- s23f["500"]:::sorted
 end
 
 subgraph S24["Liste triée"]
 direction LR
-s22a["0.2"]:::sorted --- s22b["1"]:::sorted --- s22c["10.4"]:::sorted --- s22d["53"]:::sorted --- s22e["58.3"]:::sorted --- s22f["500"]:::sorted
+s24a["0.2"]:::sorted --- s24b["1"]:::sorted --- s24c["10.4"]:::sorted --- s24d["53"]:::sorted --- s24e["58.3"]:::sorted --- s24f["500"]:::sorted
 end
 
 S0 --> S1
