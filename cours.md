@@ -842,15 +842,21 @@ print(L)
 
 ### 3.1 Tri par sélection
 
-$$
-\begin{array}{cccccc}
-\boxed{58.3} & \boxed{0.2} & \boxed{1} & \boxed{53} & \boxed{500} & \boxed{10.4}\\[8pt]
-& \downarrow & & & & \\[-2pt]
-\boxed{0.2} & \boxed{58.3} & \boxed{1} & \boxed{53} & \boxed{500} & \boxed{10.4}\\[8pt]
-& & \downarrow & & & \\[-2pt]
-\boxed{0.2} & \boxed{1} & \boxed{58.3} & \boxed{53} & \boxed{500} & \boxed{10.4}
-\end{array}
-$$
+```mermaid
+flowchart TD
+    A["[58.3 | 0.2 | 1 | 53 | 500 | 10.4]"]
+    B["[0.2 | 58.3 | 1 | 53 | 500 | 10.4]"]
+    C["[0.2 | 1 | 58.3 | 53 | 500 | 10.4]"]
+    D["[0.2 | 1 | 10.4 | 53 | 500 | 58.3]"]
+    E["[0.2 | 1 | 10.4 | 53 | 500 | 58.3]"]
+    F["[0.2 | 1 | 10.4 | 53 | 58.3 | 500]"]
+
+    A -->|"minimum : 0.2"| B
+    B -->|"minimum : 1"| C
+    C -->|"minimum : 10.4"| D
+    D -->|"minimum : 53"| E
+    E -->|"minimum : 58.3"| F
+```
 
 ### 3.2 Tri par insertion
 
