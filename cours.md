@@ -58,7 +58,7 @@ sur plusieurs lignes
 """
 ```
 
-<a id="seq1-1-2"></a>
+<a id="seq1-1-3"></a>
 ### 1.3 Entrée/Sortie
 Affichage : `print()`
 
@@ -92,6 +92,7 @@ print(type("Hello World"))
 # RETOURNE : str
 ```
 
+<a id="seq1-2-1"></a>
 ### 2.1 Nombres
 
 - `int`: entier relatif
