@@ -842,78 +842,93 @@ print(L)
 
 ### 3.1 Tri par sélection
 
-🟦 Partie déjà triée · 🟥 Minimum sélectionné · ⬜ Partie non triée
+🔵 Partie déjà triée · 🔴 Minimum sélectionné · ⚪ Partie non triée
 
 ```mermaid
 flowchart TB
+
     subgraph S0["Liste initiale"]
         direction LR
         A1["58.3"]:::normal --- A2["0.2"]:::normal --- A3["1"]:::normal --- A4["53"]:::normal --- A5["500"]:::normal --- A6["10.4"]:::normal
     end
 
-    subgraph S1["Étape 1 — minimum : 0.2"]
+    subgraph S1["Étape 1 — rechercher le minimum : 0.2 → échange avec 58.3"]
         direction LR
-        B1["0.2"]:::sorted --- B2["58.3"]:::unsorted --- B3["1"]:::unsorted --- B4["53"]:::unsorted --- B5["500"]:::unsorted --- B6["10.4"]:::unsorted
+        B1["0.2"]:::selected --- B2["58.3"]:::unsorted --- B3["1"]:::unsorted --- B4["53"]:::unsorted --- B5["500"]:::unsorted --- B6["10.4"]:::unsorted
     end
 
-    subgraph S2["Étape 2 — minimum : 1"]
+    subgraph S2["Étape 2 — rechercher le minimum : 1 → échange avec 58.3"]
         direction LR
-        C1["0.2"]:::sorted --- C2["1"]:::sorted --- C3["58.3"]:::unsorted --- C4["53"]:::unsorted --- C5["500"]:::unsorted --- C6["10.4"]:::unsorted
+        C1["0.2"]:::sorted --- C2["1"]:::selected --- C3["58.3"]:::unsorted --- C4["53"]:::unsorted --- C5["500"]:::unsorted --- C6["10.4"]:::unsorted
     end
 
-    subgraph S3["Étape 3 — minimum : 10.4"]
+    subgraph S3["Étape 3 — rechercher le minimum : 10.4 → échange avec 58.3"]
         direction LR
-        D1["0.2"]:::sorted --- D2["1"]:::sorted --- D3["10.4"]:::sorted --- D4["53"]:::unsorted --- D5["500"]:::unsorted --- D6["58.3"]:::unsorted
+        D1["0.2"]:::sorted --- D2["1"]:::sorted --- D3["10.4"]:::selected --- D4["53"]:::unsorted --- D5["500"]:::unsorted --- D6["58.3"]:::unsorted
     end
 
-    S0 --> S1 --> S2 --> S3
+    subgraph S4["Étape 4 — rechercher le minimum : 53 → échange avec 53"]
+        direction LR
+        E1["0.2"]:::sorted --- E2["1"]:::sorted --- E3["10.4"]:::sorted --- E4["53"]:::selected --- E5["500"]:::unsorted --- E6["58.3"]:::unsorted
+    end
+
+    subgraph S5["Étape 5 — le dernier élément est automatiquement placé"]
+        direction LR
+        F1["0.2"]:::sorted --- F2["1"]:::sorted --- F3["10.4"]:::sorted --- F4["53"]:::sorted --- F5["58.3"]:::sorted --- F6["500"]:::sorted
+    end
+
+    S0 --> S1 --> S2 --> S3 --> S4 --> S5
 
     classDef normal fill:#ffffff,stroke:#374151,color:#111827;
     classDef sorted fill:#dbeafe,stroke:#2563eb,color:#111827;
+    classDef selected fill:#fecaca,stroke:#dc2626,color:#111827;
     classDef unsorted fill:#f3f4f6,stroke:#9ca3af,color:#111827;
+    subgr
 ```
 **Principe :** on recherche le minimum dans la partie non triée, puis on l'échange avec le premier élément de cette partie.
 
 ### 3.2 Tri par insertion
 
-🟦 Partie déjà triée · 🟥 Élément à insérer · ⬜ Partie non traitée
+🔵 Partie déjà triée · 🔴 Élément à insérer · ⚪ Partie non traitée
 
 ```mermaid
 flowchart TB
+
     subgraph I0["Liste initiale"]
         direction LR
         A1["58.3"]:::normal --- A2["0.2"]:::normal --- A3["1"]:::normal --- A4["53"]:::normal --- A5["500"]:::normal --- A6["10.4"]:::normal
     end
 
-    subgraph I1["Étape 1 — insérer 0.2"]
+    subgraph I1["Étape 1 — insérer 0.2 avant 58.3"]
         direction LR
-        B1["0.2"]:::sorted --- B2["58.3"]:::sorted --- B3["1"]:::unsorted --- B4["53"]:::unsorted --- B5["500"]:::unsorted --- B6["10.4"]:::unsorted
+        B1["0.2"]:::selected --- B2["58.3"]:::sorted --- B3["1"]:::unsorted --- B4["53"]:::unsorted --- B5["500"]:::unsorted --- B6["10.4"]:::unsorted
     end
 
-    subgraph I2["Étape 2 — insérer 1"]
+    subgraph I2["Étape 2 — insérer 1 entre 0.2 et 58.3"]
         direction LR
-        C1["0.2"]:::sorted --- C2["1"]:::sorted --- C3["58.3"]:::sorted --- C4["53"]:::unsorted --- C5["500"]:::unsorted --- C6["10.4"]:::unsorted
+        C1["0.2"]:::sorted --- C2["1"]:::selected --- C3["58.3"]:::sorted --- C4["53"]:::unsorted --- C5["500"]:::unsorted --- C6["10.4"]:::unsorted
     end
 
-    subgraph I3["Étape 3 — insérer 53"]
+    subgraph I3["Étape 3 — insérer 53 entre 1 et 58.3"]
         direction LR
-        D1["0.2"]:::sorted --- D2["1"]:::sorted --- D3["53"]:::sorted --- D4["58.3"]:::sorted --- D5["500"]:::unsorted --- D6["10.4"]:::unsorted
+        D1["0.2"]:::sorted --- D2["1"]:::sorted --- D3["53"]:::selected --- D4["58.3"]:::sorted --- D5["500"]:::unsorted --- D6["10.4"]:::unsorted
     end
 
     subgraph I4["Étape 4 — 500 est déjà bien placé"]
         direction LR
-        E1["0.2"]:::sorted --- E2["1"]:::sorted --- E3["53"]:::sorted --- E4["58.3"]:::sorted --- E5["500"]:::sorted --- E6["10.4"]:::unsorted
+        E1["0.2"]:::sorted --- E2["1"]:::sorted --- E3["53"]:::sorted --- E4["58.3"]:::sorted --- E5["500"]:::selected --- E6["10.4"]:::unsorted
     end
 
-    subgraph I5["Étape 5 — insérer 10.4"]
+    subgraph I5["Étape 5 — insérer 10.4 entre 1 et 53"]
         direction LR
-        F1["0.2"]:::sorted --- F2["1"]:::sorted --- F3["10.4"]:::sorted --- F4["53"]:::sorted --- F5["58.3"]:::sorted --- F6["500"]:::sorted
+        F1["0.2"]:::sorted --- F2["1"]:::sorted --- F3["10.4"]:::selected --- F4["53"]:::sorted --- F5["58.3"]:::sorted --- F6["500"]:::sorted
     end
 
     I0 --> I1 --> I2 --> I3 --> I4 --> I5
 
     classDef normal fill:#ffffff,stroke:#374151,color:#111827;
     classDef sorted fill:#dbeafe,stroke:#2563eb,color:#111827;
+    classDef selected fill:#fecaca,stroke:#dc2626,color:#111827;
     classDef unsorted fill:#f3f4f6,stroke:#9ca3af,color:#111827;
 ```
 **Principe :** on prend l'élément suivant et on l'insère à la bonne position dans la partie déjà triée.
