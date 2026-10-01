@@ -946,7 +946,7 @@ flowchart TB
 À chaque passage, le plus grand élément de la partie non triée
 remonte progressivement vers la droite jusqu'à atteindre sa position définitive.
 
-> **À noter :** le tri à bulles fonctionne correctement, mais il est relativement peu efficace pour de grandes listes. Il effectue beaucoup de comparaisons et d'échanges. Sa complexité est de $O(n^2)$ dans le cas général.
+> **À noter :** le tri à bulles fonctionne correctement, mais il est relativement peu efficace pour de grandes listes. Il effectue beaucoup de comparaisons et d'échanges.
 
 <details>
 <summary>Voir le déroulement du tri à bulles</summary>
@@ -1114,3 +1114,5 @@ S22 --> S23
 S23 --> S24
 ```
 </details>
+
+## A suivre
