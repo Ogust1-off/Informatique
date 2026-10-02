@@ -423,7 +423,7 @@ for i in range(4):
 `range(n)`: entier de 0 à n-1 - `range(m, n)`: entier de m à n-1
 `range(m, n, p)`: on va de l'entier `m` à n-1 avec un pas de `p` (Ajout personnel)
 
-**Exercices :** Calculer la $\sum_{k=1}^{2026} \frac{k}{2}$ et le $\prod_{k=1}^{20} k^2$
+**Exercices :** Calculer la somme: $\sum_{k=1}^{2026} \frac{k}{2}$ et le produit: $\prod_{k=1}^{20} k^2$
 ```python
 somme=0
 for i in range(1,2027):
