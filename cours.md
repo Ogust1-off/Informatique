@@ -622,6 +622,7 @@ Comparaison : `==`
 *Deux listes sont égales si elles contiennent les mêmes éléments dans le même ordre.*
 
 Copie : `L.copy()`
+
 Exemple :
 ```python
 L=[1, 2, 3]
@@ -633,9 +634,9 @@ print(M1,M2)
 ```
 > - `M1 = L` : `M1` et `L` désignent la même liste.
 > - `M2 = L.copy()` : `M2` est une copie de `L`.
-> Ainsi, modifier `L` modifie également `M1`, mais pas `M2`.
+> Ainsi, modifier `L` ultérieurement modifie également `M1`, mais pas `M2`.
 
-**Exercice :** Afficher les 20 premiers termes de la suite de Fibonacci, de `F₀` à `F₁₉`, avec `Fₙ₊₂ = Fₙ₊₁ + Fₙ ∀n`.
+**Exercice :** Afficher les 20 premiers termes de la suite de Fibonacci, de `F₀` à `F₁₉`, sachant que la suite est définie par $F_n = F_{n-1} + F_{n-2}$, pour $n \in \mathbb{N}^* \setminus \{1\}$, avec $F_0 = 0$ et $F_1 = 1$.
 ```python
 liste=[0,1]
 
