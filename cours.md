@@ -811,7 +811,7 @@ A=[[1,2,3],
 ```
 **Exercice :** Écrire un programme qui permet de calculer un produit matriciel.
 ```python
-# Code a venir...
+# Code à venir...
 ```
 
 Exemple d'usage de `print()` avec les listes de listes:
@@ -885,7 +885,7 @@ print(maxi)
 
 **Exercice :** Soit la liste `P = [[1, 7], [4, 2], [9, 5], [3, 3], [8, 8]]` des coordonnées $(x,y)$ de points. Rechercher les deux points les plus proches et les afficher ainsi que leur distance. (S'inspirer de l'algorithme de recherche du minimum).
 ```python
-# Code a venir ...
+# Code à venir ...
 ```
  
 <a id="seq3-3"></a>
