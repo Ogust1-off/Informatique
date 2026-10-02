@@ -759,7 +759,7 @@ print(liste)
 <a id="seq3-1-4"></a>
 ### 1.4 Sous-listes et listes de listes
 
-> **Sous-liste :**
+A. **Sous-liste :**
 - `L[i: j]`: extrait une sous-liste de `L` entre l'indice `i` et `j-1`
 - `L[:j]`: extrait une sous-liste de `L` entre l'indice 0 et `j-1`
 - `L[i:]`: extrait une sous-liste de `L` entre l'indice i et `len(L)-1`
@@ -786,7 +786,7 @@ print(L[:])
 # RETOURNE : [4, 6, 7, 3, 1, 8]
 ```
 
-> **Liste de liste :**
+B. **Liste de liste :**
 ```python
 L = [1, 2, [1, 2]]
 print(L[2])
@@ -810,7 +810,7 @@ A=[[1,2,3],
    [7,8,9]]
 ```
 
-Exemple d'usage de `print()`:
+Exemple d'usage de `print()` avec les listes de listes:
 ```python
 L=[1,2,[3,4]]
 print(L[2][0])
