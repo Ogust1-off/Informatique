@@ -639,7 +639,7 @@ print(M1,M2)
 > - `M2 = L.copy()` : `M2` est une copie de `L`.
 > Ainsi, modifier `L` ultérieurement modifie également `M1`, mais pas `M2`.
 
-**Exercice :** Afficher les 20 premiers termes de la suite de Fibonacci, de $F_0$ à $F_{19}$, sachant que la suite est définie par $F_n = F_{n-1} + F_{n-2}$, pour $n \in \mathbb{N}^* \setminus \{1\}$, avec $F_0 = 0$ et $F_1 = 1$.
+**Exercice :** Afficher les 20 premiers termes de la suite de Fibonacci, de $F_0$ à $F_{19}$, sachant que la suite est définie par $F_n = F_{n-1} + F_{n-2}$, pour $n \in \mathbb{N}^* \setminus \{ 1 \}$, avec $F_0 = 0$ et $F_1 = 1$.
 ```python
 liste=[0,1]
 
