@@ -919,7 +919,7 @@ print(L)
 <a id="seq3-3-1"></a>
 ### 3.1 Tri par sélection
 
-**Principe :** on recherche le minimum dans la partie non triée, puis on l'échange avec le premier élément de cette partie.
+**Principe :** On recherche le minimum dans la partie non triée, puis on l'échange avec le premier élément de cette partie.
 
 🔵 Partie déjà triée · 🔴 Minimum sélectionné · ⚪ Partie non triée
 
@@ -972,7 +972,7 @@ flowchart TB
 <a id="seq3-3-2"></a>
 ### 3.2 Tri par insertion
 
-**Principe :** on prend l'élément suivant et on l'insère à la bonne position dans la partie déjà triée.
+**Principe :** On parcourt les éléments de la liste dans l'ordre. Pour chaque élément, on le compare aux précédents et on le déplace vers la gauche jusqu'à trouver sa bonne position.
 
 🔵 Partie déjà triée · 🔴 Élément à insérer · ⚪ Partie non traitée
 
@@ -1019,7 +1019,7 @@ flowchart TB
 <a id="seq3-3-3"></a>
 ### 3.3 Tri à bulles (Ajout personnel)
 
-**Principe :** on compare deux éléments voisins. S'ils sont dans le mauvais ordre, on les échange. On répète le parcours jusqu'à ce qu'il n'y ait plus d'échange.
+**Principe :** On compare deux éléments voisins. S'ils sont dans le mauvais ordre, on les échange. On répète le parcours jusqu'à ce qu'il n'y ait plus d'échange.
 
 À chaque passage, le plus grand élément de la partie non triée
 remonte progressivement vers la droite jusqu'à atteindre sa position définitive.
