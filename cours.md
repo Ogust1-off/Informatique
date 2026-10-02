@@ -440,7 +440,7 @@ print(prod)
 ```
 
 
-On peut également parcourir directement une liste grâce au boucle `for` :
+On peut également parcourir directement une liste grâce aux boucles `for` :
 ```python
 for i in [1,2,3]:
     print(i)
