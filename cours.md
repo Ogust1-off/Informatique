@@ -1228,4 +1228,9 @@ S23 --> S24
 ```
 </details>
 
+Exemple personnel: 
+```python
+# Code à venir ...
+```
+
 ## A suivre
