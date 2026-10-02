@@ -696,20 +696,20 @@ else:
     print(f"Le mot {mot} n'est pas un palindrome.")
 ```
 
-**Elements en plus :**
-```python
-L = [1, 2, 3]
-sum(L)
-# RETOURNE : 6
-```
-```python
-list(range(0, 21, 2))
-# RETOURNE : [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
-```
+> **Éléments supplémentaires :**
+> ```python
+> L = [1, 2, 3]
+> sum(L)
+> # RETOURNE : 6
+> ```
+> ```python
+> list(range(0, 21, 2))
+> # RETOURNE : [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+> ```
 
-Enlever un élément d'une liste:
+** Enlever un élément d'une liste :**
 - `pop(indice)` : supprime et renvoie l'élément situé à l'indice indiqué (par défaut, le dernier élément).
-- `remove(élément)` : supprime le premier élément verifier de la liste.
+- `remove(élément)` : supprime la première occurrence de l'élément indiqué dans la liste.
 
 Exemple :
 ```python
