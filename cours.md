@@ -431,7 +431,6 @@ for i in range(1,2027):
 print(somme)
 # RETOURNE : 1026675.5
 ```
-et
 ```python
 prod=1
 for i in range(1,21):
@@ -440,7 +439,8 @@ print(prod)
 # RETOURNE : 5919012181389927685417441689600000000
 ```
 
-On peut également parcourir directement une liste :
+
+On peut également parcourir directement une liste grâce au boucle `for` :
 ```python
 for i in [1,2,3]:
     print(i)
