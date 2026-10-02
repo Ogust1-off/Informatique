@@ -143,15 +143,7 @@ Opérations arithmétiques:
 | `/`       | division                                  |
 | `//`      | division euclidienne                      |
 | `%`       | modulo (reste de la division euclidienne) |
-```
-+ addition
-- soustraction
-* multiplication
-** puissance
-/ division
-// division euclidienne
-% modulo (reste de la division euclidienne)
-```
+
 
 **Exercice :**
 ```python
@@ -219,13 +211,13 @@ txt += " World"
 ```
 
 Conversion de type : convertit une valeur dans le type souhaité.
-```python
-int()
-float()
-complex()
-bool()
-str()
-```
+| Fonction | Type |
+| :- | :- |
+| `int()` | Entier |
+| `float()` | Nombre réel |
+| `complex()` | Nombre complexe |
+| `bool()` | Booléen |
+| `str()` | Chaîne de caractères |
 
 Exemple :
 ```python
