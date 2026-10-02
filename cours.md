@@ -879,6 +879,15 @@ print(maxi)
 
 # RETOURNE : 500
 ```
+```python
+# Algorithme de recherche du minimum à venir ...
+```
+
+**Exercice :** Soit la liste `P = [[1, 7], [4, 2], [9, 5], [3, 3], [8, 8]]` des coordonnées $(x,y)$ de points. Rechercher les deux points les plus proches et les afficher ainsi que leur distance. (S'inspirer de l'algorithme de recherche du minimum).
+```python
+# Code a venir ...
+```
+ 
 <a id="seq3-3"></a>
 ## 3. Algorithmes de tri
 
@@ -974,6 +983,16 @@ flowchart TB
     classDef unsorted fill:#f3f4f6,stroke:#9ca3af,color:#111827;
 ```
 
+Exemple personnel: 
+```python
+# Code à venir ...
+```
+
+**Exercice :** Soit la liste: `R = [["Alice", 12], ["Bob", 17], ["Chloé", 9], ["David", 15], ["Emma", 11]]` donnant les notes de la forme `[nom, note]` obtenue par une classe a un examen. A  l'aide de l'algorithme du tri par selection trier la liste `R` dans l'ordre décroissant des notes et afficher le classement.
+```python
+# Code à venir ...
+```
+
 <a id="seq3-3-2"></a>
 ### 3.2 Tri par insertion
 
@@ -1021,6 +1040,17 @@ flowchart TB
     classDef selected fill:#fecaca,stroke:#dc2626,color:#111827;
     classDef unsorted fill:#f3f4f6,stroke:#9ca3af,color:#111827;
 ```
+
+Exemple personnel: 
+```python
+# Code à venir ...
+```
+
+**Exercice :** Écrire un programme qui demande deux mots à l’utilisateur et affiche s’ils sont des anagrammes ou non.
+```python
+# Code à venir ...
+```
+
 <a id="seq3-3-3"></a>
 ### 3.3 Tri à bulles (Ajout personnel)
 
