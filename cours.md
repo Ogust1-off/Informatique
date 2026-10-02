@@ -929,7 +929,17 @@ print(maxi)
 # RETOURNE : 500
 ```
 ```python
-# Algorithme de recherche du minimum à venir ...
+L=[21, 50.1, 10.12, 3.9, 31, 5, 2.0, 1.2, 400, 3.2]
+
+mini=L[0] # On dit que par defaut le plus petit therme de la liste est le 1er
+
+for i in range(len(L)):
+    if mini>L[i]: # Si un therme de la liste est plus petit que mini actuel, mini prend la valeur trouvée
+        mini=L[i]
+
+print(mini)
+
+# RETOURNE : 1.2
 ```
 
 **Exercice :** Soit la liste `P = [[1, 7], [4, 2], [9, 5], [3, 3], [8, 8]]` des coordonnées $(x,y)$ de points. Rechercher les deux points les plus proches et les afficher ainsi que leur distance. (S'inspirer de l'algorithme de recherche du minimum).
