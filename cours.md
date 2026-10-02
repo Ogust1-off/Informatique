@@ -851,8 +851,17 @@ for i in range(m1): # Parcourt les lignes de la matrice A (on descend d'une lign
 print(f"\nLe produit de {matrice1} par {matrice2} donne \n{matrice3}")
 ```
 > **Explication :** `i` permet de choisir la ligne de la matrice résultat, `j` la colonne de la matrice résultat et `k` permet de faire le calcul à cette position.
-> Par exemple, pour calculer la position `[0][0]` d'une matrice résultat `2×2`, le programme fait :
-> `matrice1[0][0] * matrice2[0][0] + matrice1[0][1] * matrice2[1][0]`
+>
+> Exemple, pour une matrice `2×2`:
+> Pour la position `[0][0]`: `matrice1[0][0] * matrice2[0][0] + matrice1[0][1] * matrice2[1][0]`
+>
+> Pour la position `[0][1]`: `matrice1[0][0] * matrice2[0][1] + matrice1[0][1] * matrice2[1][1]`
+>
+> Pour la position `[1][0]`: `matrice1[1][0] * matrice2[0][0] + matrice1[1][1] * matrice2[1][0]`
+>
+> Et pour la position `[1][1]`: `matrice1[1][0] * matrice2[0][1] + matrice1[1][1] * matrice2[1][1]`
+>
+> Les positions sont définies par `[i][j]`. Dans les calculs, on utilise `matrice1[i][k] * matrice2[k][j]`, où `k` permet de parcourir les éléments nécessaires au calcul.
 
 Exemple d'usage de `print()` avec les listes de listes:
 ```python
