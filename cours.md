@@ -423,7 +423,7 @@ for i in range(4):
 `range(n)`: entier de 0 à n-1 - `range(m, n)`: entier de m à n-1
 `range(m, n, p)`: on va de l'entier `m` à n-1 avec un pas de `p` (Ajout personnel)
 
-**Exercice :** Somme de 1 à 2026 de k/2 et Produit de 1 à 20 de k^2
+**Exercices :** $\sum_{k=1}^{2026} \frac{k}{2}$ et $\prod_{k=1}^{20} k^2$
 ```python
 somme=0
 for i in range(1,2027):
@@ -706,6 +706,7 @@ else:
 > list(range(0, 21, 2))
 > # RETOURNE : [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
 > ```
+
 
 ** Enlever un élément d'une liste :**
 - `pop(indice)` : supprime et renvoie l'élément situé à l'indice indiqué (par défaut, le dernier élément).
