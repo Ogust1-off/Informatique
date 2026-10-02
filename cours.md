@@ -134,6 +134,15 @@ print(z.real, z.imag)
 ```
 
 Opérations arithmétiques:
+| Opérateur | Signification                             |
+| --------- | ----------------------------------------- |
+| `+`       | addition                                  |
+| `-`       | soustraction                              |
+| `*`       | multiplication                            |
+| `**`      | puissance                                 |
+| `/`       | division                                  |
+| `//`      | division euclidienne                      |
+| `%`       | modulo (reste de la division euclidienne) |
 ```
 + addition
 - soustraction
