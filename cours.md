@@ -59,7 +59,7 @@ Exemple : `a = 1` et `b = 2`.
 a = 1
 b = 2
 ```
-Pour inverser les deux variables :
+Pour échanger deux variables, on peut faire :
 ```python
 c = a
 a = b
@@ -193,8 +193,8 @@ a != b  # True
 ```
 <a id="seq1-2-3"></a>
 ### 2.3 Chaînes de caractères, conversion de type et f-strings
-Type d'une chaîne de caractères: 'str'
-concaténation: assemblage de deux chaînes de caractères avec `+`
+- Type d'une chaîne de caractères: `str`
+- Concaténation: assemblage de deux chaînes de caractères avec `+`
 
 Exemple :
 ```python
@@ -204,6 +204,7 @@ txt2="World"
 print(txt1+space+txt2)
 ```
 La concaténation fonctionne également avec `+=`
+
 **Exemple personnel :**
 ```python
 txt = "Hello"
@@ -834,7 +835,7 @@ print(5 in [6,5,4,3,2,1,0])
 # RETOURNE : True
 ```
 
-**Exercice :** Crée une liste aléatoire de 20 éléments entre 1 et 10 et rechercher toute les occurrence du nombre `5` en stockant leur indices:
+**Exercice :** Créer une liste aléatoire de 20 éléments entre 1 et 10 et rechercher toutes les occurrences du nombre `5` en stockant leurs indices.
 ```python
 import random
 Liste=[]
@@ -862,13 +863,13 @@ print(min(L), max(L))
 
 *Sans ces fonctions :* (Ajout personnel)
 ```python
-max=0
+maxi=0
 L=[0.2,1,5.3,500,104,58,3]
 for i in range(len(L)):
-    if L[i]>max:
-        max=L[i]
+    if L[i]>maxi:
+        maxi=L[i]
 
-print(max)
+print(maxi)
 
 # RETOURNE : 500
 ```
@@ -970,7 +971,7 @@ flowchart TB
 <a id="seq3-3-2"></a>
 ### 3.2 Tri par insertion
 
-**Principe :** on prend l'élément suivant et on l'insère à la bonne position dans la partie déjà triée
+**Principe :** on prend l'élément suivant et on l'insère à la bonne position dans la partie déjà triée.
 
 🔵 Partie déjà triée · 🔴 Élément à insérer · ⚪ Partie non traitée
 
@@ -1154,7 +1155,7 @@ direction LR
 s22a["0.2"]:::selected --- s22b["1"]:::selected --- s22c["10.4"]:::sorted --- s22d["53"]:::sorted --- s22e["58.3"]:::sorted --- s22f["500"]:::sorted
 end
 
-subgraph S23["Après le passage : 1 et 0.2 sont trié"]
+subgraph S23["Après le passage : 0.2 et 1 sont triés"]
 direction LR
 s23a["0.2"]:::sorted --- s23b["1"]:::sorted --- s23c["10.4"]:::sorted --- s23d["53"]:::sorted --- s23e["58.3"]:::sorted --- s23f["500"]:::sorted
 end
