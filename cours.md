@@ -803,12 +803,13 @@ A =
 \end{pmatrix}
 $$
 
-On écrit:
+On écrit souvent:
 ```python
 A=[[1,2,3],
    [4,5,6],
    [7,8,9]]
 ```
+
 
 ```python
 L=[1,2,[3,4]]
