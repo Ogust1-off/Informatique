@@ -809,6 +809,10 @@ A=[[1,2,3],
    [4,5,6],
    [7,8,9]]
 ```
+**Exercice :** Écrire un programme qui permet de calculer un produit matriciel.
+```python
+# Code a venir...
+```
 
 Exemple d'usage de `print()` avec les listes de listes:
 ```python
@@ -830,6 +834,7 @@ print(L[2:])
 ## 2. Algorithmes de recherche
 <a id="seq3-2-1"></a>
 ### 2.1 Recherche d'éléments
+- `in` permet de vérifier si un élément est présent dans une liste.
 
 ```python
 print(5 in [6,5,4,3,2,1,0])
