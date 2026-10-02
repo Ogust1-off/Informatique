@@ -155,7 +155,7 @@ a%b -> 1 en int
 
 **Opérations d'affectation :**
 incrémentation, décrémentation
-```
+```python
 a += 1
 b -= 2
 ```
@@ -186,7 +186,7 @@ Opérations de comparaisons:
 
 
 **Exercice :**
-```
+```python
 a, b = True, False
 a == b  # False
 a != b  # True
@@ -362,7 +362,7 @@ else:
 
 <a id="seq2-2-4"></a>
 ### 2.4 Instruction match-case
-Similaire à `if`-`elif`-`else`. On sort de la boucle dès qu'une condition est remplie.
+Similaire à `if`-`elif`-`else`. Dès qu'un `case` correspond, les autres `case` ne sont pas évalués.
 ```python
 match element:
     case valeur_1:
@@ -389,7 +389,7 @@ case x if x < 2:
 On peut aussi utiliser `case _:` qui agit un peu comme le `else` (Ajout personnel)
 
 
-**Exercice :** Programme qui demande quelle opération est associée au symbole `** en Python.
+**Exercice :** Programme qui demande quelle opération est associée au symbole `**` en Python.
 ```python
 print("Dans le langage Python, quelle opération est associée au symbole **?\nA. division\nB. multiplication\nC. puissance\nD. division euclidienne\n")
 rep=input("Saisir la lettre de votre réponse: ")
@@ -681,14 +681,14 @@ print(L)
 **Exercice :** Testeur de palindrome
 ```python
 mot=input("Saisir un mot en minuscule: ")
-# On pourrais utiliser .lower pour mettre le texte dans le même classe.
+# On pourrais utiliser .lower pour mettre le texte dans la même casse.
 listeMot = []
 for i in mot:
     listeMot.append(i) # Transformation du mot en une liste avec chaque caractère indépendant
 palindrome = True
 
 for j in range(len(mot)//2):
-    if listeMot[j] != listeMot[-(j+1)]: #Comparaison des caractères : 1er avec le dernier, 2e avec l'avant-dernier, ... avec la méthode des indices croissants et décroissants
+    if listeMot[j] != listeMot[-(j+1)]: # Comparaison des caractères : 1er avec le dernier, 2e avec l'avant-dernier, ... avec la méthode des indices croissants et décroissants
         palindrome=False
         # On pourrait rajouter un break pour sortir immédiatement de la boucle quand on sait que ce n'est pas un palindrome.
 
@@ -877,7 +877,7 @@ print(maxi)
 ## 3. Algorithmes de tri
 
 - `sorted()`: trie une liste dans l'ordre croissant sans modifier l'ordre original
-- `.sort()`: trie directement la liste original dans l'ordre croissant
+- `.sort()`: trie directement la liste originale dans l'ordre croissant
 - `reverse=True`: permet de trier dans l'ordre décroissant
 
 ```python
