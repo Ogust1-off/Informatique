@@ -811,8 +811,48 @@ A=[[1,2,3],
 ```
 **Exercice :** Écrire un programme qui permet de calculer un produit matriciel.
 ```python
-# Code à venir...
+m1=int(input("Saisir la dimention m de la matrice A: "))
+n1=int(input("Saisir la dimention n de la matrice A: "))
+m2=int(input("Saisir la dimention m de la matrice B: "))
+n2=int(input("Saisir la dimention n de la matrice B: "))
+
+if n1!=m2:
+    print("Le produit de votre matrice est impossible")
+
+matrice1=[]
+matrice2=[]
+matrice3=[]
+
+for i in range(m1):
+    ligne=[]
+    for j in range(n1):
+        ligne.append(int(input(f"Saisir le therme {i+1},{j+1} de la matrice A: ")))
+    matrice1.append(ligne)
+
+print(f"\nVotre matrice A est : {matrice1}\n")
+
+for i in range(m2):
+    ligne=[]
+    for j in range(n2):
+        ligne.append(int(input(f"Saisir le therme {i+1},{j+1} de la matrice B: ")))
+    matrice2.append(ligne)
+
+print(f"\nVotre matrice B est : {matrice2}\n")
+
+for i in range(m1): # Parcourt les lignes de la matrice A (on descend d'une ligne)
+    ligne=[]
+    for j in range(n2): # Parcourt les colonnes de la matrice B (on avance horizontalement)
+        calcule=0
+        for k in range(n1): # Parcourt les cases de la ligne de A et de la colonne de B
+            calcule+=matrice1[i][k]*matrice2[k][j]
+        ligne.append(calcule)
+    matrice3.append(ligne)
+
+print(f"\nLe produit de {matrice1} par {matrice2} donne \n{matrice3}")
 ```
+> **Explication :** `i` permet de choisir la ligne de la matrice résultat, `j` la colonne de la matrice résultat et `k` permet de faire le calcul à cette position.
+> Par exemple, pour calculer la position `[0][0]` d'une matrice résultat `2×2`, le programme fait :
+> `matrice1[0][0] * matrice2[0][0] + matrice1[0][1] * matrice2[1][0]`
 
 Exemple d'usage de `print()` avec les listes de listes:
 ```python
