@@ -681,7 +681,7 @@ print(L)
 **Exercice :** Testeur de palindrome
 ```python
 mot=input("Saisir un mot en minuscule: ")
-# On pourrais utiliser .lower pour mettre le texte dans la même casse.
+# On pourrait utiliser .lower pour mettre le texte dans la même casse.
 listeMot = []
 for i in mot:
     listeMot.append(i) # Transformation du mot en une liste avec chaque caractère indépendant
@@ -728,7 +728,7 @@ print(L)
 # RETOURNE : ['h', 'e', 'l', 'o']
 ```
 
-**Exercice :** Crée une liste de 1 à 100 et appliquer le crible d'Eratosthène pour enlever les éléments non premiers.
+**Exercice :** Créer une liste de 1 à 100 et appliquer le crible d'Ératosthène pour enlever les éléments non premiers.
 ```python
 liste=[]
 for i in range (2,101):
