@@ -148,9 +148,9 @@ Opérations arithmétiques:
 **Exercice :**
 ```python
 a, b = 21, 5
-a/b -> 4.2 en float
-a//b -> 4 en int
-a%b -> 1 en int
+a/b # 4.2 en float
+a//b # 4 en int
+a%b # 1 en int
 ```
 
 **Opérations d'affectation :**
@@ -811,44 +811,44 @@ A=[[1,2,3],
 ```
 **Exercice :** Écrire un programme qui permet de calculer un produit matriciel.
 ```python
-m1=int(input("Saisir la dimention m de la matrice A: "))
-n1=int(input("Saisir la dimention n de la matrice A: "))
-m2=int(input("Saisir la dimention m de la matrice B: "))
-n2=int(input("Saisir la dimention n de la matrice B: "))
+m1=int(input("Saisir la dimension m de la matrice A: "))
+n1=int(input("Saisir la dimension n de la matrice A: "))
+m2=int(input("Saisir la dimension m de la matrice B: "))
+n2=int(input("Saisir la dimension n de la matrice B: "))
 
 if n1!=m2:
-    print("Le produit de votre matrice est impossible")
+    print("Le produit de vos matrices est impossible")
+else:
+    matrice1=[]
+    matrice2=[]
+    matrice3=[]
 
-matrice1=[]
-matrice2=[]
-matrice3=[]
+    for i in range(m1):
+        ligne=[]
+        for j in range(n1):
+            ligne.append(int(input(f"Saisir le terme {i+1},{j+1} de la matrice A: ")))
+        matrice1.append(ligne)
 
-for i in range(m1):
-    ligne=[]
-    for j in range(n1):
-        ligne.append(int(input(f"Saisir le therme {i+1},{j+1} de la matrice A: ")))
-    matrice1.append(ligne)
+    print(f"\nVotre matrice A est : {matrice1}\n")
 
-print(f"\nVotre matrice A est : {matrice1}\n")
+    for i in range(m2):
+        ligne=[]
+        for j in range(n2):
+            ligne.append(int(input(f"Saisir le terme {i+1},{j+1} de la matrice B: ")))
+        matrice2.append(ligne)
 
-for i in range(m2):
-    ligne=[]
-    for j in range(n2):
-        ligne.append(int(input(f"Saisir le therme {i+1},{j+1} de la matrice B: ")))
-    matrice2.append(ligne)
+    print(f"\nVotre matrice B est : {matrice2}\n")
 
-print(f"\nVotre matrice B est : {matrice2}\n")
+    for i in range(m1): # Parcourt les lignes de la matrice A (on descend d'une ligne)
+        ligne=[]
+        for j in range(n2): # Parcourt les colonnes de la matrice B (on avance horizontalement)
+            calcule=0
+            for k in range(n1): # Parcourt les cases de la ligne de A et de la colonne de B
+                calcule+=matrice1[i][k]*matrice2[k][j]
+            ligne.append(calcule)
+        matrice3.append(ligne)
 
-for i in range(m1): # Parcourt les lignes de la matrice A (on descend d'une ligne)
-    ligne=[]
-    for j in range(n2): # Parcourt les colonnes de la matrice B (on avance horizontalement)
-        calcule=0
-        for k in range(n1): # Parcourt les cases de la ligne de A et de la colonne de B
-            calcule+=matrice1[i][k]*matrice2[k][j]
-        ligne.append(calcule)
-    matrice3.append(ligne)
-
-print(f"\nLe produit de {matrice1} par {matrice2} donne \n{matrice3}")
+    print(f"\nLe produit de {matrice1} par {matrice2} donne \n{matrice3}")
 ```
 > **Explication :** `i` permet de choisir la ligne de la matrice résultat, `j` la colonne de la matrice résultat et `k` permet de faire le calcul à cette position.
 >
@@ -947,7 +947,7 @@ print(mini)
 import math
 P = [[1, 7], [4, 2], [9, 5], [3, 3], [8, 8]]
 
-dmin=math.sqrt((P[0][0]-P[1][0])**2+(P[0][1]-P[1][1])**2) # Par défaut la distance minimal est entre le 1er et le 2nd point.
+dmin=math.sqrt((P[0][0]-P[1][0])**2+(P[0][1]-P[1][1])**2) # Par défaut la distance minimale est entre le 1er et le 2nd point.
 point1=0
 point2=1
 print(dmin)
@@ -1101,7 +1101,7 @@ print(R)
 R = [["Alice", 12], ["Bob", 17], ["Chloé", 9], ["David", 15], ["Emma", 11]]
 
 for i in range(len(R)):
-    # Recherche de la note minimal:
+    # Recherche de la note minimale:
     noteMin=R[i][1]
     indiceMin=i
     for j in range(i,len(R)):
@@ -1172,10 +1172,10 @@ L=[21, 50.1, 10.12, 3.9, 31, 5, 2.0, 1.2, 400, 3.2]
 for i in range(len(L)):
     temp=L[i] # On mémorise la valeur que l'on doit déplacer
     j=i-1
-    while temp<L[j] and j>=0:
+    while j>=0 and temp<L[j]:
         L[j+1]=L[j] # On décale les termes vers la droite
         j-=1
-    L[j+1]=temp # On insère le minimum à sa bonne position
+    L[j+1]=temp # On insère le terme à sa bonne position
 
 print(L)
 # RETOURNE : [1.2, 2.0, 3.2, 3.9, 5, 10.12, 21, 31, 50.1, 400]
@@ -1234,7 +1234,7 @@ else:
 <a id="seq3-3-3"></a>
 ### 3.3 Tri à bulles (Ajout personnel)
 
-**Principe :** On compare deux éléments voisins. S'ils sont dans le mauvais ordre, on les échange. On répète le parcours jusqu'à ce qu'il n'y ait plus d'échange.
+**Principe :** On compare deux éléments voisins. S'ils sont dans le mauvais ordre, on les échange. On répète les passages jusqu'à ce que la liste soit triée.
 
 À chaque passage, le plus grand élément de la partie non triée
 remonte progressivement vers la droite jusqu'à atteindre sa position définitive.
