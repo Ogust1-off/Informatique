@@ -944,7 +944,24 @@ print(mini)
 
 **Exercice :** Soit la liste `P = [[1, 7], [4, 2], [9, 5], [3, 3], [8, 8]]` des coordonnées $(x,y)$ de points. Rechercher les deux points les plus proches et les afficher ainsi que leur distance. (S'inspirer de l'algorithme de recherche du minimum).
 ```python
-# Code à venir ...
+import math
+P = [[1, 7], [4, 2], [9, 5], [3, 3], [8, 8]]
+
+dmin=math.sqrt((P[0][0]-P[1][0])**2+(P[0][1]-P[1][1])**2)
+point1=0
+point2=1
+print(dmin)
+for i in range(len(P)):
+    for j in range(i+1,len(P)):
+        if dmin>math.sqrt((P[i][0]-P[j][0])**2+(P[i][1]-P[j][1])**2):
+            dmin=math.sqrt((P[i][0]-P[j][0])**2+(P[i][1]-P[j][1])**2)
+            point1=i
+            point2=j
+
+print(f"Les points {P[point1]}(l'indice {point1}) et {P[point2]}(l'indice {point2}) sont les plus proches\nDistance entre les deux: {dmin}")
+
+# RETOURNE : Les points [4, 2](l'indice 1) et [3, 3](l'indice 3) sont les plus proches
+# Distance entre les deux: 1.4142135623730951
 ```
  
 <a id="seq3-3"></a>
