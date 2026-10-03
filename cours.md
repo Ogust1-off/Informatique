@@ -1044,7 +1044,21 @@ flowchart TB
 
 Exemple personnel: 
 ```python
-# Code à venir ...
+L=[21, 50.1, 10.12, 3.9, 31, 5, 2.0, 1.2, 400, 3.2]
+
+for i in range(len(L)):
+    mini=L[i] # Par défaut, le minimum est le premier terme de la sous-liste
+    indicemini=i
+    for j in range(i,len(L)):
+        if L[j]<mini: # Recherche du minimum de la sous-liste
+            mini=L[j]
+            indicemini=j # Stocke l'indice du minimum
+    temp=L[i] # On mémorise la valeur du terme qui va être échangé avec le minimum
+    L[i]=mini # Le minimum prend sa position
+    L[indicemini]=temp # On remet la valeur à l'ancien indice du minimum
+
+print(L)
+# RETOURNE : [1.2, 2.0, 3.2, 3.9, 5, 10.12, 21, 31, 50.1, 400]
 ```
 
 **Exercice :** Soit la liste: `R = [["Alice", 12], ["Bob", 17], ["Chloé", 9], ["David", 15], ["Emma", 11]]` donnant les notes de la forme `[nom, note]` obtenue par une classe a un examen. A  l'aide de l'algorithme du tri par selection trier la liste `R` dans l'ordre décroissant des notes et afficher le classement.
