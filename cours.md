@@ -1085,7 +1085,6 @@ R = [["Alice", 12], ["Bob", 17], ["Chloé", 9], ["David", 15], ["Emma", 11]]
 for i in range(len(R)):
     # Recherche de la note maximal:
     noteMax=0
-    indiceMax=None
     for j in range(i,len(R)):
         if noteMax<R[j][1]:
             noteMax=R[j][1]
@@ -1185,7 +1184,51 @@ print(L)
 
 **Exercice :** Écrire un programme qui demande deux mots à l’utilisateur et affiche s’ils sont des anagrammes ou non.
 ```python
-# Code à venir ...
+mot1=input("Saisir le 1er mot : ")
+mot2=input("Saisir le 2nd mot : ")
+
+liste1=[i for i in mot1]
+liste2=[i for i in mot2]
+
+anagrammes=True
+if len(mot1)!=len(mot2):
+    print(f"{mot1} et {mot2} ne sont pas des anagrammes")
+else:
+    # Version un avec sort pour trier
+    '''
+    liste1.sort()
+    liste2.sort()
+    for i in range(len(liste1)):
+        if liste1[i]!=liste2[i]:
+            anagrammes=False
+    '''
+    # Version avec le tri par insertion
+    for i in range(len(liste1)):
+        temp=liste1[i]
+        j=i-1
+        while j>=0 and temp<=liste1[j]:
+            liste1[j+1]=liste1[j]
+            j-=1
+        liste1[j+1]=temp
+
+    for i in range(len(liste2)):
+        temp=liste2[i]
+        j=i-1
+        while j>=0 and temp<=liste2[j]:
+            liste2[j+1]=liste2[j]
+            j-=1
+        liste2[j+1]=temp
+    
+    for i in range(len(liste1)):
+            if liste1[i]!=liste2[i]:
+                anagrammes=False
+    # On aurait aussi pu créer une fonction pour trier les deux listes,
+    # cela aurait évité d'écrire deux fois le même code.
+
+if anagrammes:
+    print(f"{mot1} et {mot2} sont des anagrammes")
+else:
+    print(f"{mot1} et {mot2} ne sont pas des anagrammes")
 ```
 
 <a id="seq3-3-3"></a>
