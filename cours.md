@@ -1080,7 +1080,42 @@ print(L)
 
 **Exercice :** Soit la liste: `R = [["Alice", 12], ["Bob", 17], ["Chloé", 9], ["David", 15], ["Emma", 11]]` donnant les notes sous la forme `[nom, note]` obtenue par une classe à un examen. À  l'aide de l'algorithme du tri par sélection, trier la liste `R` dans l'ordre décroissant des notes et afficher le classement.
 ```python
-# Code à venir ...
+R = [["Alice", 12], ["Bob", 17], ["Chloé", 9], ["David", 15], ["Emma", 11]]
+
+for i in range(len(R)):
+    # Recherche de la note maximal:
+    noteMax=0
+    indiceMax=None
+    for j in range(i,len(R)):
+        if noteMax<R[j][1]:
+            noteMax=R[j][1]
+            indiceMax=j
+
+    if noteMax>R[i][1]:
+        R[i],R[indiceMax]=R[indiceMax],R[i]
+
+print(R)
+# RETOURNE : [['Bob', 17], ['David', 15], ['Alice', 12], ['Emma', 11], ['Chloé', 9]]
+```
+*Version pour l'ordre croissant :*
+```python
+R = [["Alice", 12], ["Bob", 17], ["Chloé", 9], ["David", 15], ["Emma", 11]]
+
+for i in range(len(R)):
+    # Recherche de la note minimal:
+    noteMin=R[i][1]
+    indiceMin=i
+    for j in range(i,len(R)):
+        if noteMin>R[j][1]:
+            noteMin=R[j][1]
+            indiceMin=j
+
+    if noteMin<R[i][1]:
+        R[i],R[indiceMin]=R[indiceMin],R[i]
+
+print(R)
+
+# RETOURNE : [['Chloé', 9], ['Emma', 11], ['Alice', 12], ['David', 15], ['Bob', 17]]
 ```
 
 <a id="seq3-3-2"></a>
