@@ -947,7 +947,7 @@ print(mini)
 import math
 P = [[1, 7], [4, 2], [9, 5], [3, 3], [8, 8]]
 
-dmin=math.sqrt((P[0][0]-P[1][0])**2+(P[0][1]-P[1][1])**2)
+dmin=math.sqrt((P[0][0]-P[1][0])**2+(P[0][1]-P[1][1])**2) # Par défaut la distance minimal est entre le 1er et le 2nd point.
 point1=0
 point2=1
 print(dmin)
@@ -1078,7 +1078,7 @@ print(L)
 # RETOURNE : [1.2, 2.0, 3.2, 3.9, 5, 10.12, 21, 31, 50.1, 400]
 ```
 
-**Exercice :** Soit la liste: `R = [["Alice", 12], ["Bob", 17], ["Chloé", 9], ["David", 15], ["Emma", 11]]` donnant les notes de la forme `[nom, note]` obtenue par une classe a un examen. A  l'aide de l'algorithme du tri par selection trier la liste `R` dans l'ordre décroissant des notes et afficher le classement.
+**Exercice :** Soit la liste: `R = [["Alice", 12], ["Bob", 17], ["Chloé", 9], ["David", 15], ["Emma", 11]]` donnant les notes sous la forme `[nom, note]` obtenue par une classe à un examen. À  l'aide de l'algorithme du tri par sélection, trier la liste `R` dans l'ordre décroissant des notes et afficher le classement.
 ```python
 # Code à venir ...
 ```
