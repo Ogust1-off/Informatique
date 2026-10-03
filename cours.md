@@ -1116,8 +1116,20 @@ flowchart TB
 
 Exemple personnel: 
 ```python
-# Code à venir ...
+L=[21, 50.1, 10.12, 3.9, 31, 5, 2.0, 1.2, 400, 3.2]
+
+for i in range(len(L)):
+    temp=L[i] # On mémorise la valeur que l'on doit déplacer
+    j=i-1
+    while temp<L[j] and j>=0:
+        L[j+1]=L[j] # On décale les termes vers la droite
+        j-=1
+    L[j+1]=temp # On insère le minimum à sa bonne position
+
+print(L)
+# RETOURNE : [1.2, 2.0, 3.2, 3.9, 5, 10.12, 21, 31, 50.1, 400]
 ```
+**Remarque :** On pourrait aussi directement commencer au rang 1.
 
 **Exercice :** Écrire un programme qui demande deux mots à l’utilisateur et affiche s’ils sont des anagrammes ou non.
 ```python
