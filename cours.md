@@ -1315,7 +1315,20 @@ S23 --> S24
 
 Exemple personnel: 
 ```python
-# Code à venir ...
+L=[21, 50.1, 10.12, 3.9, 31, 5, 2.0, 1.2, 400, 3.2]
+
+compteur=len(L)
+while compteur>1:
+    for i in range(1,compteur): # On ne parcourt pas les termes déjà triés
+        if L[i]<L[i-1]: # Si deux termes voisins sont dans le mauvais ordre...
+            temp=L[i]
+            L[i]=L[i-1]
+            L[i-1]=temp # ... On échange leur valeur
+    compteur-=1
+
+print(L)
+
+# RETOURNE : [1.2, 2.0, 3.2, 3.9, 5, 10.12, 21, 31, 50.1, 400]
 ```
 
 ## A suivre
