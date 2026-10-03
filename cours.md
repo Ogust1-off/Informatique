@@ -931,10 +931,10 @@ print(maxi)
 ```python
 L=[21, 50.1, 10.12, 3.9, 31, 5, 2.0, 1.2, 400, 3.2]
 
-mini=L[0] # On dit que par defaut le plus petit therme de la liste est le 1er
+mini=L[0] # On dit que par defaut le plus petit terme de la liste est le 1er
 
 for i in range(len(L)):
-    if mini>L[i]: # Si un therme de la liste est plus petit que mini actuel, mini prend la valeur trouvée
+    if mini>L[i]: # Si un terme de la liste est plus petit que mini actuel, mini prend la valeur trouvée
         mini=L[i]
 
 print(mini)
