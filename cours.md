@@ -867,6 +867,7 @@ else:
 
 <details>
 <summary> *Autre version avec une fonction (pas encore vue a ce stade du cours) qui permet de crée les matrices A et B :* </summary>
+
 ```python
 def matrixcreator(m,n,letter):
     matrice=[]
@@ -1261,9 +1262,13 @@ else:
             j-=1
         liste2[j+1]=temp
     
+    if liste1!=liste2:
+        anagrammes=True
+    '''
     for i in range(len(liste1)):
             if liste1[i]!=liste2[i]:
                 anagrammes=False
+    '''
     # On aurait aussi pu créer une fonction pour trier les deux listes,
     # cela aurait évité d'écrire deux fois le même code.
 
