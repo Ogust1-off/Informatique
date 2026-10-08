@@ -39,7 +39,7 @@
 		- [3.2 Tri par insertion](#seq3-3-2)
 		- [3.3 Tri à bulles (Ajout personnel)](#seq3-3-3)
 - [Séquence 4 - Fonctions et algorithmique](#seq4)
-	- [1. Ecriture de fonctions](#seq4-1)
+	- [1. Écriture de fonctions](#seq4-1)
 		- [1.1 Définition et syntaxe](#seq4-1-1)
 		- [1.2 Paramètres et renvois](#seq4-1-2)
 		- [1.3 Documentation](#seq4-1-3)
@@ -538,7 +538,7 @@ print(L)
 Une compréhension de liste permet de créer une liste à partir d'un itérable. 
 
 **Génération de nombres aléatoires :**
-En Python, on utilise la librairie `random`
+En Python, on utilise la bibliothèque [plus d'infos ici](#seq4-1_4)  `random`
 Pour utiliser le module `random` :
 ```python
 import random
@@ -977,7 +977,7 @@ print(maxi)
 ```python
 L=[21, 50.1, 10.12, 3.9, 31, 5, 2.0, 1.2, 400, 3.2]
 
-mini=L[0] # On dit que par defaut le plus petit terme de la liste est le 1er
+mini=L[0] # On dit que par défaut le plus petit terme de la liste est le 1er
 
 for i in range(len(L)):
     if mini>L[i]: # Si un terme de la liste est plus petit que mini actuel, mini prend la valeur trouvée
@@ -994,7 +994,7 @@ import math
 P = [[1, 7], [4, 2], [9, 5], [3, 3], [8, 8]]
 
 dmin=math.sqrt((P[0][0]-P[1][0])**2+(P[0][1]-P[1][1])**2) # Par défaut la distance minimale est entre le 1er et le 2nd point.
-# On peut aussi utiliser la puissance 1/2 si on ne connait pas la librairie math (**(1/2))
+# On peut aussi utiliser la puissance 1/2 si on ne connait pas la bibliothèque math (**(1/2))
 point1=0
 point2=1
 print(dmin)
@@ -1017,7 +1017,7 @@ print(f"Les points {P[point1]}(l'indice {point1}) et {P[point2]}(l'indice {point
 - `sorted()`: trie une liste dans l'ordre croissant sans modifier l'ordre original
 - `.sort()`: trie directement la liste originale dans l'ordre croissant
 - `reverse=True`: permet de trier dans l'ordre décroissant
-Note personnelle : lorsqu'on mélange des chiffres, des lettres et des symboles, l'ordre croissant correspond à l'ordre Unicode des caractères, similaire à l'ordre ASCII.
+Note personnelle : lorsqu'on mélange des chiffres, des lettres et des symboles, l'ordre croissant correspond à l'ordre Unicode des caractères, similaire à celui de l'ASCII.
 
 ```python
 L=[4,0,12,56.8,22.1,98.12,89,127,12,400]
@@ -1131,7 +1131,7 @@ print(L)
 R = [["Alice", 12], ["Bob", 17], ["Chloé", 9], ["David", 15], ["Emma", 11]]
 
 for i in range(len(R)):
-    # Recherche de la note maximal:
+    # Recherche de la note maximale:
     noteMax=0
     for j in range(i,len(R)):
         if noteMax<R[j][1]:
@@ -1481,7 +1481,7 @@ print(L)
 <a id="seq4"></a>
 # Séquence 4 — Fonctions et algorithmique
 <a id="seq4-1"></a>
-## 1. Ecriture de fonctions
+## 1. Écriture de fonctions
 <a id="seq4-1-1"></a>
 ### 1.1 Définition et syntaxe
 
@@ -1500,7 +1500,7 @@ La variable `r` prend en mémoire ce que la fonction `fonction` retourne.
 > 1) `return` ≠ `print`
 > 2) paramètres ≠ arguments
 
-**Exercice :** Crée un fonction qui retourne: $f(x)=\frac{x^2+2x-4}{\sqrt{x-3}}$
+**Exercice :** Crée une fonction qui retourne: $f(x)=\frac{x^2+2x-4}{\sqrt{x-3}}$
 ```python
 x=int(input("Votre valeur de x: "))
 def f(x):
@@ -1540,7 +1540,7 @@ a1, ... , am = fonction(p1, ... , pn)
 ```
 
 > **Remarque :**
-> 1) Une fonction peut ne pas avoir de paramètres (`f()`) par exemple `.sort()`,`.copy()`
+> 1) Une fonction peut ne pas avoir de paramètres (`f()`) par exemple `.sort()`,`.copy()` (qui en réalité sont des méthodes).
 > 2) Une fonction peut ne rien renvoyer par exemple:
 > ```python
 > def hello():
@@ -1548,7 +1548,7 @@ a1, ... , am = fonction(p1, ... , pn)
 > hello()
 >
 > # RETOURNE : Hello World!
-> # Mais la fonction hello ne retourne rien.
+> # Mais la fonction hello ne retourne rien (None).
 > ```
 
 **Exercice :** Soit $p(x)=ax^2+bx+c , (a,b,c)\in\mathbb{R}^3$ on veut avoir x quand a=-1, b=-2 et c=5 pour $p(x)=0$:
@@ -1606,7 +1606,7 @@ On peut citer comme exemple courant de bibliothèque `random` ou `math` que l'on
 > import random
 > # import ...
 > 
-> # Puis seulement ensuite de reste du code
+> # Puis seulement ensuite de reste du code.
 > ```
 
 2) Pour utiliser les fonctions de la bibliothèque importée on utilise la syntaxe suivante :
