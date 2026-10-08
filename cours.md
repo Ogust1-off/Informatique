@@ -38,6 +38,8 @@
 		- [3.1 Tri par sélection](#seq3-3-1)
 		- [3.2 Tri par insertion](#seq3-3-2)
 		- [3.3 Tri à bulles (Ajout personnel)](#seq3-3-3)
+- [Séquence 4 - ](#seq4)
+	- [1. ](#seq4-1)
 
 
 <a id="seq1"></a>
@@ -863,6 +865,42 @@ else:
 >
 > Les positions sont définies par `[i][j]`. Dans les calculs, on utilise `matrice1[i][k] * matrice2[k][j]`, où `k` permet de parcourir les éléments nécessaires au calcul.
 
+*Autre version avec une fonction (pas encore vue a ce stade du cours) qui permet de crée les matrices 1 et B :*
+```python
+def matrixcreator(m,n,letter):
+    matrice=[]
+    for i in range(m):
+            ligne=[]
+            for j in range(n):
+                ligne.append(int(input(f"Saisir le terme {i+1},{j+1} de la matrice {letter}: ")))
+            matrice.append(ligne)
+    print(f"\nVotre matrice {letter} est : {matrice}\n")
+    return(matrice)
+
+m1=int(input("Saisir la dimension m de la matrice A: "))
+n1=int(input("Saisir la dimension n de la matrice A: "))
+m2=int(input("Saisir la dimension m de la matrice B: "))
+n2=int(input("Saisir la dimension n de la matrice B: "))
+
+if n1!=m2:
+    print("Le produit de votre matrice est impossible")
+else:
+    matrice1=matrixcreator(m1,n1,"A")
+    matrice2=matrixcreator(m2,n2,"B")
+    matrice3=[]
+
+    for i in range(m1): # Parcourt les lignes de la matrice A (on descend d'une ligne)
+        ligne=[]
+        for j in range(n2): # Parcourt les colonnes de la matrice B (on avance horizontalement)
+            calcule=0
+            for k in range(n1): # Parcourt les cases de la ligne de A et de la colonne de B
+                calcule+=matrice1[i][k]*matrice2[k][j]
+            ligne.append(calcule)
+        matrice3.append(ligne)
+
+    print(f"\nLe produit de {matrice1} par {matrice2} donne \n{matrice3}")
+```
+
 Exemple d'usage de `print()` avec les listes de listes:
 ```python
 L=[1,2,[3,4]]
@@ -1427,4 +1465,7 @@ print(L)
 # RETOURNE : [1.2, 2.0, 3.2, 3.9, 5, 10.12, 21, 31, 50.1, 400]
 ```
 
-## A suivre
+<a id="seq4"></a>
+# Séquence 4 — xxx
+<a id="seq4-1"></a>
+## 1. xxx
