@@ -41,6 +41,9 @@
 - [Séquence 4 - Fonctions et algorithmique](#seq4)
 	- [1. Ecriture de fonctions](#seq4-1)
 		- [1.1 Définition et syntaxe](#seq4-1-1)
+		- [1.2 Paramètres et renvois](#seq4-1-2)
+		- [1.3 Documentation](#seq4-1-3)
+		- [1.4 Bibliothèques](#seq4-1-4)
 
 
 <a id="seq1"></a>
@@ -1014,6 +1017,7 @@ print(f"Les points {P[point1]}(l'indice {point1}) et {P[point2]}(l'indice {point
 - `sorted()`: trie une liste dans l'ordre croissant sans modifier l'ordre original
 - `.sort()`: trie directement la liste originale dans l'ordre croissant
 - `reverse=True`: permet de trier dans l'ordre décroissant
+Note personnelle : l'ordre croissant est celui de la table ASCII
 
 ```python
 L=[4,0,12,56.8,22.1,98.12,89,127,12,400]
@@ -1535,7 +1539,10 @@ a1, ... , am = fonction(p1, ... , pn)
 > ```pyton
 > def hello():
 >     print("Hello World!")
->     return None
+> hello()
+>
+> # RETOURNE : Hello World!
+> # Mais la fonction hello ne retourne rien.
 > ```
 
 **Exercice :** Soit $p(x)=ax^2+bx+c , (a,b,c)\in\mathbb{R}^3$ on veut avoir x quand a=-1, b=-2 et c=5 pour $p(x)=0$:
@@ -1558,11 +1565,10 @@ print(racines(-1,-2,5))
 <a id="seq4-1-3"></a>
 ### 1.3 Documentation
 
-Manière d'expliquer ce que fait une fonction:
-```python
+Il est important d'expliquer ce que fait une fonction. Voilà une manière de le faire :
 def fonction(p1, ... , pn):
     """
-    fonction: descriptipon
+    fonction: description de ce que la fonction fait.
     ----------------------
     Entrée :
         p1 : info
@@ -1580,28 +1586,46 @@ def fonction(p1, ... , pn):
 <a id="seq4-1-4"></a>
 ### 1.4 Bibliothèques
 
-`import nomBibliotheque`
-Par exemple :
-`import random`, `import math`
-
-Pour utiliser la fonction `fonction` de la bibliothèque `nomBibliotheque`:
-`nomBibliotheque.fonction()`
-
-Et pour renommer cette bibliothèque `nomBibliotheque` en `bib` :
+Pour utiliser une bibliothèque, il faut d'abord l'importer. Pour cela on utilise: `import` en suivant la syntaxe :
 ```python
-import nomBibliotheque as bib
-bib.fonction()
+import nomBibliotheque
+```
+On peut citer comme exemple courant de bibliothèque `random` ou `math` que l'on utilise comme ceci : `import random`, `import math`
+Pour que l'on puisse utiliser les fonctions associer à ces bibliothèques il est important de faire l'import à tout debut du code:
+```python
+import math
+import random
+# import ...
+
+# Puis seulement ensuite de reste du code
 ```
 
-Pour importer uniquement une fonction `fonction` de la bibliothèque `nomBibliotheque`:
+Pour utiliser les fonctions de la bibliothèque importer on utilise la syntaxe suivant :
 ```python
-from nomBibliotheque import fonction
-fonction()
+nomBibliotheque.nomfonction()
+```
+Qui permet ici d'utiliser la fonction fonction `nomfonction` de la bibliothèque `nomBibliotheque`.
+
+On peut aussi renommer cette bibliothèque pour faciliter son usage dans la suite du code. Ici `nomBibliotheque` en `nouveauNom` :
+```python
+import nomBibliotheque as nouveauNom
+```
+Pour l'utiliser on utilise donc le nouveau nom donner a la fonction suivit de la fonction appeler en suivant la syntaxe suivante :
+```python
+nouveauNom.nomfonction()
 ```
 
-Pour renommer cette unique fonction importer:
+On peut aussi importer uniquement une fonction d'un bibliothèque.
+Ici on importe la fonction `fonctionImporter` de la bibliothèque `nomBibliotheque`:
 ```python
-from nomBibliotheque import fonction
+from nomBibliotheque import fonctionImporter
+```
+Pour l'utiliser on utilise donc son nom : `fonctionImporter()`
+
+Enfin on peut aussi renommer cette unique fonction importer pour faciliter son usage dans le code :
+Ici on importe `fonctionImporter` depuis `nomBibliotheque` et on transforme le nom de la fonction importer en `fct`:
+```python
+from nomBibliotheque import fonctionImporter
     as fct
-fct()
 ```
+Pour l'utiliser on utilise donc son nouveau nom : `fct()`.
