@@ -1485,6 +1485,8 @@ print(L)
 <a id="seq4-1-1"></a>
 ### 1.1 Définition et syntaxe
 
+En Python, comme dans les autres languages, l'usage de fonctions est fortement recommandé pour améliorer la lisibilité d'un code. Cela permet entre autres d'éviter de réécrire plusieurs fois un même code quand il depend uniquement d'un changement de variable (cf Programme du produit matriciel [Seq3 §1.4](#seq3-1-4)) (Ajout personnel)
+
 On utilise `def` pour créer une fonction
 ```python
 def fonction(parametres):
@@ -1500,7 +1502,7 @@ La variable `r` contient ce que la fonction `fonction` retourne.
 > 1) `return` ≠ `print`
 > 2) paramètres ≠ arguments
 
-**Exercice :** Crée une fonction qui retourne : $f(x)=\frac{x^2+2x-4}{\sqrt{x-3}}$
+**Exercice :** Crée une fonction qui retourne l'image de la fonction : $f(x)=\frac{x^2+2x-4}{\sqrt{x-3}}$
 ```python
 x=int(input("Votre valeur de x: "))
 def f(x):
