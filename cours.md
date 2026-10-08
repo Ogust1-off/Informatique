@@ -1566,6 +1566,7 @@ print(racines(-1,-2,5))
 ### 1.3 Documentation
 
 Il est important d'expliquer ce que fait une fonction. Voilà une manière de le faire :
+```python
 def fonction(p1, ... , pn):
     """
     fonction: description de ce que la fonction fait.
