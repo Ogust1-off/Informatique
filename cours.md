@@ -867,6 +867,7 @@ else:
 
 *Autre version avec une fonction (pas encore vue a ce stade du cours) qui permet de crée les matrices A et B :*
 <details>
+<summary>*Autre version avec une fonction (pas encore vue a ce stade du cours) qui permet de crée les matrices A et B :*</summary>
 ```python
 def matrixcreator(m,n,letter):
     matrice=[]
