@@ -1485,7 +1485,7 @@ print(L)
 <a id="seq4-1-1"></a>
 ### 1.1 Définition et syntaxe
 
-En Python, comme dans les autres languages, l'usage de fonctions est fortement recommandé pour améliorer la lisibilité d'un code. Cela permet entre autres d'éviter de réécrire plusieurs fois un même code quand il depend uniquement d'un changement de variable (cf Programme du produit matriciel [Seq3 §1.4](#seq3-1-4)) (Ajout personnel)
+En Python, comme dans les autres langages, l'usage de fonctions est fortement recommandé pour améliorer la lisibilité d'un code. Cela permet entre autres d'éviter de réécrire plusieurs fois un même code quand il dépend uniquement d'un changement de variable (cf Programme du produit matriciel [Seq3 §1.4](#seq3-1-4)) (Ajout personnel)
 
 On utilise `def` pour créer une fonction
 ```python
