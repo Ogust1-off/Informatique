@@ -1591,7 +1591,8 @@ Pour utiliser une bibliothèque, il faut d'abord l'importer. Pour cela on utilis
 ```python
 import nomBibliotheque
 ```
-On peut citer comme exemple courant de bibliothèque `random` ou `math` que l'on utilise comme ceci : `import random`, `import math`
+On peut citer comme exemple courant de bibliothèque `random` ou `math` que l'on utilise comme ceci : `import random`, `import math`.
+
 Pour que l'on puisse utiliser les fonctions associer à ces bibliothèques il est important de faire l'import à tout debut du code:
 ```python
 import math
