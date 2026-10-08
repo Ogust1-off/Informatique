@@ -994,7 +994,7 @@ import math
 P = [[1, 7], [4, 2], [9, 5], [3, 3], [8, 8]]
 
 dmin=math.sqrt((P[0][0]-P[1][0])**2+(P[0][1]-P[1][1])**2) # Par défaut la distance minimale est entre le 1er et le 2nd point.
-# On peut aussi utiliser la puissance 1/2 si on ne connait pas la bibliothèque math (**(1/2))
+# On peut aussi utiliser la puissance 1/2 si on ne connaît pas la bibliothèque math (**(1/2))
 point1=0
 point2=1
 print(dmin)
