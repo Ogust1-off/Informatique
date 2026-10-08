@@ -538,7 +538,7 @@ print(L)
 Une compréhension de liste permet de créer une liste à partir d'un itérable. 
 
 **Génération de nombres aléatoires :**
-En Python, on utilise la bibliothèque [(plus d'infos sur les bibliothèques)](#seq4-1-4)  `random`
+En Python, on utilise la bibliothèque `random` [(plus d'infos sur les bibliothèques)](#seq4-1-4)
 Pour utiliser le module `random` :
 ```python
 import random
