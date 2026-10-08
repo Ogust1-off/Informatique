@@ -865,7 +865,8 @@ else:
 >
 > Les positions sont définies par `[i][j]`. Dans les calculs, on utilise `matrice1[i][k] * matrice2[k][j]`, où `k` permet de parcourir les éléments nécessaires au calcul.
 
-*Autre version avec une fonction (pas encore vue a ce stade du cours) qui permet de crée les matrices 1 et B :*
+*Autre version avec une fonction (pas encore vue a ce stade du cours) qui permet de crée les matrices A et B :*
+<details>
 ```python
 def matrixcreator(m,n,letter):
     matrice=[]
@@ -900,6 +901,7 @@ else:
 
     print(f"\nLe produit de {matrice1} par {matrice2} donne \n{matrice3}")
 ```
+</details
 
 Exemple d'usage de `print()` avec les listes de listes:
 ```python
