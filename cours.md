@@ -901,7 +901,7 @@ else:
 
     print(f"\nLe produit de {matrice1} par {matrice2} donne \n{matrice3}")
 ```
-</details
+</details>
 
 Exemple d'usage de `print()` avec les listes de listes:
 ```python
