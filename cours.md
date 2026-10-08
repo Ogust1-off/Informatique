@@ -96,7 +96,7 @@ sur plusieurs lignes
 ### 1.3 Entrée/Sortie
 Affichage : `print()`
 
-Multi-affichage:
+Multi-affichage :
 ```python
 a = 1
 b = 2
@@ -272,7 +272,7 @@ print(cond_1, cond_2)
 ```
 **Exercice :** Demander l'année de naissance de l'utilisateur et déterminer s'il est majeur (`True`) ou non (`False`).
 ```python
-a=int(input("Année de naissance: "))
+a=int(input("Année de naissance : "))
 calc=2026-a #Pour l'année 2026
 cond=calc>=18
 print(f"Majeur? {cond}")
@@ -293,7 +293,7 @@ print(cond)
 
 **Exercice :** Donner la génération de la personne en fonction de son année de naissance.
 ```python
-a=int(input("Année de naissance: "))
+a=int(input("Année de naissance : "))
 cond1=a>=1965 and a<=1980
 cond2=a>=1981 and a<=1996
 cond3=a>=1997 and a<=2010
@@ -315,7 +315,7 @@ if condition:
 
 **Exercice :** Re-test de majorité
 ```python
-age=2026-int(input("Année de naissance: "))
+age=2026-int(input("Année de naissance : "))
 if age<18:
     print("Mineur")
 if age>=18:
@@ -332,7 +332,7 @@ else:
  
 **Exercice :** paire ou impaire
 ```python
-number=int(input("Choisir un nombre: "))
+number=int(input("Choisir un nombre : "))
 if number%2==0:
     print(f"Le nombre {number} est pair")
 else:
@@ -364,7 +364,7 @@ elif nombre%7==0:
 else:
     print(f"{nombre} n'est pas divisible par 2, 3, 5, 7")
 ```
-> **Note personnelle :** si on choisit `6` on remarque que le programme affiche uniquement que `6 est divisible par 2` et non par 3. En effet quand le programme trouve une condition qui est vérifiée, il ne vérifie pas les autres. Autrement dit pour 6 il s'arrête à divisible par 2. Pour cela il faudrait utiliser des `if` a la place des `elif` pour vérifier chaque condition. Il faudrait aussi remplacer/supprimer le `else` car il se trouverait à la fin de la dernière boucle.
+> **Note personnelle :** si on choisit `6` on remarque que le programme affiche uniquement que `6 est divisible par 2` et non par 3. En effet quand le programme trouve une condition qui est vérifiée, il ne vérifie pas les autres. Autrement dit pour 6 il s'arrête à divisible par 2. Pour cela il faudrait utiliser des `if` à la place des `elif` pour vérifier chaque condition. Il faudrait aussi remplacer/supprimer le `else` car il se trouverait à la fin de la dernière boucle.
 
 <a id="seq2-2-4"></a>
 ### 2.4 Instruction match-case
@@ -398,7 +398,7 @@ On peut aussi utiliser `case _:` qui agit un peu comme le `else` (Ajout personne
 **Exercice :** Programme qui demande quelle opération est associée au symbole `**` en Python.
 ```python
 print("Dans le langage Python, quelle opération est associée au symbole **?\nA. division\nB. multiplication\nC. puissance\nD. division euclidienne\n")
-rep=input("Saisir la lettre de votre réponse: ")
+rep=input("Saisir la lettre de votre réponse : ")
 match rep:
     case "A":
         print("FAUX")
@@ -431,7 +431,7 @@ for i in range(4):
 - `range(m, n)`: entier de m à n-1
 - `range(m, n, p)`: on va de l'entier `m` à n-1 avec un pas de `p` (Ajout personnel)
 
-**Exercices :** Calculer la somme: $\sum_{k=1}^{2026} \frac{k}{2}$ et le produit: $\prod_{k=1}^{20} k^2$
+**Exercices :** Calculer la somme : $\sum_{k=1}^{2026} \frac{k}{2}$ et le produit: $\prod_{k=1}^{20} k^2$
 ```python
 somme=0
 for i in range(1,2027):
@@ -490,8 +490,8 @@ while i < 4:
 
 **Exercice :** Calcul du PGCD
 ```python
-dividende=int(input("Saisir un dividende: "))
-diviseur=int(input("Saisir un diviseur: "))
+dividende=int(input("Saisir un dividende : "))
+diviseur=int(input("Saisir un diviseur : "))
 a=dividende
 b=diviseur
 r=dividende
@@ -686,7 +686,7 @@ print(L)
 
 **Exercice :** Testeur de palindrome
 ```python
-mot=input("Saisir un mot en minuscule: ")
+mot=input("Saisir un mot en minuscule : ")
 # On pourrait utiliser .lower pour mettre le texte dans la même casse.
 listeMot = []
 for i in mot:
@@ -913,12 +913,12 @@ Exemple d'usage de `print()` avec les listes de listes:
 ```python
 L=[1,2,[3,4]]
 print(L[2][0])
-# RETOURNE: 3
+# RETOURNE : 3
 ```
 ```python
 L=[1,2,[3,4]]
 print(L[:2])
-# RETOURNE: [1, 2]
+# RETOURNE : [1, 2]
 ```
 ```python
 L=[1,2,[3,4]]
@@ -1126,12 +1126,12 @@ print(L)
 # RETOURNE : [1.2, 2.0, 3.2, 3.9, 5, 10.12, 21, 31, 50.1, 400]
 ```
 
-**Exercice :** Soit la liste: `R = [["Alice", 12], ["Bob", 17], ["Chloé", 9], ["David", 15], ["Emma", 11]]` donnant les notes sous la forme `[nom, note]` obtenue par une classe à un examen. À  l'aide de l'algorithme du tri par sélection, trier la liste `R` dans l'ordre décroissant des notes et afficher le classement.
+**Exercice :** Soit la liste : `R = [["Alice", 12], ["Bob", 17], ["Chloé", 9], ["David", 15], ["Emma", 11]]` donnant les notes sous la forme `[nom, note]` obtenue par une classe à un examen. À  l'aide de l'algorithme du tri par sélection, trier la liste `R` dans l'ordre décroissant des notes et afficher le classement.
 ```python
 R = [["Alice", 12], ["Bob", 17], ["Chloé", 9], ["David", 15], ["Emma", 11]]
 
 for i in range(len(R)):
-    # Recherche de la note maximale:
+    # Recherche de la note maximale :
     noteMax=0
     for j in range(i,len(R)):
         if noteMax<R[j][1]:
@@ -1149,7 +1149,7 @@ print(R)
 R = [["Alice", 12], ["Bob", 17], ["Chloé", 9], ["David", 15], ["Emma", 11]]
 
 for i in range(len(R)):
-    # Recherche de la note minimale:
+    # Recherche de la note minimale :
     noteMin=R[i][1]
     indiceMin=i
     for j in range(i,len(R)):
@@ -1494,13 +1494,13 @@ def fonction(parametres):
 ```python
 r=fonction(parametres)
 ```
-La variable `r` prend en mémoire ce que la fonction `fonction` retourne.
+La variable `r` contient ce que la fonction `fonction` retourne.
 
 > **Remarque :**
 > 1) `return` ≠ `print`
 > 2) paramètres ≠ arguments
 
-**Exercice :** Crée une fonction qui retourne: $f(x)=\frac{x^2+2x-4}{\sqrt{x-3}}$
+**Exercice :** Crée une fonction qui retourne : $f(x)=\frac{x^2+2x-4}{\sqrt{x-3}}$
 ```python
 x=int(input("Votre valeur de x: "))
 def f(x):
@@ -1516,7 +1516,7 @@ type(f)
 # RETOURNE : <class 'function'>
 ```
 
-On peut donc écrire:
+On peut donc écrire :
 ```python
 def f(x):
     # instructions
@@ -1541,7 +1541,7 @@ a1, ... , am = fonction(p1, ... , pn)
 
 > **Remarque :**
 > 1) Une fonction peut ne pas avoir de paramètres (`f()`) par exemple `.sort()`,`.copy()` (qui en réalité sont des méthodes).
-> 2) Une fonction peut ne rien renvoyer par exemple:
+> 2) Une fonction peut ne rien renvoyer par exemple :
 > ```python
 > def hello():
 >     print("Hello World!")
@@ -1593,7 +1593,7 @@ def fonction(p1, ... , pn):
 <a id="seq4-1-4"></a>
 ### 1.4 Bibliothèques
 
-1) Pour utiliser un module ou une bibliothèque, il faut d'abord l'importer. Pour cela on utilise: `import` en suivant la syntaxe :
+1) Pour utiliser un module ou une bibliothèque, il faut d'abord l'importer. Pour cela on utilise : `import` en suivant la syntaxe :
 ```python
 import nomBibliotheque
 ```
@@ -1606,7 +1606,7 @@ On peut citer comme exemple courant de bibliothèque `random` ou `math` que l'on
 > import random
 > # import ...
 > 
-> # Puis seulement ensuite de reste du code.
+> # Puis seulement ensuite le reste du code.
 > ```
 
 2) Pour utiliser les fonctions de la bibliothèque importée on utilise la syntaxe suivante :
