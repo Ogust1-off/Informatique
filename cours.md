@@ -1555,3 +1555,53 @@ print(racines(-1,-2,5))
 # RETOURNE : (1.4494897427831779, -3.449489742783178)
 ```
 
+<a id="seq4-1-3"></a>
+### 1.3 Documentation
+
+Manière d'expliquer ce que fait une fonction:
+```python
+def fonction(p1, ... , pn):
+    """
+    fonction: descriptipon
+    ----------------------
+    Entrée :
+        p1 : info
+        ...
+        pn : info
+    ----------------------
+    Sortie : info
+        r1 : info
+        ...
+        rm : info
+    """
+    return r1, ... , rm
+```
+
+<a id="seq4-1-4"></a>
+### 1.4 Bibliothèques
+
+`import nomBibliotheque`
+Par exemple :
+`import random`, `import math`
+
+Pour utiliser la fonction `fonction` de la bibliothèque `nomBibliotheque`:
+`nomBibliotheque.fonction()`
+
+Et pour renommer cette bibliothèque `nomBibliotheque` en `bib` :
+```python
+import nomBibliotheque as bib
+bib.fonction()
+```
+
+Pour importer uniquement une fonction `fonction` de la bibliothèque `nomBibliotheque`:
+```python
+from nomBibliotheque import fonction
+fonction()
+```
+
+Pour renommer cette unique fonction importer:
+```python
+from nomBibliotheque import fonction
+    as fct
+fct()
+```
