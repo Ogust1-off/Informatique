@@ -876,12 +876,12 @@ else:
 def matrixcreator(m,n,letter):
     matrice=[]
     for i in range(m):
-            ligne=[]
-            for j in range(n):
-                ligne.append(int(input(f"Saisir le terme {i+1},{j+1} de la matrice {letter}: ")))
-            matrice.append(ligne)
+        ligne=[]
+        for j in range(n):
+            ligne.append(int(input(f"Saisir le terme {i+1},{j+1} de la matrice {letter}: ")))
+        matrice.append(ligne)
     print(f"\nVotre matrice {letter} est : {matrice}\n")
-    return(matrice)
+    return matrice
 
 m1=int(input("Saisir la dimension m de la matrice A: "))
 n1=int(input("Saisir la dimension n de la matrice A: "))
@@ -1017,7 +1017,7 @@ print(f"Les points {P[point1]}(l'indice {point1}) et {P[point2]}(l'indice {point
 - `sorted()`: trie une liste dans l'ordre croissant sans modifier l'ordre original
 - `.sort()`: trie directement la liste originale dans l'ordre croissant
 - `reverse=True`: permet de trier dans l'ordre décroissant
-Note personnelle : l'ordre croissant est celui de la table ASCII
+Note personnelle : lorsqu'on mélange des chiffres, des lettres et des symboles, l'ordre croissant correspond à l'ordre Unicode des caractères, similaire à l'ordre ASCII.
 
 ```python
 L=[4,0,12,56.8,22.1,98.12,89,127,12,400]
@@ -1485,7 +1485,7 @@ print(L)
 <a id="seq4-1-1"></a>
 ### 1.1 Définition et syntaxe
 
-On utilise `def` pour crée une fonction
+On utilise `def` pour créer une fonction
 ```python
 def fonction(parametres):
     instructions
@@ -1494,7 +1494,7 @@ def fonction(parametres):
 ```python
 r=fonction(parametres)
 ```
-La variable `r` prend en mémoires ce que la fonction `fonction` retourne.
+La variable `r` prend en mémoire ce que la fonction `fonction` retourne.
 
 > **Remarque :**
 > 1) `return` ≠ `print`
@@ -1503,13 +1503,18 @@ La variable `r` prend en mémoires ce que la fonction `fonction` retourne.
 **Exercice :** Crée un fonction qui retourne: $f(x)=\frac{x^2+2x-4}{\sqrt{x-3}}$
 ```python
 x=int(input("Votre valeur de x: "))
-def f (x):
-    resultat=(x**2+2*x-4)/((x-3)**(1/2))
+def f(x):
+    resultat = (x**2+2*x-4)/((x-3)**(1/2))
     return resultat
 print(f(x))
 ```
 
-Le type d'une fonction est : `function`
+Le type d'une fonction est `function`.
+Donc : ```python
+type(f)
+# RETOURNE : <class 'function'>
+```
+
 On peut donc écrire:
 ```python
 def f(x):
@@ -1550,13 +1555,13 @@ a1, ... , am = fonction(p1, ... , pn)
 def racines(a,b,c):
     delta=b**2-4*a*c
     if delta>0:
-        x1=(-b-delta**(1/2))/2*a
-        x2=(-b+delta**(1/2))/2*a
+        x1=(-b-delta**(1/2))/(2*a)
+        x2=(-b+delta**(1/2))/(2*a)
         return x1,x2
     elif delta==0:
-        return (-b)/2*a
+        return (-b)/(2*a)
     else:
-        return "Pas de racine réel"
+        return "Aucune racine réelle"
     
 print(racines(-1,-2,5))
 # RETOURNE : (1.4494897427831779, -3.449489742783178)
@@ -1565,7 +1570,7 @@ print(racines(-1,-2,5))
 <a id="seq4-1-3"></a>
 ### 1.3 Documentation
 
-Il est important d'expliquer ce que fait une fonction. Voilà une manière de le faire :
+Il est important d'expliquer ce que fait une fonction. Voici une manière de le faire :
 ```python
 def fonction(p1, ... , pn):
     """
@@ -1587,14 +1592,14 @@ def fonction(p1, ... , pn):
 <a id="seq4-1-4"></a>
 ### 1.4 Bibliothèques
 
-1) Pour utiliser une bibliothèque, il faut d'abord l'importer. Pour cela on utilise: `import` en suivant la syntaxe :
+1) Pour utiliser un module ou une bibliothèque, il faut d'abord l'importer. Pour cela on utilise: `import` en suivant la syntaxe :
 ```python
 import nomBibliotheque
 ```
 On peut citer comme exemple courant de bibliothèque `random` ou `math` que l'on utilise comme ceci : `import random`, `import math`.
 
 > **Remarque :**
-> Pour que l'on puisse utiliser les fonctions associer à ces bibliothèques il est important de faire l'import à tout debut du code:
+> Pour que l'on puisse utiliser les fonctions associées à ces bibliothèques il est important de faire l'import avant l'usage de ses fonctions. On place donc généralement les imports au début du code.
 > ```python
 > import math
 > import random
@@ -1603,7 +1608,7 @@ On peut citer comme exemple courant de bibliothèque `random` ou `math` que l'on
 > # Puis seulement ensuite de reste du code
 > ```
 
-2) Pour utiliser les fonctions de la bibliothèque importer on utilise la syntaxe suivant :
+2) Pour utiliser les fonctions de la bibliothèque importée on utilise la syntaxe suivante :
 ```python
 nomBibliotheque.nomfonction()
 ```
@@ -1613,22 +1618,21 @@ Qui permet ici d'utiliser la fonction fonction `nomfonction` de la bibliothèque
 ```python
 import nomBibliotheque as nouveauNom
 ```
-Pour l'utiliser on utilise donc le nouveau nom donner a la fonction suivit de la fonction appeler en suivant la syntaxe suivante :
+Pour l'utiliser on utilise donc le nouveau nom donné à la fonction suivit de la fonction appeler en suivant la syntaxe suivante :
 ```python
 nouveauNom.nomfonction()
 ```
 
-4) On peut aussi importer uniquement une fonction d'un bibliothèque.
+4) On peut aussi importer uniquement une fonction d'une bibliothèque.
 Ici on importe la fonction `fonctionImporter` de la bibliothèque `nomBibliotheque`:
 ```python
 from nomBibliotheque import fonctionImporter
 ```
 Pour l'utiliser on utilise donc son nom : `fonctionImporter()`
 
-5) Enfin on peut aussi renommer cette unique fonction importer pour faciliter son usage dans le code :
-Ici on importe `fonctionImporter` depuis `nomBibliotheque` et on transforme le nom de la fonction importer en `fct`:
+5) Enfin, on peut aussi renommer cette fonction importée pour faciliter son utilisation dans le code :
+Ici, on importe `fonctionImporter` depuis `nomBibliotheque` et on renomme la fonction importée en `fct` :
 ```python
-from nomBibliotheque import fonctionImporter
-    as fct
+from nomBibliotheque import fonctionImporter as fct
 ```
 Pour l'utiliser on utilise donc son nouveau nom : `fct()`.
