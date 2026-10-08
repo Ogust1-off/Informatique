@@ -38,7 +38,7 @@
 		- [3.1 Tri par sélection](#seq3-3-1)
 		- [3.2 Tri par insertion](#seq3-3-2)
 		- [3.3 Tri à bulles (Ajout personnel)](#seq3-3-3)
-- [Séquence 4 - ](#seq4)
+- [Séquence 4 - Fonctions et algorithmique](#seq4)
 	- [1. ](#seq4-1)
 
 
@@ -1474,6 +1474,31 @@ print(L)
 ```
 
 <a id="seq4"></a>
-# Séquence 4 — xxx
+# Séquence 4 — Fonctions et algorithmique
 <a id="seq4-1"></a>
-## 1. xxx
+## 1. Ecriture de fonctions
+<a id="seq4-1-1"></a>
+### 1.1 Définition et syntaxe
+On utilise `def` pour crée une fonction
+```python
+def fonction(parametres):
+    instructions
+    return resultats
+```
+```python
+r=fonction(parametres)
+```
+La variable `r` prend en mémoires ce que la fonction `fonction` retourne.
+
+> **Remarque :**
+> 1) `return` ≠ `print`
+> 2) paramètres ≠ arguments
+
+**Exercice :** Crée un fonction qui retourne: $f(x)=(x^2+2x-4)/(\sqrt{x-3}$
+```python
+x=int(input("Votre valeur de x: "))
+def f (x):
+    resultat=(x**2+2*x-4)/((x-3)**(1/2))
+    return resultat
+print(f(x))
+``
