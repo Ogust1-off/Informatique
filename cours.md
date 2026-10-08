@@ -1587,28 +1587,29 @@ def fonction(p1, ... , pn):
 <a id="seq4-1-4"></a>
 ### 1.4 Bibliothèques
 
-Pour utiliser une bibliothèque, il faut d'abord l'importer. Pour cela on utilise: `import` en suivant la syntaxe :
+1) Pour utiliser une bibliothèque, il faut d'abord l'importer. Pour cela on utilise: `import` en suivant la syntaxe :
 ```python
 import nomBibliotheque
 ```
 On peut citer comme exemple courant de bibliothèque `random` ou `math` que l'on utilise comme ceci : `import random`, `import math`.
 
-Pour que l'on puisse utiliser les fonctions associer à ces bibliothèques il est important de faire l'import à tout debut du code:
-```python
-import math
-import random
-# import ...
+> **Remarque :**
+> Pour que l'on puisse utiliser les fonctions associer à ces bibliothèques il est important de faire l'import à tout debut du code:
+> ```python
+> import math
+> import random
+> # import ...
+> 
+> # Puis seulement ensuite de reste du code
+> ```
 
-# Puis seulement ensuite de reste du code
-```
-
-Pour utiliser les fonctions de la bibliothèque importer on utilise la syntaxe suivant :
+2) Pour utiliser les fonctions de la bibliothèque importer on utilise la syntaxe suivant :
 ```python
 nomBibliotheque.nomfonction()
 ```
 Qui permet ici d'utiliser la fonction fonction `nomfonction` de la bibliothèque `nomBibliotheque`.
 
-On peut aussi renommer cette bibliothèque pour faciliter son usage dans la suite du code. Ici `nomBibliotheque` en `nouveauNom` :
+3) On peut aussi renommer cette bibliothèque pour faciliter son usage dans la suite du code. Ici `nomBibliotheque` en `nouveauNom` :
 ```python
 import nomBibliotheque as nouveauNom
 ```
@@ -1617,14 +1618,14 @@ Pour l'utiliser on utilise donc le nouveau nom donner a la fonction suivit de la
 nouveauNom.nomfonction()
 ```
 
-On peut aussi importer uniquement une fonction d'un bibliothèque.
+4) On peut aussi importer uniquement une fonction d'un bibliothèque.
 Ici on importe la fonction `fonctionImporter` de la bibliothèque `nomBibliotheque`:
 ```python
 from nomBibliotheque import fonctionImporter
 ```
 Pour l'utiliser on utilise donc son nom : `fonctionImporter()`
 
-Enfin on peut aussi renommer cette unique fonction importer pour faciliter son usage dans le code :
+5) Enfin on peut aussi renommer cette unique fonction importer pour faciliter son usage dans le code :
 Ici on importe `fonctionImporter` depuis `nomBibliotheque` et on transforme le nom de la fonction importer en `fct`:
 ```python
 from nomBibliotheque import fonctionImporter
