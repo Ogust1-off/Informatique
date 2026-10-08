@@ -870,7 +870,7 @@ else:
 > Les positions sont définies par `[i][j]`. Dans les calculs, on utilise `matrice1[i][k] * matrice2[k][j]`, où `k` permet de parcourir les éléments nécessaires au calcul.
 
 <details>
-<summary> *Autre version avec une fonction (pas encore vue a ce stade du cours) qui permet de crée les matrices A et B :* </summary>
+<summary> *Autre version avec une fonction (pas encore vue a ce stade du cours) qui permet de créer les matrices A et B :* </summary>
 
 ```python
 def matrixcreator(m,n,letter):
@@ -1268,7 +1268,7 @@ else:
         liste2[j+1]=temp
     
     if liste1!=liste2:
-        anagrammes=True
+        anagrammes=False
     '''
     for i in range(len(liste1)):
             if liste1[i]!=liste2[i]:
@@ -1510,7 +1510,8 @@ print(f(x))
 ```
 
 Le type d'une fonction est `function`.
-Donc : ```python
+Donc :
+```python
 type(f)
 # RETOURNE : <class 'function'>
 ```
@@ -1541,7 +1542,7 @@ a1, ... , am = fonction(p1, ... , pn)
 > **Remarque :**
 > 1) Une fonction peut ne pas avoir de paramètres (`f()`) par exemple `.sort()`,`.copy()`
 > 2) Une fonction peut ne rien renvoyer par exemple:
-> ```pyton
+> ```python
 > def hello():
 >     print("Hello World!")
 > hello()
@@ -1612,13 +1613,13 @@ On peut citer comme exemple courant de bibliothèque `random` ou `math` que l'on
 ```python
 nomBibliotheque.nomfonction()
 ```
-Qui permet ici d'utiliser la fonction fonction `nomfonction` de la bibliothèque `nomBibliotheque`.
+Qui permet ici d'utiliser la fonction `nomfonction` de la bibliothèque `nomBibliotheque`.
 
 3) On peut aussi renommer cette bibliothèque pour faciliter son usage dans la suite du code. Ici `nomBibliotheque` en `nouveauNom` :
 ```python
 import nomBibliotheque as nouveauNom
 ```
-Pour l'utiliser on utilise donc le nouveau nom donné à la fonction suivit de la fonction appeler en suivant la syntaxe suivante :
+Pour l'utiliser on utilise donc le nouveau nom donné à la fonction, suivi de la fonction appelée en suivant la syntaxe suivante :
 ```python
 nouveauNom.nomfonction()
 ```
