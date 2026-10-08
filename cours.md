@@ -39,7 +39,8 @@
 		- [3.2 Tri par insertion](#seq3-3-2)
 		- [3.3 Tri à bulles (Ajout personnel)](#seq3-3-3)
 - [Séquence 4 - Fonctions et algorithmique](#seq4)
-	- [1. ](#seq4-1)
+	- [1. Ecriture de fonctions](#seq4-1)
+		- [1.1 Définition et syntaxe](#seq4-1-1)
 
 
 <a id="seq1"></a>
@@ -1479,6 +1480,7 @@ print(L)
 ## 1. Ecriture de fonctions
 <a id="seq4-1-1"></a>
 ### 1.1 Définition et syntaxe
+
 On utilise `def` pour crée une fonction
 ```python
 def fonction(parametres):
@@ -1501,4 +1503,55 @@ def f (x):
     resultat=(x**2+2*x-4)/((x-3)**(1/2))
     return resultat
 print(f(x))
-``
+```
+
+Le type d'une fonction est : `function`
+On peut donc écrire:
+```python
+def f(x):
+    # instructions
+    return
+def g(x):
+    # instructions
+    return
+def composition(f,g,x):
+    return f(g(x))
+```
+
+<a id="seq4-1-2"></a>
+### 1.2 Paramètres et renvois
+
+```python
+def fonction(p1, ... , pn):
+    # instructions
+    return r1, ... , rm
+
+a1, ... , am = fonction(p1, ... , pn)
+```
+
+> **Remarque :**
+> 1) Une fonction peut ne pas avoir de paramètres (`f()`) par exemple `.sort()`,`.copy()`
+> 2) Une fonction peut ne rien renvoyer par exemple:
+> ```pyton
+> def hello():
+>     print("Hello World!")
+>     return None
+> ```
+
+**Exercice :** Soit $p(x)=ax^2+bx+c , (a,b,c)\in\mathbb{R}^3$ on veut avoir x quand a=-1, b=-2 et c=5 pour $p(x)=0$:
+```python
+def racines(a,b,c):
+    delta=b**2-4*a*c
+    if delta>0:
+        x1=(-b-delta**(1/2))/2*a
+        x2=(-b+delta**(1/2))/2*a
+        return x1,x2
+    elif delta==0:
+        return (-b)/2*a
+    else:
+        return "Pas de racine réel"
+    
+print(racines(-1,-2,5))
+# RETOURNE : (1.4494897427831779, -3.449489742783178)
+```
+
