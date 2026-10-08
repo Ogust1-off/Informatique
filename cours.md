@@ -1494,7 +1494,7 @@ La variable `r` prend en mémoires ce que la fonction `fonction` retourne.
 > 1) `return` ≠ `print`
 > 2) paramètres ≠ arguments
 
-**Exercice :** Crée un fonction qui retourne: $f(x)=(x^2+2x-4)/(\sqrt{x-3}$
+**Exercice :** Crée un fonction qui retourne: $f(x)=\frac{x^2+2x-4}{\sqrt{x-3}}$
 ```python
 x=int(input("Votre valeur de x: "))
 def f (x):
