@@ -1708,7 +1708,7 @@ print(factorielle(5))
 # RETOURNE: 120
 ```
 
-** Exercice :** Soit la suite $U_{n+2}=U_{n+1}\crossU_n$ avec $U_0=2$ et $U_1=3$.
+** Exercice :** Soit la suite $U_{n+2}=U_{n+1}\times U_n$ avec $U_0=2$ et $U_1=3$.
 1) $U(n)$ -> calculer $U(5)$
 2) sommeSuite(n) )> calculer sommeSuite(5)
 ```python
