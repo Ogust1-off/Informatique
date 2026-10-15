@@ -43,7 +43,10 @@
 		- [1.1 Définition et syntaxe](#seq4-1-1)
 		- [1.2 Paramètres et renvois](#seq4-1-2)
 		- [1.3 Documentation](#seq4-1-3)
-		- [1.4 Bibliothèques](#seq4-1-4)
+	- [2. Appel de fonctions](#seq4-2)
+		- [2.1 Bibliothèques Python](#seq4-2-1)
+		- [2.2 ](#seq4-2-2)
+
 
 
 <a id="seq1"></a>
@@ -1592,8 +1595,10 @@ def fonction(p1, ... , pn):
     return r1, ... , rm
 ```
 
-<a id="seq4-1-4"></a>
-### 1.4 Bibliothèques
+<a id="seq4-2"></a>
+## 2. Appel de fonctions
+<a id="seq4-2-1"></a>
+### 2.1 Bibliothèques Python
 
 1) Pour utiliser un module ou une bibliothèque, il faut d'abord l'importer. Pour cela on utilise : `import` en suivant la syntaxe :
 ```python
@@ -1639,3 +1644,32 @@ Ici, on importe `fonctionImporter` depuis `nomBibliotheque` et on renomme la fon
 from nomBibliotheque import fonctionImporter as fct
 ```
 Pour l'utiliser on utilise donc son nouveau nom : `fct()`.
+
+Exemple de fonction courante de la bibliothèque `math`: `sqrt`, `cos`, `sin`.
+
+**Exercice :** Trouvez l'angle entre la ("grande") diagonale d'un cube et une de ses arrêtes adjacentes.
+1) produit_scalaire(x,y)
+2) angle_entre_2vecteurs(x,y)
+```python
+import math
+
+def produit_scalaire(x,y):
+    produit=0
+    for i in range(len(x)):
+        produit+=x[i]*y[i]
+    return produit
+
+def angle_entre_2vecteur(x,y):
+    if len(x)!=len(y):
+        print("Vos vecteur ne sont pas de même dimension")
+    else:
+        #angle=math.acos((produit_scalaire(x,y))/(math.sqrt(x[0]**2+x[1]**2)*math.sqrt(y[0]**2+y[1]**2)))
+        angle=math.acos((produit_scalaire(x,y))/(math.sqrt(produit_scalaire(x,x))*math.sqrt(produit_scalaire(y,y))))
+        return angle
+
+#print(produit_scalaire([0,1],[1,0]))
+print(angle_entre_2vecteur([0,1,0],[1,1,1]))
+
+# RETOURNE : 0.9553166181245092
+```
+
