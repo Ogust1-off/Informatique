@@ -1709,8 +1709,8 @@ print(factorielle(5))
 ```
 
 ** Exercice :** Soit la suite $U_{n+2}=U_{n+1}\times U_n$ avec $U_0=2$ et $U_1=3$.
-1) $U(n)$ -> calculer $U(5)$
-2) sommeSuite(n) )> calculer sommeSuite(5)
+1) U(n) -> calculer $U(5)$
+2) sommeSuite(n) -> calculer sommeSuite(5)
 ```python
 def U(n):
     if n==0: return 2
