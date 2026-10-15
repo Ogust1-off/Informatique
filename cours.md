@@ -1693,3 +1693,16 @@ print("i=", i) # ERREUR car i est une variable local donc le programme ne la con
 
 <a id="seq4-2-3"></a>
 ### 2.3 Récursivité
+C'est quand une fonction s'appelle elle-même pour se définir
+
+Exemple :
+```python
+def factorielle(n):
+    if n<=1:
+        return 1
+    else:
+        return n*factorielle(n-1)
+
+print(factorielle(5))
+# RETOURNE: 120
+```
