@@ -1694,6 +1694,7 @@ print("i=", i) # ERREUR car i est une variable local donc le programme ne la con
 <a id="seq4-2-3"></a>
 ### 2.3 Récursivité
 C'est quand une fonction s'appelle elle-même pour se définir
+*C'est très pratique pour les processus itératif (calcule de somme, ...)*
 
 Exemple :
 ```python
@@ -1705,4 +1706,23 @@ def factorielle(n):
 
 print(factorielle(5))
 # RETOURNE: 120
+```
+
+** Exercice :** Soit la suite $U_{n+2}=U_{n+1}\crossU_n$ avec $U_0=2$ et $U_1=3$.
+1) $U(n)$ -> calculer $U(5)$
+2) sommeSuite(n) )> calculer sommeSuite(5)
+```python
+def U(n):
+    if n==0: return 2
+    elif n==1: return 3
+    else:
+        return U(n-1)*U(n-2)
+
+def sommeSuite(n):
+    if n==0: return U(n)
+    else:
+        return U(n)+sommeSuite(n-1)
+
+print(f"U(5) = {U(5)} et la somme de U(0) à U(5) = {sommeSuite(5)}")
+# RETOURNE : U(5) = 1944 et la somme de U(0) à U(5) = 2081
 ```
