@@ -45,7 +45,8 @@
 		- [1.3 Documentation](#seq4-1-3)
 	- [2. Appel de fonctions](#seq4-2)
 		- [2.1 Bibliothèques Python](#seq4-2-1)
-		- [2.2 ](#seq4-2-2)
+		- [2.2 Portée des variables](#seq4-2-2)
+		- [2.3 Récursivité](#seq4-2-3)
 
 
 
@@ -1668,8 +1669,27 @@ def angle_entre_2vecteur(x,y):
         return angle
 
 #print(produit_scalaire([0,1],[1,0]))
-print(angle_entre_2vecteur([0,1,0],[1,1,1]))
+print(f"L'angle entre vos 2 vecteur est de {angle_entre_2vecteur([0,1,0],[1,1,1])} radian")
 
-# RETOURNE : 0.9553166181245092
+# RETOURNE : L'angle entre vos 2 vecteur est de 0.9553166181245092 radian
 ```
 
+<a id="seq4-2-2"></a>
+### 2.2 Portée des variables
+- Les variables locales sont présente dans les bloc d'instruction
+- Les variables globales sont celle présentes dans le code
+
+Exemple :
+```python
+n=5 # Variable global
+def afficheur():
+    for i in range(n): # Variable local
+        print("i=", i)
+    print("ici i vaut", i)
+afficheur()
+print("n=", n)
+print("i=", i) # ERREUR car i est une variable local donc le programme ne la connaît pas
+```
+
+<a id="seq4-2-3"></a>
+### 2.3 Récursivité
