@@ -968,8 +968,8 @@ print(min(L), max(L))
 
 *Sans ces fonctions :* (Ajout personnel)
 ```python
-maxi=0
 L=[0.2,1,5.3,500,104,58,3]
+maxi=L[0] # Par défaut le maximum de la liste est son premier therme.
 for i in range(len(L)):
     if L[i]>maxi:
         maxi=L[i]
@@ -978,6 +978,8 @@ print(maxi)
 
 # RETOURNE : 500
 ```
+*Note :* Si on met `maxi=0` et que l'on a une liste de nombre négatif, le programme nous retournera que son maximum est `0` or 0 ne fait donc pas partie de la liste
+
 ```python
 L=[21, 50.1, 10.12, 3.9, 31, 5, 2.0, 1.2, 400, 3.2]
 
