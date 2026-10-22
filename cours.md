@@ -47,7 +47,10 @@
 		- [2.1 Bibliothèques Python](#seq4-2-1)
 		- [2.2 Portée des variables](#seq4-2-2)
 		- [2.3 Récursivité](#seq4-2-3)
-
+- [Séquence 5 — Bibliothèque NumPy](#seq5)
+	- [1. Opérations mathématiques](#seq5-1)
+		- [1.1 Constantes et fonctions utiles](#seq5-1-1)
+		- [1.2 ](#seq5-1-2)
 
 
 <a id="seq1"></a>
@@ -1761,15 +1764,16 @@ Sur [numpy.org](numpy.org) on a de la doc et des tutoriels
 | np.ceil(x) | $\lceil x \rceil$ |
 
 **Exercice :** $\displaystyle{\lim_{n\to+\infty}=\sum_{k=1}^{n}\frac{1}{k^2}=\frac{\pi^2}{6}}$
-1) inverseCarres(n)
-2) erreur(n)
+1) `inverseCarres(n)` : calcule $\frac{1}{n^2}$.
+2) `somme(n)` : calcule la somme des inverses des carrés de (1) à (n).
+3) `erreur(n)` : calcule l'écart entre cette somme et sa limite théorique.
 
-**A VERIFIER**
 ```python
 import numpy as np
 
 def inverseCarres(n):
     return 1/n**2
+
 def somme(n):
     somme=0
     for i in range(1,n+1):
@@ -1777,28 +1781,32 @@ def somme(n):
     return somme
 
 def erreur(n):
-    return np.abs(np.pi-somme(n))
+    return np.abs(np.pi**2/6-somme(n))
 ```
 
 **Exercice :** Soit $a>0$, $x_0=a$, $x_{n+1}=\frac12(x_n+\frac{a}{x_n})$
-1) heron(a,epsilon)
+Cette relation permet d'approcher $\sqrt a$ par la méthode de Héron.
+1) `heron(a, epsilon)` : calcule une approximation de $\sqrt a$, avec epsilon comme seuil de précision, et retourne le résultat ainsi que le nombre d'itérations effectuées.
 
-**A VERIFIER**
 ```python
 import numpy as np
 
 def heron(a,espison):
     x0=a
     x=0.5*(a+1)
-    cpt=0
+    cpt=1
     while np.abs(x-x0)>=espison:
         x0=x
         x=(1/2)*(x0+(a/x0))
         cpt+=1
     return x, cpt
 
-a=int(input(f"Choisir une valeur de a: "))
-eps=float(input(f"Choisir une valeur pour 𝛆: "))
-print(heron(a,eps))
+a = float(input("Choisir une valeur de a (> 0) : "))
+epsilon = float(input("Choisir une valeur pour epsilon (> 0) : "))
+
+if a > 0 and epsilon > 0:
+    print(heron(a, epsilon))
+else:
+    print("a et epsilon doivent être strictement positifs.")
 
 ```
