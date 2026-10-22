@@ -1728,3 +1728,34 @@ def sommeSuite(n):
 print(f"U(5) = {U(5)} et la somme de U(0) à U(5) = {sommeSuite(5)}")
 # RETOURNE : U(5) = 1944 et la somme de U(0) à U(5) = 2081
 ```
+
+<a id="seq5"></a>
+# Séquence 5 — Bibliothèque NumPy
+
+NumPy est la bibliothèque que l'on utiliser pour les calcules scientifique
+Par convention on importe NumPy en np: 
+```python
+import numpy as np
+```
+
+Sur [numpy.org](numpy.org) on a de la doc et des tutoriels
+
+<a id="seq5-1"></a>
+## 1. Opérations mathématiques
+<a id="seq5-1-1"></a>
+### 1.1 Constantes et fonctions utiles
+
+| $\pi$ | np.pi |
+| $\e$ | np.e |
+| $\infinity$ | np.inf |
+| NaN (Not a Number) | np.nan |
+
+| np.abs(x) | $\abs x$ |
+| np.sign(x) | signe de x |
+| np.round(x,d) | arrondi à s décimales |
+| np.floor(x) | ⎣x⎦ |
+| np.ceil(x) | ⎡x⎤ |
+
+**Exercices :** $\lim_{n\to+\infinity}=\sum_{k=1]^{n}\frac{1]{k^2}=\frac{\pi^2}{6}$
+1) inverseCarres(n)
+2) erreur(n)
