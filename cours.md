@@ -1745,11 +1745,15 @@ Sur [numpy.org](numpy.org) on a de la doc et des tutoriels
 <a id="seq5-1-1"></a>
 ### 1.1 Constantes et fonctions utiles
 
+| valeur | en python |
+| :- | :- |
 | $\pi$ | np.pi |
 | $e$ | np.e |
 | $\infty$ | np.inf |
 | NaN (Not a Number) | np.nan |
 
+| python | maths |
+| :- | :- |
 | np.abs(x) | $|x|$ |
 | np.sign(x) | signe de x |
 | np.round(x,d) | arrondi à s décimales |
@@ -1775,5 +1779,17 @@ def erreur(n):
     return np.abs(np.pi-somme(n))
 ```
 
-**Exercice :* Soit $a>0$, $x_0=a$, $x_{n+1}=\frac12(x_n+\frac{a}{x_n}$
-``
+**Exercice :* Soit $a>0$, $x_0=a$, $x_{n+1}=\frac12(x_n+\frac{a}{x_n})$
+```python
+import numpy as np
+
+def heron(a,espison):
+    xn=a
+    xNplus1=xn
+    while np.abs(xNplus1-xn)<espison:
+        xn=xNplus1
+        xNplus1=(1/2)*(xn+a/xn)
+    return xNplus1
+
+print(heron(4,0.0001))
+```
