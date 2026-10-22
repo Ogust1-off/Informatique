@@ -1783,7 +1783,7 @@ def erreur(n):
 **Exercice :** Soit $a>0$, $x_0=a$, $x_{n+1}=\frac12(x_n+\frac{a}{x_n})$
 1) heron(a,epsilon)
 
-**A VERIFIER*
+**A VERIFIER**
 ```python
 import numpy as np
 
