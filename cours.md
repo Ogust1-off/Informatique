@@ -1788,16 +1788,16 @@ def erreur(n):
 
 **Exercice :** Soit $a>0$, $x_0=a$, $x_{n+1}=\frac12(x_n+\frac{a}{x_n})$
 Cette relation permet d'approcher $\sqrt a$ par la méthode de Héron.
-1) `heron(a, epsilon)` : calcule une approximation de $\sqrt a$, avec epsilon comme seuil de précision, et retourne le résultat ainsi que le nombre d'itérations effectuées.
+1) `heron(a, epsilon)` : calcule une approximation de $\sqrt a$ jusqu'à ce que la différence entre deux approximations successives soit inférieure à epsilon. La fonction renvoie l'approximation obtenue ainsi que le nombre d'itérations effectuées.
 
 ```python
 import numpy as np
 
-def heron(a,espison):
+def heron(a,espilon):
     x0=a
     x=0.5*(a+1)
     cpt=1
-    while np.abs(x-x0)>=espison:
+    while np.abs(x-x0)>=espilon:
         x0=x
         x=(1/2)*(x0+(a/x0))
         cpt+=1
