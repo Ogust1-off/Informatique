@@ -1779,9 +1779,9 @@ La documentation et des tutoriels sont disponibles sur [numpy.org](https://numpy
 | np.floor(x) | $\lfloor x \rfloor$ | Plus grand entier inférieur ou égal à $x$ | `np.floor(3.8)` → `3.0` |
 | np.ceil(x) | $\lceil x \rceil$ | Plus petit entier supérieur ou égal à $x$ | `np.ceil(3.2)` → `4.0` |
 
-**Exercice :** $\displaystyle{\lim_{n\to+\infty}\sum_{k=1}^{n}\frac{1}{k^2}=\frac{\pi^2}{6}}$
+**Exercice :** Soir $\displaystyle{\lim_{n\to+\infty}\sum_{k=1}^{n}\frac{1}{k^2}=\frac{\pi^2}{6}}$, écrire les fonctions suivantes :
 1) `inverseCarres(n)` : calcule $\frac{1}{n^2}$.
-2) `somme(n)` : calcule la somme des inverses des carrés de (1) à (n).
+2) `somme(n)` : calcule la somme des inverses des carrés de $1$ à $n$.
 3) `erreur(n)` : calcule l'écart entre cette somme et sa limite théorique.
 
 ```python
