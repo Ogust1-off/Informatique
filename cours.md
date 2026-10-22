@@ -285,7 +285,7 @@ cond=calc>=18
 print(f"Majeur? {cond}")
 ```
 > **Remarque :**
-> Le programme ne tiens pas compte du mois et du jours de naissance (ajout personnel)
+> Le programme ne tient pas compte du mois et du jour de naissance (ajout personnel)
 
 <a id="seq2-1-2"></a>
 ### 1.2 Opérateurs logiques
@@ -548,7 +548,7 @@ print(L)
 Une compréhension de liste permet de créer une liste à partir d'un itérable. 
 
 **Génération de nombres aléatoires :**
-En Python, on utilise la bibliothèque `random` [(plus d'infos sur les bibliothèques)](#seq4-1-4)
+En Python, on utilise la bibliothèque `random` [(plus d'infos sur les bibliothèques)](#seq4-2-1)
 Pour utiliser le module `random` :
 ```python
 import random
@@ -880,7 +880,7 @@ else:
 > Les positions sont définies par `[i][j]`. Dans les calculs, on utilise `matrice1[i][k] * matrice2[k][j]`, où `k` permet de parcourir les éléments nécessaires au calcul.
 
 <details>
-<summary> *Autre version avec une fonction (pas encore vue a ce stade du cours) qui permet de créer les matrices A et B :* </summary>
+<summary> *Autre version avec une fonction (pas encore vue à ce stade du cours) qui permet de créer les matrices A et B :* </summary>
 
 ```python
 def matrixcreator(m,n,letter):
@@ -1295,7 +1295,7 @@ else:
     print(f"{mot1} et {mot2} ne sont pas des anagrammes")
 ```
 > **Remarque :**
-> Les majuscules, minuscule et accents sont traités comme des caractères différents.
+> Les majuscules, les minuscules et les accents sont traités comme des caractères différents.
 
 <a id="seq3-3-3"></a>
 ### 3.3 Tri à bulles (Ajout personnel)
@@ -1680,9 +1680,9 @@ def angle_entre_2vecteur(x,y):
         return angle
 
 #print(produit_scalaire([0,1],[1,0]))
-print(f"L'angle entre vos 2 vecteur est de {angle_entre_2vecteur([0,1,0],[1,1,1])} radian")
+print(f"L'angle entre vos deux vecteurs est de {angle_entre_2vecteur([0,1,0],[1,1,1])} radian")
 
-# RETOURNE : L'angle entre vos 2 vecteur est de 0.9553166181245092 radian
+# RETOURNE : L'angle entre vos deux vecteurs est de 0.9553166181245092 radian
 ```
 
 <a id="seq4-2-2"></a>
@@ -1705,7 +1705,7 @@ print("i=", i) # ERREUR car i est une variable local donc le programme ne la con
 <a id="seq4-2-3"></a>
 ### 2.3 Récursivité
 C'est quand une fonction s'appelle elle-même pour se définir
-*C'est très pratique pour les processus itératif (calcul de somme, ...)*
+*C'est très pratique pour les processus itératifs (calcul de somme, ...)*
 
 Exemple :
 ```python
