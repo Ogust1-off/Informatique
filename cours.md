@@ -1757,8 +1757,8 @@ Sur [numpy.org](numpy.org) on a de la doc et des tutoriels
 | np.abs(x) | $\lvert x\rvert$ |
 | np.sign(x) | signe de x |
 | np.round(x,d) | arrondi à s décimales |
-| np.floor(x) | ⎣x⎦ |
-| np.ceil(x) | ⎡x⎤ |
+| np.floor(x) | \lfloor x \rfloor |
+| np.ceil(x) | \lceil x \rceil |
 
 **Exercice :** $\displaystyle{\lim_{n\to+\infty}=\sum_{k=1}^{n}\frac{1}{k^2}=\frac{\pi^2}{6}}$
 1) inverseCarres(n)
@@ -1779,7 +1779,7 @@ def erreur(n):
     return np.abs(np.pi-somme(n))
 ```
 
-**Exercice :* Soit $a>0$, $x_0=a$, $x_{n+1}=\frac12(x_n+\frac{a}{x_n})$
+**Exercice :** Soit $a>0$, $x_0=a$, $x_{n+1}=\frac12(x_n+\frac{a}{x_n})$
 ```python
 
 ```
