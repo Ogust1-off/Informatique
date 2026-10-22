@@ -10,5 +10,5 @@ Note de cours d'informatique Python ECAM A&M2
 | Schéma du tri par insertion | Génération | Séquence 3, § 3.2 |
 | Schéma du tri à bulles | Génération | Séquence 3, § 3.3 |
 | Texte introductif de la séquence 5 | Réécriture | Séquence 5 |
-| Signification et exemples des fonctions | Ajout | Séquence 5, § 1.1 |
-| Description du rôle des fonctions dans les exercices 1 et 2 | Réécriture | Séquence 5, § 1.1 |
+| Signification et exemples des fonctions | Ajout | Séquence 5, § 1.1, Tableaux |
+| Description du rôle des fonctions dans les exercices 1 et 2 | Réécriture | Séquence 5, § 1.1, Exercices 1 et 2|
