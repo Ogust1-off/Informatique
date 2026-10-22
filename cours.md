@@ -1735,33 +1735,35 @@ print(f"U(5) = {U(5)} et la somme de U(0) à U(5) = {sommeSuite(5)}")
 <a id="seq5"></a>
 # Séquence 5 — Bibliothèque NumPy
 
-NumPy est la bibliothèque que l'on utiliser pour les calcules scientifique
-Par convention on importe NumPy en np: 
+NumPy est une bibliothèque Python utilisée pour les calculs scientifiques, notamment pour manipuler des tableaux numériques et effectuer des opérations mathématiques.
+
+Par convention, on importe NumPy sous le nom `np` :
 ```python
 import numpy as np
 ```
-
-Sur [numpy.org](numpy.org) on a de la doc et des tutoriels
+La documentation et des tutoriels sont disponibles sur [numpy.org](https://numpy.org/).
 
 <a id="seq5-1"></a>
 ## 1. Opérations mathématiques
 <a id="seq5-1-1"></a>
 ### 1.1 Constantes et fonctions utiles
 
-| maths | python |
-| :- | :- |
-| $\pi$ | np.pi |
-| $e$ | np.e |
-| $\infty$ | np.inf |
-| NaN (Not a Number) | np.nan |
+**A. Constantes**
+| Mathématiques | NumPy | Signification |
+| :- | :- | :- |
+| $\pi$ | `np.pi` | Constante pi |
+| $e$ | `np.e` | Exponentiel |
+| $+\infty$ | `np.inf` | Infini positif |
+| NaN (Not a Number) | `np.nan` | Valeur représentant un résultat numérique indéfini ou absent |
 
-| python | maths |
-| :- | :- |
-| np.abs(x) | $\lvert x\rvert$ |
-| np.sign(x) | signe de x |
-| np.round(x,d) | arrondi à d décimales |
-| np.floor(x) | $\lfloor x \rfloor$ |
-| np.ceil(x) | $\lceil x \rceil$ |
+**B. Fonctions mathématiques**
+| Fonction NumPy | Notation Mathématiques | Signification | Exemple |
+| :- | :- | :- | :- |
+| np.abs(x) | $\lvert x\rvert$ | Valeur absolue de $x$ | `np.abs(-3)` → `3` |
+| np.sign(x) |  | Signe de $x$ | `np.sign(-3)` → `-1` |
+| np.round(x,d) |  | Arrondit à $d$ décimales | `np.round(3.14159, 2)` → `3.14` |
+| np.floor(x) | $\lfloor x \rfloor$ | Plus grand entier inférieur ou égal à $x$ | `np.floor(3.8)` → `3.0` |
+| np.ceil(x) | $\lceil x \rceil$ | Plus petit entier supérieur ou égal à $x$ | `np.ceil(3.2)` → `4.0` |
 
 **Exercice :** $\displaystyle{\lim_{n\to+\infty}=\sum_{k=1}^{n}\frac{1}{k^2}=\frac{\pi^2}{6}}$
 1) `inverseCarres(n)` : calcule $\frac{1}{n^2}$.
