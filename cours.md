@@ -1760,7 +1760,7 @@ La documentation et des tutoriels sont disponibles sur [numpy.org](https://numpy
 | Fonction NumPy | Notation Mathématique | Signification | Exemple |
 | :- | :- | :- | :- |
 | np.abs(x) | $\lvert x\rvert$ | Valeur absolue de $x$ | `np.abs(-3)` → `3` |
-| np.sign(x) | $\operatorname{sgn}(x)$ | Renvoie le signe de $x$ : −1, 0 ou 1 | `np.sign(-3)` → `-1` |
+| np.sign(x) | $\sgn(x)$ | Renvoie le signe de $x$ : −1, 0 ou 1 | `np.sign(-3)` → `-1` |
 | np.round(x,d) |  | Arrondit $x$ à $d$ décimales | `np.round(3.14159, 2)` → `3.14` |
 | np.floor(x) | $\lfloor x \rfloor$ | Plus grand entier inférieur ou égal à $x$ | `np.floor(3.8)` → `3.0` |
 | np.ceil(x) | $\lceil x \rceil$ | Plus petit entier supérieur ou égal à $x$ | `np.ceil(3.2)` → `4.0` |
