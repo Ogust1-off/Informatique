@@ -1745,7 +1745,7 @@ Sur [numpy.org](numpy.org) on a de la doc et des tutoriels
 <a id="seq5-1-1"></a>
 ### 1.1 Constantes et fonctions utiles
 
-| valeur | en python |
+| maths | python |
 | :- | :- |
 | $\pi$ | np.pi |
 | $e$ | np.e |
@@ -1763,6 +1763,7 @@ Sur [numpy.org](numpy.org) on a de la doc et des tutoriels
 **Exercice :** $\displaystyle{\lim_{n\to+\infty}=\sum_{k=1}^{n}\frac{1}{k^2}=\frac{\pi^2}{6}}$
 1) inverseCarres(n)
 2) erreur(n)
+
 **A VERIFIER**
 ```python
 import numpy as np
@@ -1780,6 +1781,24 @@ def erreur(n):
 ```
 
 **Exercice :** Soit $a>0$, $x_0=a$, $x_{n+1}=\frac12(x_n+\frac{a}{x_n})$
+1) heron(a,epsilon)
+
+**A VERIFIER*
 ```python
+import numpy as np
+
+def heron(a,espison):
+    x0=a
+    x=0.5*(a+1)
+    cpt=0
+    while np.abs(x-x0)>=espison:
+        x0=x
+        x=(1/2)*(x0+(a/x0))
+        cpt+=1
+    return x, cpt
+
+a=int(input(f"Choisir une valeur de a: "))
+eps=float(input(f"Choisir une valeur pour 𝛆: "))
+print(heron(a,eps))
 
 ```
