@@ -1752,20 +1752,20 @@ La documentation et des tutoriels sont disponibles sur [numpy.org](https://numpy
 | Mathématiques | NumPy | Signification |
 | :- | :- | :- |
 | $\pi$ | `np.pi` | Constante pi |
-| $e$ | `np.e` | Exponentiel |
+| $e$ | `np.e` | Base du logarithme népérien |
 | $+\infty$ | `np.inf` | Infini positif |
 | NaN (Not a Number) | `np.nan` | Valeur représentant un résultat numérique indéfini ou absent |
 
 **B. Fonctions mathématiques**
-| Fonction NumPy | Notation Mathématiques | Signification | Exemple |
+| Fonction NumPy | Notation Mathématique | Signification | Exemple |
 | :- | :- | :- | :- |
 | np.abs(x) | $\lvert x\rvert$ | Valeur absolue de $x$ | `np.abs(-3)` → `3` |
-| np.sign(x) |  | Signe de $x$ | `np.sign(-3)` → `-1` |
-| np.round(x,d) |  | Arrondit à $d$ décimales | `np.round(3.14159, 2)` → `3.14` |
+| np.sign(x) | $\operatorname{sgn}(x)$ | Renvoie le signe de $x$ : −1, 0 ou 1 | `np.sign(-3)` → `-1` |
+| np.round(x,d) |  | Arrondit $x$ à $d$ décimales | `np.round(3.14159, 2)` → `3.14` |
 | np.floor(x) | $\lfloor x \rfloor$ | Plus grand entier inférieur ou égal à $x$ | `np.floor(3.8)` → `3.0` |
 | np.ceil(x) | $\lceil x \rceil$ | Plus petit entier supérieur ou égal à $x$ | `np.ceil(3.2)` → `4.0` |
 
-**Exercice :** $\displaystyle{\lim_{n\to+\infty}=\sum_{k=1}^{n}\frac{1}{k^2}=\frac{\pi^2}{6}}$
+**Exercice :** $\displaystyle{\lim_{n\to+\infty}\sum_{k=1}^{n}\frac{1}{k^2}=\frac{\pi^2}{6}}$
 1) `inverseCarres(n)` : calcule $\frac{1}{n^2}$.
 2) `somme(n)` : calcule la somme des inverses des carrés de (1) à (n).
 3) `erreur(n)` : calcule l'écart entre cette somme et sa limite théorique.
