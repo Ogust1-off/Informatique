@@ -1760,7 +1760,7 @@ Sur [numpy.org](numpy.org) on a de la doc et des tutoriels
 | np.floor(x) | ⎣x⎦ |
 | np.ceil(x) | ⎡x⎤ |
 
-**Exercice :** $\lim_{n\to+\infty}=\sum_{k=1]^{n}\frac{1]{k^2}=\frac{\pi^2}{6}$
+**Exercice :** $\lim_{n\to+\infty}=\sum_{k=1}^{n}\frac{1]{k^2}=\frac{\pi^2}{6}$
 1) inverseCarres(n)
 2) erreur(n)
 **A VERIFIER**
