@@ -258,7 +258,7 @@ print(f"Ton imc est: {p/(t**2)}")
 - Lire l'erreur et essayer de la comprendre.
 - Vérifier la syntaxe du code.
 - Utiliser `help()`. [Par exemple `help(print)` renvoie la documentation sur la fonction `print()`]
-- Rechercher sur Google votre message d'erreur.
+- Rechercher en ligne votre message d'erreur.
 
 <a id="seq1-3-2"></a>
 ### 3.2 Erreurs courantes
@@ -284,6 +284,9 @@ calc=2026-a #Pour l'année 2026
 cond=calc>=18
 print(f"Majeur? {cond}")
 ```
+> **Remarque :**
+> Le programme ne tiens pas compte du mois et du jours de naissance (ajout personnel)
+
 <a id="seq2-1-2"></a>
 ### 1.2 Opérateurs logiques
 | Opérateur | Signification | Exemple   |
@@ -320,7 +323,7 @@ if condition:
     instructions
 ```
 
-**Exercice :** Re-test de majorité
+**Exercice :** Re-test de majorité, *en fonction de l'année*.
 ```python
 age=2026-int(input("Année de naissance : "))
 if age<18:
@@ -474,7 +477,7 @@ for c in "hello":
 # l
 # o
 ```
-Ajout personnel: on peut aussi parcourir deux listes (ou plus) à la fois avec `zip`:
+Ajout personnel : on peut aussi parcourir deux listes (ou plus) à la fois avec `zip`:
 ```python
 for i, j in zip(liste1, liste2):
 ``` 
@@ -604,11 +607,11 @@ nombre=int(input("Choisir un nombre "))
 liste=[]
 
 # Ma version
-"""for i in range (nombre):
+"""for i in range (nombre+1):
     liste.append(i)
 """
 #Version avec les éléments vus en cours
-liste=[i for i in range(nombre)]
+liste=[i for i in range(nombre+1)]
 
 somme=0
 for i in range (len(liste)):
@@ -701,7 +704,7 @@ for i in mot:
 palindrome = True
 
 for j in range(len(mot)//2):
-    if listeMot[j] != listeMot[-(j+1)]: # Comparaison des caractères : 1er avec le dernier, 2e avec l'avant-dernier, ... avec la méthode des indices croissants et décroissants
+    if listeMot[j] != listeMot[-(j+1)]: # Comparaison des caractères : premier avec le dernier, deuxième avec l'avant-dernier, ... avec la méthode des indices croissants et décroissants
         palindrome=False
         # On pourrait rajouter un break pour sortir immédiatement de la boucle quand on sait que ce n'est pas un palindrome.
 
@@ -972,7 +975,7 @@ print(min(L), max(L))
 *Sans ces fonctions :* (Ajout personnel)
 ```python
 L=[0.2,1,5.3,500,104,58,3]
-maxi=L[0] # Par défaut le maximum de la liste est son premier therme.
+maxi=L[0] # Par défaut le maximum de la liste est son premier terme.
 for i in range(len(L)):
     if L[i]>maxi:
         maxi=L[i]
@@ -986,7 +989,7 @@ print(maxi)
 ```python
 L=[21, 50.1, 10.12, 3.9, 31, 5, 2.0, 1.2, 400, 3.2]
 
-mini=L[0] # On dit que par défaut le plus petit terme de la liste est le 1er
+mini=L[0] # On dit que par défaut le plus petit terme de la liste est le premier
 
 for i in range(len(L)):
     if mini>L[i]: # Si un terme de la liste est plus petit que mini actuel, mini prend la valeur trouvée
@@ -1002,7 +1005,7 @@ print(mini)
 import math
 P = [[1, 7], [4, 2], [9, 5], [3, 3], [8, 8]]
 
-dmin=math.sqrt((P[0][0]-P[1][0])**2+(P[0][1]-P[1][1])**2) # Par défaut la distance minimale est entre le 1er et le 2nd point.
+dmin=math.sqrt((P[0][0]-P[1][0])**2+(P[0][1]-P[1][1])**2) # Par défaut la distance minimale est entre le premier et le deuxième point.
 # On peut aussi utiliser la puissance 1/2 si on ne connaît pas la bibliothèque math (**(1/2))
 point1=0
 point2=1
@@ -1116,7 +1119,7 @@ flowchart TB
     classDef unsorted fill:#f3f4f6,stroke:#9ca3af,color:#111827;
 ```
 
-Exemple personnel: 
+Exemple personnel : 
 ```python
 L=[21, 50.1, 10.12, 3.9, 31, 5, 2.0, 1.2, 400, 3.2]
 
@@ -1222,7 +1225,7 @@ flowchart TB
     classDef unsorted fill:#f3f4f6,stroke:#9ca3af,color:#111827;
 ```
 
-Exemple personnel: 
+Exemple personnel : 
 ```python
 L=[21, 50.1, 10.12, 3.9, 31, 5, 2.0, 1.2, 400, 3.2]
 
@@ -1241,8 +1244,8 @@ print(L)
 
 **Exercice :** Écrire un programme qui demande deux mots à l’utilisateur et affiche s’ils sont des anagrammes ou non.
 ```python
-mot1=input("Saisir le 1er mot : ")
-mot2=input("Saisir le 2nd mot : ")
+mot1=input("Saisir le premier mot : ")
+mot2=input("Saisir le deuxième mot : ")
 
 liste1=[i for i in mot1]
 liste2=[i for i in mot2]
@@ -1291,6 +1294,8 @@ if anagrammes:
 else:
     print(f"{mot1} et {mot2} ne sont pas des anagrammes")
 ```
+> **Remarque :**
+> Les majuscules, minuscule et accents sont traités comme des caractères différents.
 
 <a id="seq3-3-3"></a>
 ### 3.3 Tri à bulles (Ajout personnel)
@@ -1469,7 +1474,7 @@ S23 --> S24
 ```
 </details>
 
-Exemple personnel: 
+Exemple personnel : 
 ```python
 L=[21, 50.1, 10.12, 3.9, 31, 5, 2.0, 1.2, 400, 3.2]
 
@@ -1562,7 +1567,8 @@ a1, ... , am = fonction(p1, ... , pn)
 > # Mais la fonction hello ne retourne rien (None).
 > ```
 
-**Exercice :** Soit $p(x)=ax^2+bx+c , (a,b,c)\in\mathbb{R}^3$ on veut avoir x quand a=-1, b=-2 et c=5 pour $p(x)=0$:
+**Exercice :** Soit un polynôme du second degré: $p(x)=ax^2+bx+c, avec $(a,b,c)\in\mathbb{R}^3$.
+Déterminer les solutions de $p(x)=0$ pour $a=-1$, $b=-2$ et $c=5$.
 ```python
 def racines(a,b,c):
     delta=b**2-4*a*c
@@ -1653,7 +1659,7 @@ Pour l'utiliser on utilise donc son nouveau nom : `fct()`.
 
 Exemple de fonction courante de la bibliothèque `math`: `sqrt`, `cos`, `sin`.
 
-**Exercice :** Trouvez l'angle entre la ("grande") diagonale d'un cube et une de ses arrêtes adjacentes.
+**Exercice :** Trouvez l'angle entre la ("grande") diagonale d'un cube et une de ses arêtes adjacentes.
 1) produit_scalaire(x,y)
 2) angle_entre_2vecteurs(x,y)
 ```python
@@ -1667,7 +1673,7 @@ def produit_scalaire(x,y):
 
 def angle_entre_2vecteur(x,y):
     if len(x)!=len(y):
-        print("Vos vecteur ne sont pas de même dimension")
+        print("Vos vecteurs ne sont pas de même dimension")
     else:
         #angle=math.acos((produit_scalaire(x,y))/(math.sqrt(x[0]**2+x[1]**2)*math.sqrt(y[0]**2+y[1]**2)))
         angle=math.acos((produit_scalaire(x,y))/(math.sqrt(produit_scalaire(x,x))*math.sqrt(produit_scalaire(y,y))))
@@ -1681,8 +1687,8 @@ print(f"L'angle entre vos 2 vecteur est de {angle_entre_2vecteur([0,1,0],[1,1,1]
 
 <a id="seq4-2-2"></a>
 ### 2.2 Portée des variables
-- Les variables locales sont présente dans les bloc d'instruction
-- Les variables globales sont celle présentes dans le code
+- Les variables locales sont définies dans une fonction et ne sont accessibles que dans celle-ci.
+- Les variables globales sont définies en dehors des fonctions et peuvent être utilisées dans celles-ci, sous certaines conditions.
 
 Exemple :
 ```python
@@ -1699,7 +1705,7 @@ print("i=", i) # ERREUR car i est une variable local donc le programme ne la con
 <a id="seq4-2-3"></a>
 ### 2.3 Récursivité
 C'est quand une fonction s'appelle elle-même pour se définir
-*C'est très pratique pour les processus itératif (calcule de somme, ...)*
+*C'est très pratique pour les processus itératif (calcul de somme, ...)*
 
 Exemple :
 ```python
@@ -1751,7 +1757,7 @@ La documentation et des tutoriels sont disponibles sur [numpy.org](https://numpy
 **A. Constantes**
 | Mathématiques | NumPy | Signification |
 | :- | :- | :- |
-| $\pi$ | `np.pi` | Constante pi |
+| $\pi$ | `np.pi` | Constante $\pi$ |
 | $e$ | `np.e` | Base du logarithme népérien |
 | $+\infty$ | `np.inf` | Infini positif |
 | NaN (Not a Number) | `np.nan` | Valeur représentant un résultat numérique indéfini ou absent |
@@ -1760,8 +1766,8 @@ La documentation et des tutoriels sont disponibles sur [numpy.org](https://numpy
 | Fonction NumPy | Notation Mathématique | Signification | Exemple |
 | :- | :- | :- | :- |
 | np.abs(x) | $\lvert x\rvert$ | Valeur absolue de $x$ | `np.abs(-3)` → `3` |
-| np.sign(x) | $sgn(x)$ | Renvoie le signe de $x$ : −1, 0 ou 1 | `np.sign(-3)` → `-1` |
-| np.round(x,d) |  | Arrondit $x$ à $d$ décimales | `np.round(3.14159, 2)` → `3.14` |
+| np.sign(x) | $\mathrm{sgn}(x)$ | Renvoie le signe de $x$ : −1, 0 ou 1 | `np.sign(-3)` → `-1` |
+| np.round(x, d) |  | Arrondit $x$ à $d$ décimales | `np.round(3.14159, 2)` → `3.14` |
 | np.floor(x) | $\lfloor x \rfloor$ | Plus grand entier inférieur ou égal à $x$ | `np.floor(3.8)` → `3.0` |
 | np.ceil(x) | $\lceil x \rceil$ | Plus petit entier supérieur ou égal à $x$ | `np.ceil(3.2)` → `4.0` |
 
@@ -1793,11 +1799,11 @@ Cette relation permet d'approcher $\sqrt a$ par la méthode de Héron.
 ```python
 import numpy as np
 
-def heron(a,espilon):
+def heron(a,epsilon):
     x0=a
     x=0.5*(a+1)
     cpt=1
-    while np.abs(x-x0)>=espilon:
+    while np.abs(x-x0)>=epsilon:
         x0=x
         x=(1/2)*(x0+(a/x0))
         cpt+=1
