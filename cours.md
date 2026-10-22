@@ -31,6 +31,8 @@
 		- [1.2 Opérations sur les listes](#seq3-1-2)
 		- [1.3 Modification de listes](#seq3-1-3)
 		- [1.4 Sous-listes et listes de listes](#seq3-1-4)
+			- [A. Sous-listes](#seq3-1-4-A)
+			- [B. Liste de liste](#seq3-1-4-B)
 	- [2. Algorithmes de recherche](#seq3-2)
 		- [2.1 Recherche d'éléments](#seq3-2-1)
 		- [2.2 Recherche min-max](#seq3-2-2)
@@ -50,6 +52,8 @@
 - [Séquence 5 — Bibliothèque NumPy](#seq5)
 	- [1. Opérations mathématiques](#seq5-1)
 		- [1.1 Constantes et fonctions utiles](#seq5-1-1)
+			- [A. Constantes](#seq5-1-1-A)
+			- [B. Fonctions mathématiques](#seq5-1-1-B)
 		- [1.2 ](#seq5-1-2)
 
 
@@ -775,7 +779,8 @@ print(liste)
 <a id="seq3-1-4"></a>
 ### 1.4 Sous-listes et listes de listes
 
-A. **Sous-liste :**
+<a id="seq3-1-4-A"></a>
+**A. Sous-liste :**
 - `L[i: j]`: extrait une sous-liste de `L` entre l'indice `i` et `j-1`
 - `L[:j]`: extrait une sous-liste de `L` entre l'indice 0 et `j-1`
 - `L[i:]`: extrait une sous-liste de `L` entre l'indice i et `len(L)-1`
@@ -802,7 +807,8 @@ print(L[:])
 # RETOURNE : [4, 6, 7, 3, 1, 8]
 ```
 
-B. **Liste de liste :**
+<a id="seq3-1-4-B"></a>
+**B. Liste de liste :**
 ```python
 L = [1, 2, [1, 2]]
 print(L[2])
@@ -1754,6 +1760,7 @@ La documentation et des tutoriels sont disponibles sur [numpy.org](https://numpy
 <a id="seq5-1-1"></a>
 ### 1.1 Constantes et fonctions utiles
 
+<a id="seq5-1-1-A"></a>
 **A. Constantes**
 | Mathématiques | NumPy | Signification |
 | :- | :- | :- |
@@ -1762,6 +1769,7 @@ La documentation et des tutoriels sont disponibles sur [numpy.org](https://numpy
 | $+\infty$ | `np.inf` | Infini positif |
 | NaN (Not a Number) | `np.nan` | Valeur représentant un résultat numérique indéfini ou absent |
 
+<a id="seq5-1-1-B"></a>
 **B. Fonctions mathématiques**
 | Fonction NumPy | Notation Mathématique | Signification | Exemple |
 | :- | :- | :- | :- |
