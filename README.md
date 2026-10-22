@@ -6,9 +6,9 @@ Note de cours d'informatique Python ECAM A&M2
 | Élément | Type de contribution | Localisation |
 | :--- | :--- | :--- |
 | Texte du cours | Corrections orthographiques, grammaticales et syntaxiques | Ensemble du document |
-| Schéma Mermaid du tri par sélection | Génération | Séquence 3, § 3.1 |
-| Schéma Mermaid du tri par insertion | Génération | Séquence 3, § 3.2 |
-| Schéma Mermaid du tri à bulles | Génération | Séquence 3, § 3.3 |
+| Schéma Mermaid du tri par sélection | Génération | Séquence 3, §3.1 |
+| Schéma Mermaid du tri par insertion | Génération | Séquence 3, §3.2 |
+| Schéma Mermaid du tri à bulles | Génération | Séquence 3, §3.3 |
 | Texte introductif de la séquence 5 | Réécriture | Séquence 5 |
-| Signification et exemples des fonctions | Ajout | Séquence 5, § 1.1, Tableaux |
-| Description du rôle des fonctions dans les exercices 1 et 2 | Réécriture | Séquence 5, § 1.1, Exercices 1 et 2|
+| Signification et exemples des fonctions | Ajout | Séquence 5, §1.1.A et §1.1.B, (*Tableaux*) |
+| Description du rôle des fonctions dans les exercices 1 et 2 | Réécriture | Séquence 5, §1.1, Exercices 1 et 2|
