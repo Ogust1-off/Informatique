@@ -1567,7 +1567,7 @@ a1, ... , am = fonction(p1, ... , pn)
 > # Mais la fonction hello ne retourne rien (None).
 > ```
 
-**Exercice :** Soit un polynôme du second degré: $p(x)=ax^2+bx+c, avec $(a,b,c)\in\mathbb{R}^3$.
+**Exercice :** Soit un polynôme du second degré: $p(x)=ax^2+bx+c$, avec $(a,b,c)\in\mathbb{R}^3$.
 Déterminer les solutions de $p(x)=0$ pour $a=-1$, $b=-2$ et $c=5$.
 ```python
 def racines(a,b,c):
