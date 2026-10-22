@@ -1754,7 +1754,7 @@ Sur [numpy.org](numpy.org) on a de la doc et des tutoriels
 
 | python | maths |
 | :- | :- |
-| np.abs(x) | $|x|$ |
+| np.abs(x) | $\lvert x\rvert$ |
 | np.sign(x) | signe de x |
 | np.round(x,d) | arrondi à s décimales |
 | np.floor(x) | ⎣x⎦ |
