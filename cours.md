@@ -1756,9 +1756,9 @@ Sur [numpy.org](numpy.org) on a de la doc et des tutoriels
 | :- | :- |
 | np.abs(x) | $\lvert x\rvert$ |
 | np.sign(x) | signe de x |
-| np.round(x,d) | arrondi à s décimales |
-| np.floor(x) | \lfloor x \rfloor |
-| np.ceil(x) | \lceil x \rceil |
+| np.round(x,d) | arrondi à d décimales |
+| np.floor(x) | $\lfloor x \rfloor$ |
+| np.ceil(x) | $\lceil x \rceil$ |
 
 **Exercice :** $\displaystyle{\lim_{n\to+\infty}=\sum_{k=1}^{n}\frac{1}{k^2}=\frac{\pi^2}{6}}$
 1) inverseCarres(n)
