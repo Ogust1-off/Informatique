@@ -1760,7 +1760,7 @@ Sur [numpy.org](numpy.org) on a de la doc et des tutoriels
 | np.floor(x) | ⎣x⎦ |
 | np.ceil(x) | ⎡x⎤ |
 
-**Exercice :** $\lim_{n\to+\infty}=\sum_{k=1}^{n}\frac{1}{k^2}=\frac{\pi^2}{6}$
+**Exercice :** $\displaystyle{\lim_{n\to+\infty}=\sum_{k=1}^{n}\frac{1}{k^2}=\frac{\pi^2}{6}}$
 1) inverseCarres(n)
 2) erreur(n)
 **A VERIFIER**
@@ -1781,15 +1781,5 @@ def erreur(n):
 
 **Exercice :* Soit $a>0$, $x_0=a$, $x_{n+1}=\frac12(x_n+\frac{a}{x_n})$
 ```python
-import numpy as np
 
-def heron(a,espison):
-    xn=a
-    xNplus1=xn
-    while np.abs(xNplus1-xn)<espison:
-        xn=xNplus1
-        xNplus1=(1/2)*(xn+a/xn)
-    return xNplus1
-
-print(heron(4,0.0001))
 ```
