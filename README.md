@@ -1,12 +1,14 @@
 # Informatique
 Note de cours d'informatique Python ECAM A&M2
 
-*Dans un souci de transparence, je tiens à signaler que les 3 schémas réalisés avec Mermaid [tris par sélection, insertion et bulles (séquence3 §3.1 - 3)] ont été générés à l’aide d’un LLM, suivant mes instructions.*
+*Dans un souci de transparence, voici les éléments réalisés ou modifiés à l’aide d’un LLM, à partir de mes instructions.*
 
-***Texte réecrit à l'aide de LLM :***
-| Quoi | Ce qui à était fait | Localisation |
-| :- | :- | :- |
-| Texte introductif de la séquence 5 | Réecriture | séquence5 |
-| Signification et exemple | Ajout | séquence5 §1.1 Tableau|
-| Rôle des fonctions dans les exercices 1 et 2 | Réecriture | séquence5 §1.1 |
-||||
+| Élément | Type de contribution | Localisation |
+| :--- | :--- | :--- |
+| Texte du cours | Corrections orthographiques, grammaticales et syntaxiques | Ensemble du document |
+| Schéma du tri par sélection | Génération | Séquence 3, § 3.1 |
+| Schéma du tri par insertion | Génération | Séquence 3, § 3.2 |
+| Schéma du tri à bulles | Génération | Séquence 3, § 3.3 |
+| Texte introductif de la séquence 5 | Réécriture | Séquence 5 |
+| Signification et exemples des fonctions | Ajout | Séquence 5, § 1.1 |
+| Description du rôle des fonctions dans les exercices 1 et 2 | Réécriture | Séquence 5, § 1.1 |
