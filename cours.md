@@ -1746,16 +1746,34 @@ Sur [numpy.org](numpy.org) on a de la doc et des tutoriels
 ### 1.1 Constantes et fonctions utiles
 
 | $\pi$ | np.pi |
-| $\e$ | np.e |
-| $\infinity$ | np.inf |
+| $e$ | np.e |
+| $\infty$ | np.inf |
 | NaN (Not a Number) | np.nan |
 
-| np.abs(x) | $\abs x$ |
+| np.abs(x) | $|x|$ |
 | np.sign(x) | signe de x |
 | np.round(x,d) | arrondi à s décimales |
 | np.floor(x) | ⎣x⎦ |
 | np.ceil(x) | ⎡x⎤ |
 
-**Exercices :** $\lim_{n\to+\infinity}=\sum_{k=1]^{n}\frac{1]{k^2}=\frac{\pi^2}{6}$
+**Exercice :** $\lim_{n\to+\infty}=\sum_{k=1]^{n}\frac{1]{k^2}=\frac{\pi^2}{6}$
 1) inverseCarres(n)
 2) erreur(n)
+**A VERIFIER**
+```python
+import numpy as np
+
+def inverseCarres(n):
+    return 1/n**2
+def somme(n):
+    somme=0
+    for i in range(1,n+1):
+        somme+=inverseCarres(i)
+    return somme
+
+def erreur(n):
+    return np.abs(np.pi-somme(n))
+```
+
+**Exercice :* Soit $a>0$, $x_0=a$, $x_{n+1}=\frac12(x_n+\frac{a}{x_n}$
+``
