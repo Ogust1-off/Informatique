@@ -1833,7 +1833,7 @@ else:
 ### 1.2 Fonctions usuelles
 
 **A METTRE EN TABLEAU**
-np.sqrt(x), np.exp(), np.log(), np.sin(), np.cos(), np.tan(), np.arccos(), np.arcsin(), np.arctan()
+`np.sqrt(x)`, `np.exp()`, `np.log()`, `np.sin()`, `np.cos()`, `np.tan()`, `np.arccos()`, `np.arcsin()`, `np.arctan()
 
 Ces fonction par rapport a celle de la bibliothèque math sont vectorialisables:
 ```python
@@ -1875,7 +1875,7 @@ print(np.sum(arr-1))
 ### 1.3 Complexes
 
 **A METRE EN TABLEAU**
-z.real, z.imag, z.conjugate(), np.angle(z) (en rad), np.angle(z, deg=True) (en degre), np.abs(z)
+`z.real`, `z.imag`, `z.conjugate()`, `np.angle(z)` (en rad), `np.angle(z, deg=True)` (en degre), np.abs(z)
 
 **Exercice :** Calcule approximation de pi par la méthode d'Archimede:
 ```python
@@ -1919,7 +1919,7 @@ print(mat.shape[1])
 ```
 **AJOUTER COMM DANS LE CODE**
 
-vec[i] et mat[i][j] (mat[i,j]) slicing, extraction sous-array cf listes
+`vec[i]` et `mat[i][j]` (ou: `mat[i,j]`) slicing, extraction sous-array cf listes
 **AJOUTER EXPLICATION**
 
 reshape
@@ -1938,6 +1938,20 @@ print(tab.reshape(3,2))
 > `tab.reshape(1,8) non admissible
 
 **Exercice :** Trace d'une matrice
-trace(A) $A\in Mat(R)$
+trace(A) $A\in Mat_p(IR)$
 Trace = somme coef diad
 **Faire explication shema LaTeX**
+```python
+import numpy as np 
+
+def trace(mat):
+    mat = np.array(mat)
+    s=0
+    if mat.shape[0]==mat.shape[1]:
+        for i in range(len(mat)):
+            s+=mat[i][i]
+    return s
+
+print(trace([[1,1],[1,1]]))
+# RETOURNE : 2
+```
