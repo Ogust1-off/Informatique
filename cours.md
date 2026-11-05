@@ -2050,7 +2050,7 @@ vec2=np.arange(2,10,2)
 | `np.ones(x)` | Tableau de $x$ uns |
 | `np.ones([x,y])` | Matrice de uns de dimension $x\times y$ |
 | `np.eye(x)` | Matrice identité de dimension $x\times x$ |
-| `np.diag([a1, a2, ... , an])` | Matrice diagonale contenant: $a_1, a_2, ... , a_n$ ($n\in \mathbf{N}$) |
+| `np.diag([a1, a2, ... , an])` | Matrice diagonale contenant: $a_1, a_2, ... , a_n$ ($n\in ℕ$) |
 
 Exemple: 
 ```python
