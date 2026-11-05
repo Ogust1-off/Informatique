@@ -1841,13 +1841,39 @@ print(L)
 # RETOURNE : [1.         1.41421356 1.73205081]
 ```
 
-**Exercice :** Méthodes des rectangles $\displaystyle{I=\int_{a}^{b}f(x)dx}$
-$\displaystyle{I_g=\sum_{I=1}^{n}f(x_i)h}$
-$\displaystyle{I_d=\sum_{i=0}^{n-1}f(x_i)h}$
+**Exercice :** Méthodes des rectangles $\displaystyle{I=\int_{a}^{b}f(x)dx}$ , 
+$\displaystyle{I_g=\sum_{I=1}^{n}f(x_i)dx}$ , 
+$\displaystyle{I_d=\sum_{i=0}^{n-1}f(x_i)dx}$
 
 1) decoupage(a,b,n)
 2) rectangles(f,a,b,n)
 
+**A VERIFIER**
 ```python
+import numpy as np
 
+def decoupage(a,b,n):
+    h=(b-a)/n
+    l=[]
+    for i in range(n):
+        l.append(a+h*i)
+    return l
+
+def rectangle(f,a,b,n):
+    Ig=np.sum(decoupage(a,b,n)[:1])
+    Id=np.sum(decoupage(a,b,n)[1:])
+    return
+
+arr = np.array([1, 2, 3,4])
+print(np.sum(arr-1))
+```
+
+<a id="seq5-1-3"></a>
+### 1.3 Complexes
+
+z.real, z.imag, z.conjugate(), np.angle(z) (en rad), np.angle(z, deg=True) (en degre), np.abs(z)
+
+**Exercice :** Calcule approximation de pi par la méthode d'Archimede:
+```python
+# A Faire
 ```
