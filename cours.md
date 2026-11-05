@@ -1,5 +1,8 @@
 # Informatique S3 — Cours Python
 
+<a id="top"></a>
+[Allez au bas de la page](#bottom)
+
 ## Sommaire
 - [Séquence 1 — Premiers pas en Python](#seq1)
 	- [1. Bases](#seq1-1)
@@ -68,8 +71,6 @@
 		- [2.2 Opérations sur les tableaux](#seq5-2-2)
 
 
-<a id="top"></a>
-[Allez au bas de la page](#bottom)
 
 <a id="seq1"></a>
 # Séquence 1 — Premiers pas en Python
