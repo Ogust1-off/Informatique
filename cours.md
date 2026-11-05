@@ -1,6 +1,5 @@
-# Informatique S3 — Cours Python
+# Informatique S3 — Cours Python						<a id="top"></a>
 
-<a id="top"></a>
 [Allez au bas de la page](#bottom)
 
 ## Sommaire
