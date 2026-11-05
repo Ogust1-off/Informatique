@@ -54,7 +54,8 @@
 		- [1.1 Constantes et fonctions utiles](#seq5-1-1)
 			- [A. Constantes](#seq5-1-1-A)
 			- [B. Fonctions mathématiques](#seq5-1-1-B)
-		- [1.2 ](#seq5-1-2)
+		- [1.2 Fonctions usuelles](#seq5-1-2)
+		- [1.3 ](#seq5-1-3)
 
 
 <a id="seq1"></a>
@@ -1824,5 +1825,26 @@ if a > 0 and epsilon > 0:
     print(heron(a, epsilon))
 else:
     print("a et epsilon doivent être strictement positifs.")
+```
 
+<a id="seq5-1-2"></a>
+### 1.2 Fonctions usuelles
+
+np.sqrt(x), np.exp(), np.log(), np.sin(), np.cos(), np.tan(), np.arccos(), np.arcsin(), np.arctan()
+
+Ces fonction par rapport a celle de la bibliothèqueque math son vectorialisable:
+```python
+import numpy as np
+X=[1,2,3]
+L=np.sqrt(X)
+print(L)
+# RETOURNE : [1.         1.41421356 1.73205081]
+```
+
+**Exercice :** Méthodes des rectangles $I=\displaystyle{\int_{a}^{b}f(x)dx}$
+$I_g=\displaystyle{\sum_{i=1}^{n}f(x_i)h$
+$I_d=\displaystyle{\sum_{i=0}^{n-1}f(x_i)h$
+1) decoupage(a,b,n)
+2) rectangles(f,a,b,n)
+```python
 ```
