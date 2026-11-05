@@ -1933,3 +1933,9 @@ print(tab.reshape(3,2))
 #  [3 4]
 #  [5 6]]
 ```
+> **Attention :** aux bornes
+> Par exemple ici:
+> `tab.reshape(1,8) non admissible
+
+**Exercice :** Trace d'une matrice
+trace(A) $A\inMat(R)$
