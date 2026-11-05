@@ -1938,6 +1938,6 @@ print(tab.reshape(3,2))
 > `tab.reshape(1,8) non admissible
 
 **Exercice :** Trace d'une matrice
-trace(A) $A\inMat(R)$
+trace(A) $A\in Mat(R)$
 Trace = somme coef diad
 **Faire explication shema LaTeX**
