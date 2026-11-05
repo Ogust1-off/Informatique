@@ -40,7 +40,7 @@
 		- [3.1 Tri par sélection](#seq3-3-1)
 		- [3.2 Tri par insertion](#seq3-3-2)
 		- [3.3 Tri à bulles (Ajout personnel)](#seq3-3-3)
-- [Séquence 4 - Fonctions et algorithmique](#seq4)
+- [Séquence 4 — Fonctions et algorithmique](#seq4)
 	- [1. Écriture de fonctions](#seq4-1)
 		- [1.1 Définition et syntaxe](#seq4-1-1)
 		- [1.2 Paramètres et renvois](#seq4-1-2)
@@ -1689,7 +1689,7 @@ def produit_scalaire(x,y):
         produit+=x[i]*y[i]
     return produit
 
-def angle_entre_2vecteur(x,y):
+def angle_entre_2vecteurs(x,y):
     if len(x)!=len(y):
         print("Vos vecteurs ne sont pas de même dimension")
     else:
@@ -1698,7 +1698,7 @@ def angle_entre_2vecteur(x,y):
         return angle
 
 #print(produit_scalaire([0,1],[1,0]))
-print(f"L'angle entre vos deux vecteurs est de {angle_entre_2vecteur([0,1,0],[1,1,1])} radian")
+print(f"L'angle entre vos deux vecteurs est de {angle_entre_2vecteurs([0,1,0],[1,1,1])} radian")
 
 # RETOURNE : L'angle entre vos deux vecteurs est de 0.9553166181245092 radian
 ```
@@ -2041,12 +2041,13 @@ import numpy as np
 def trace(mat):
     mat = np.array(mat)
 
-    if mat.ndim == 2 and mat.shape[0] == mat.shape[1]: #mat.ndim == 2 verifie que mla matrice est de 2 dimetiosn
+    if mat.ndim == 2 and mat.shape[0] == mat.shape[1]: # mat.ndim == 2 vérifie que le tableau possède deux dimensions.
         s = 0
         for i in range(mat.shape[0]):
             s += mat[i][i]
         return s
-    else return "La matrice n'est pas de dimension 2 ou n'est pas carée"
+    else:
+        print("La matrice doit être carrée.")
 
 print(trace([[1, 1], [1, 1]]))
 # RETOURNE : 2
