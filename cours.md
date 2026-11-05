@@ -2043,29 +2043,56 @@ vec2=np.arange(2,10,2)
 <a id="seq5-2-1-G"></a>
 **G. Tableaux particuliers**
 
-`np.zero()` donne `[0,0]
-`np.zeros([2,2])`donne
+| Fonction NumPy | Résultat |
+| :- | :- |
+| `np.zero(x)` | Tableau de $x$ zéros |
+| `np.zeros([x,y])` | Matrice de zéros de dimension $x\times y$ |
+| `np.ones(x)` | Tableau de $x$ uns |
+| `np.ones([x,y])` | Matrice de uns de dimension $x\times y$ |
+| `np.eye(x)` | Matrice identité de dimension $x\times x$ |
+| `np.diag([a1, a2, ... , an])` | Matrice diagonale contenant: a1, a2, ... , an |
+
+Exemple: 
 ```python
-[[0,0]
- [0,0]]
+np.zero(x)
+# RETOURNE :
+# [0,0]
 ```
-`np.ones(2)` donne `[1,1]`
-`np.ones([2,2])` donne
+
 ```python
-[[1,1]
- [1,1]]
+np.zeros([2,2])
+# RETOURNE :
+# [[0,0]
+#  [0,0]]
 ```
-`np.eye(2)` donne
+
 ```python
-[[1,0]
- [0,1]]
+np.ones(2)
+# RETOURNE : 
+# {1,1]
 ```
-`np.diag([1,2,3,4])`donne
+
 ```python
-[[1 0 0 0]
- [0 2 0 0]
- [0 0 3 0]
- [0 0 0 4]]
+np.ones([2,2])
+# RETOURNE :
+# [[1,1]
+#  [1,1]]
+```
+
+```python
+np.eye(2)
+# RETOURNE :
+# [[1,0]
+#  [0,1]]
+```
+
+```python
+np.diag([1,2,3,4])
+# RETOURNE :
+# [[1 0 0 0]
+#  [0 2 0 0]
+#  [0 0 3 0]
+#  [0 0 0 4]]
 ```
 
 <a id="seq5-2-2"></a>
