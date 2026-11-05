@@ -55,7 +55,9 @@
 			- [A. Constantes](#seq5-1-1-A)
 			- [B. Fonctions mathématiques](#seq5-1-1-B)
 		- [1.2 Fonctions usuelles](#seq5-1-2)
-		- [1.3 ](#seq5-1-3)
+		- [1.3 Complexes](#seq5-1-3)
+	- [2. Tableaux NumPy](#seq5-2)
+		- [2.1](#seq5-2-1)
 
 
 <a id="seq1"></a>
@@ -1876,4 +1878,28 @@ z.real, z.imag, z.conjugate(), np.angle(z) (en rad), np.angle(z, deg=True) (en d
 **Exercice :** Calcule approximation de pi par la méthode d'Archimede:
 ```python
 # A Faire
+```
+
+<a id="seq5-2"></a>
+### 2. Tableaux NumPy
+```python
+import numpy as np 
+X=[1,2,3,4]
+L=np.log(X)
+print(type(L))
+# RETOURNE : <class 'numpy.ndarray'>
+```
+
+<a id="seq5-2-1"></a>
+### 2.1 Vecteurs, matrices & tableaux particuliers
+
+```python
+import numpy as np 
+vec = np.array([1,2,3,4])
+mat = np.array([[1,2],[3,4]])
+print(vec)
+print(mat)
+# RETOURNE : [1 2 3 4]
+# [[1 2]
+#  [3 4]]
 ```
