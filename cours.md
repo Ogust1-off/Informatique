@@ -2041,7 +2041,7 @@ import numpy as np
 def trace(mat):
     mat = np.array(mat)
 
-    if mat.ndim == 2 or mat.shape[0] == mat.shape[1]: #mat.ndim == 2 verifie que mla matrice est de 2 dimetiosn
+    if mat.ndim == 2 and mat.shape[0] == mat.shape[1]: #mat.ndim == 2 verifie que mla matrice est de 2 dimetiosn
         s = 0
         for i in range(mat.shape[0]):
             s += mat[i][i]
