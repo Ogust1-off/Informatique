@@ -1921,3 +1921,15 @@ print(mat.shape[1])
 
 vec[i] et mat[i][j] (mat[i,j]) slicing, extraction sous-array cf listes
 **AJOUTER EXPLICATION**
+
+reshape
+```python
+import numpy as np 
+tab=np.array([[1,2,3],[4,5,6]])
+print(tab.reshape(1,6))
+print(tab.reshape(3,2))
+# RETOURNE : [[1 2 3 4 5 6]]
+# [[1 2]
+#  [3 4]
+#  [5 6]]
+```
