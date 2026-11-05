@@ -57,7 +57,16 @@
 		- [1.2 Fonctions usuelles](#seq5-1-2)
 		- [1.3 Complexes](#seq5-1-3)
 	- [2. Tableaux NumPy](#seq5-2)
-		- [2.1](#seq5-2-1)
+		- [2.1 Vecteurs, matrices & tableaux particuliers](#seq5-2-1)
+			- [A. Création de tableaux](#seq5-2-1-A)
+			- [B. Dimensions d'un tableau : `shape`](#seq5-2-1-B)
+			- [C. Indexation et extraction (slicing)](#seq5-2-1-C)
+			- [D. Redimensionnement : `reshape()`](#seq5-2-1-D)
+			- [E. Trace d'une matrice](#seq5-2-1-E)
+			- [F. Création de tableaux régulièrement espacés](#seq5-2-1-F)
+			- [G. Tableaux particuliers](#seq5-2-1-G)
+		- [2.2 Opérations sur les tableaux](#seq5-2-2)
+
 
 
 <a id="seq1"></a>
@@ -1934,7 +1943,8 @@ print(mat)
 ```
 
 <a id="seq5-2-1-B"></a>
-**B. Dimensions d'un tableau : shape**
+**B. Dimensions d'un tableau : `shape`**
+
 L'attribut shape renvoie les dimensions du tableau sous la forme d'un tuple.
 
 ```python
@@ -1953,6 +1963,7 @@ print(mat.shape[1])
 
 <a id="seq5-2-1-C"></a>
 **C. Indexation et extraction (slicing)**
+
 Comme pour les listes Python, les éléments d'un tableau NumPy sont accessibles grâce à leurs indices.
 
 `vec[i]` : élément d'indice i du vecteur vec.
@@ -1977,7 +1988,8 @@ print(mat[:, 0])
 # [1 4]
 ```
 <a id="seq5-2-1-D"></a>
-**D. Redimensionnement : reshape()**
+**D. Redimensionnement : `reshape()`**
+
 La méthode reshape() permet de modifier la forme d'un tableau sans changer ses éléments.
 
 ```python
@@ -1996,6 +2008,7 @@ print(tab.reshape(3,2))
 
 <a id="seq5-2-1-E"></a>
 **E. Trace d'une matrice**
+
 La trace d'une matrice carrée $A\in\mathcal{M}_p(\mathbb{R})$ est la somme des coefficients de sa diagonale principale :
 
 $A=\begin{pmatrix}a_{11} & a_{12} & \cdots & a_{1n}\\a_{21} & a_{22} & \cdots & a_{2n}\\\vdots & \vdots & \ddots & \vdots\\a_{n1} & a_{n2} & \cdots & a_{nn}\end{pmatrix}$
