@@ -1831,11 +1831,22 @@ else:
 
 <a id="seq5-1-2"></a>
 ### 1.2 Fonctions usuelles
+Les fonctions usuelles de NumPy permettent d'effectuer des opérations mathématiques sur des nombres, mais également directement sur des tableaux (vectorisation).
 
-**A METTRE EN TABLEAU**
-`np.sqrt(x)`, `np.exp()`, `np.log()`, `np.sin()`, `np.cos()`, `np.tan()`, `np.arccos()`, `np.arcsin()`, `np.arctan()
+| Fonction NumPy | Notation Mathématique | Signification |
+| :- | :- | :- |
+| `np.sqrt(x)` | $\sqrt{x}$ | Racine carrée |
+| `np.exp(x)` | $e^x$ | Fonction exponentielle |
+| `np.log(x)` | $\ln(x)$ | Logarithme népérien |
+| `np.sin(x)` | $\sin(x)$ | Sinus |
+| `np.cos(x)` | $\cos(x)$ | Cosinus |
+| `np.tan(x)` | $\tan(x)$ | Tangente |
+| `np.arccos(x)` | $\arccos(x)$ | Arc cosinus |
+| `np.arcsin(x)` | $\arcsin(x)$ | Arc sinus |
+| `np.arctan(x)` | $\arctan(x)$ | Arc tangente |
 
-Ces fonction par rapport a celle de la bibliothèque math sont vectorialisables:
+> **Remarque :** Les fonctions trigonométriques donne par défaut les résultats en radians.
+
 ```python
 import numpy as np
 X=[1,2,3]
@@ -1843,13 +1854,16 @@ L=np.sqrt(X)
 print(L)
 # RETOURNE : [1.         1.41421356 1.73205081]
 ```
+Contrairement au fonction de la bibliothèque `math`, ces fonctions peuvent être appliquer a des tableau de valeur.
 
-**Exercice :** Méthodes des rectangles $\displaystyle{I=\int_{a}^{b}f(x)dx}$ , 
+**Exercice :** Méthodes des rectangles.
+Soit: $\displaystyle{I=\int_{a}^{b}f(x)dx}$. On cherche a approcher le résultat de cette intégrale a l'aide de somme de rectangles.
 $\displaystyle{I_g=\sum_{I=1}^{n}f(x_i)dx}$ , 
 $\displaystyle{I_d=\sum_{i=0}^{n-1}f(x_i)dx}$
 
-1) decoupage(a,b,n)
-2) rectangles(f,a,b,n)
+Écrire les fonctions suivantes :
+1) `decoupage(a, b, n)` : renvoie les points de subdivision de l'intervalle.
+2) `rectangles(f, a, b, n)` : calcule les approximations à gauche et à droite de l'intégrale.
 
 **A VERIFIER**
 ```python
@@ -1873,17 +1887,26 @@ print(np.sum(arr-1))
 
 <a id="seq5-1-3"></a>
 ### 1.3 Complexes
+NumPy permet également de manipuler les nombres complexes.
 
-**A METRE EN TABLEAU**
-`z.real`, `z.imag`, `z.conjugate()`, `np.angle(z)` (en rad), `np.angle(z, deg=True)` (en degre), np.abs(z)
+| Fonction NumPy / Python | Signification | Exemple (pour $z=3+4i$) (z = 3+4j en python) |
+| :- | :- | :- |
+| `z.real` | Partie réelle | `3.0` |
+| `z.imag` | Partie imaginaire | `4.0` |
+| `z.conjugate()` | Conjugué de $z$ | `5.0` |
+| `np.angle(z)` | Argument de $z$ en radians | `0.9272952180016122` |
+| `np.angle(z, deg=True)` | Argument de $z$ en degrés | `53.13010235415598` |
+| np.abs(z) | Module de $z$ |
 
-**Exercice :** Calcule approximation de pi par la méthode d'Archimede:
+**Exercice :** Calculer une approximation de $\pi$ par la méthode d'Archimède.
 ```python
 # A Faire
 ```
 
 <a id="seq5-2"></a>
 ### 2. Tableaux NumPy
+NumPy permet de convertir des listes Python en tableaux numériques appelés ndarray *(N-dimensional array)*.
+
 ```python
 import numpy as np 
 X=[1,2,3,4]
@@ -1895,55 +1918,89 @@ print(type(L))
 <a id="seq5-2-1"></a>
 ### 2.1 Vecteurs, matrices & tableaux particuliers
 
+<a id="seq5-2-1-A"></a>
+**A. Création de tableaux**
+
 ```python
 import numpy as np 
 vec = np.array([1,2,3,4])
 mat = np.array([[1,2],[3,4]])
 print(vec)
 print(mat)
-# RETOURNE : [1 2 3 4]
+# RETOURNE :
+# [1 2 3 4]
 # [[1 2]
 #  [3 4]]
 ```
 
-taille tableau -> shape
+<a id="seq5-2-1-B"></a>
+**B. Dimensions d'un tableau : shape**
+L'attribut shape renvoie les dimensions du tableau sous la forme d'un tuple.
+
 ```python
 import numpy as np 
 mat=np.array([[1,2,3],[4,5,6]])
 print(mat.shape)
 print(mat.shape[0])
 print(mat.shape[1])
-# RETOURNE : (2, 3)
+# RETOURNE :
+# (2, 3)
 # 2
 # 3
 ```
-**AJOUTER COMM DANS LE CODE**
+* `mat.shape[0]` : nombre de lignes de la matrice `mat`.
+* `mat.shape[1]` : nombre de colonnes de la matrice `mat`.
 
-`vec[i]` et `mat[i][j]` (ou: `mat[i,j]`) slicing, extraction sous-array cf listes
-**AJOUTER EXPLICATION**
+<a id="seq5-2-1-C"></a>
+**C. Indexation et extraction (slicing)**
+Comme pour les listes Python, les éléments d'un tableau NumPy sont accessibles grâce à leurs indices.
 
-reshape
+`vec[i]` : élément d'indice i du vecteur vec.
+`mat[i][j]` ou `mat[i, j]` : élément situé à la ligne i et à la colonne j.
+`mat[i, :]` : extraction de la ligne i.
+`mat[:, j]` : extraction de la colonne j.
+`mat[i:j, k:l]` : extraction d'un sous-tableau.
+
+Exemple :**
+```python
+import numpy as np
+
+mat = np.array([[1, 2, 3], [4, 5, 6]])
+
+print(mat[0, 1])
+print(mat[1, :])
+print(mat[:, 0])
+
+# RETOURNE :
+# 2
+# [4 5 6]
+# [1 4]
+```
+<a id="seq5-2-1-D"></a>
+**D. Redimensionnement : reshape()**
+La méthode reshape() permet de modifier la forme d'un tableau sans changer ses éléments.
+
 ```python
 import numpy as np 
 tab=np.array([[1,2,3],[4,5,6]])
 print(tab.reshape(1,6))
 print(tab.reshape(3,2))
-# RETOURNE : [[1 2 3 4 5 6]]
+# RETOURNE :
+# [[1 2 3 4 5 6]]
 # [[1 2]
 #  [3 4]
 #  [5 6]]
 ```
 > **Attention :** aux bornes
-> Par exemple ici:
-> `tab.reshape(1,8) non admissible
+> Ici, par exemple `tab.reshape(1,8)` est impossible car tab contient uniquement 6 éléments.
 
-`mat.shape[0]`nombre de ligne de la matrice `mat`
-`mat.shape[1]`nombre de colonne de la matrice `mat`
+<a id="seq5-2-1-E"></a>
+**E. Trace d'une matrice**
+La trace d'une matrice carrée $A\in\mathcal{M}_p(\mathbb{R})$ est la somme des coefficients de sa diagonale principale :
 
-**Exercice :** Trace d'une matrice
-trace(A) $A\in Mat_p(IR)$
-Trace = somme coef diad
-**Faire explication shema LaTeX**
+$$\operatorname{Tr}(A)=\sum_{i=1}^{p}a_{ii}.$$
+
+**Exercice :** Écrire une fonction trace(A) qui calcule la trace d'une matrice carrée.
 ```python
 import numpy as np 
 
@@ -1958,12 +2015,19 @@ def trace(mat):
 print(trace([[1,1],[1,1]]))
 # RETOURNE : 2
 ```
+<a id="seq5-2-1-F"></a>
+**F. Création de tableaux régulièrement espacés**
 
-`vec1=np.linspace(2,10,5)`
-`vec2=np.arange(2,10,2)`
-**Ajout explication**
+```python
+vec1=np.linspace(2,10,5)
+vec2=np.arange(2,10,2)
+```
+* `np.linspace(a, b, n)` : crée n valeurs régulièrement espacées entre a et b, bornes incluses.
+* `np.arange(a, b, p)` : crée des valeurs de a inclus à b exclu, avec un pas de p.
 
-**Arrays particuliers :**
+<a id="seq5-2-1-G"></a>
+**G. Tableaux particuliers**
+
 `np.zero()` donne `[0,0]
 `np.zeros([2,2])`donne
 ```python
@@ -1991,6 +2055,8 @@ print(trace([[1,1],[1,1]]))
 
 <a id="seq5-2-2"></a>
 ### 2.2 Opérations sur les tableaux
+Les opérations arithmétiques usuelles peuvent être appliquées directement aux tableaux NumPy.
+
 ```python
 import numpy as np 
 
@@ -2015,7 +2081,11 @@ print(A**0.5)
 ```
 
 > **Attention :**
-> A*B n'est pas un produit matriciel
-> `np.dot(A,B)`
+> A*B effectue une multiplication terme à terme et non un produit matriciel.
+> A**2 élève chaque coefficient de A au carré.
+> `np.dot(A, B)` ou `A @ B` permet d'effectuer un produit matriciel.
 
-**Exercice :** Produit matriciel sans `np.dot(A,B)` $A,B \in Mat_n(IR)^2$
+**Exercice :** Écrire un programme permettant de calculer le produit matriciel de deux matrices $A,B\in\mathcal{M}_n(\mathbb{R})$, sans utiliser np.dot(A, B).
+```python
+# À faire
+```
