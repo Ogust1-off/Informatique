@@ -1791,7 +1791,7 @@ La documentation et des tutoriels sont disponibles sur [numpy.org](https://numpy
 | np.floor(x) | $\lfloor x \rfloor$ | Plus grand entier inférieur ou égal à $x$ | `np.floor(3.8)` → `3.0` |
 | np.ceil(x) | $\lceil x \rceil$ | Plus petit entier supérieur ou égal à $x$ | `np.ceil(3.2)` → `4.0` |
 
-**Exercice :** Soir $\displaystyle{\lim_{n\to+\infty}\sum_{k=1}^{n}\frac{1}{k^2}=\frac{\pi^2}{6}}$, écrire les fonctions suivantes :
+**Exercice :** Soit $\displaystyle{\lim_{n\to+\infty}\sum_{k=1}^{n}\frac{1}{k^2}=\frac{\pi^2}{6}}$, écrire les fonctions suivantes :
 1) `inverseCarres(n)` : calcule $\frac{1}{n^2}$.
 2) `somme(n)` : calcule la somme des inverses des carrés de $1$ à $n$.
 3) `erreur(n)` : calcule l'écart entre cette somme et sa limite théorique.
@@ -1863,14 +1863,14 @@ L=np.sqrt(X)
 print(L)
 # RETOURNE : [1.         1.41421356 1.73205081]
 ```
-Contrairement au fonction de la bibliothèque `math`, ces fonctions peuvent être appliquées à des tableaux de valeur.
+Contrairement aux fonctions de la bibliothèque `math`, ces fonctions peuvent être appliquées à des tableaux de valeur.
 
 **Exercice :** Méthodes des rectangles.
 
 Soit: $\displaystyle{I=\int_{a}^{b}f(x)dx}$. On cherche à approcher le résultat de cette intégrale à l'aide de la somme de rectangles.
 
-* $\displaystyle{I_g=\sum_{i=0}^{n-1}(f(x_i)\cdot h)dx}$ 
-* $\displaystyle{I_d=\sum_{i=1}^{n}(f(x_i)\cdot h)dx}$
+* $\displaystyle{I_g=h\sum_{i=0}^{n-1}f(x_i)}$ 
+* $\displaystyle{I_d=h\sum_{i=1}^{n}f(x_i)}$
 
 Écrire les fonctions suivantes :
 1) `decoupage(a, b, n)` : renvoie les points de subdivision de l'intervalle.
@@ -1913,7 +1913,7 @@ NumPy permet également de manipuler les nombres complexes.
 | `z.conjugate()` | Conjugué de $z$ | `(3-4j)` |
 | `np.angle(z)` | Argument de $z$ en radians | `0.9272952180016122` |
 | `np.angle(z, deg=True)` | Argument de $z$ en degrés | `53.13010235415598` |
-| `np.abs(z)` | Module de $z$ | '5.0' |
+| `np.abs(z)` | Module de $z$ | `5.0` |
 
 **Exercice :** Calculer une approximation de $\pi$ par la méthode d'Archimède.
 ```python
@@ -2041,7 +2041,7 @@ import numpy as np
 def trace(mat):
     mat = np.array(mat)
 
-    if mat.shape[0] == mat.shape[1]:
+    if mat.ndim == 2 or mat.shape[0] == mat.shape[1]: #mat.ndim == 2 verifie que mla matrice est de 2 dimetiosn
         s = 0
         for i in range(mat.shape[0]):
             s += mat[i][i]
