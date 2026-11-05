@@ -1998,15 +1998,8 @@ print(tab.reshape(3,2))
 **E. Trace d'une matrice**
 La trace d'une matrice carrée $A\in\mathcal{M}_p(\mathbb{R})$ est la somme des coefficients de sa diagonale principale :
 
-$
-A=
-\begin{pmatrix}
-a_{11} & a_{12} & \cdots & a_{1n}\\
-a_{21} & a_{22} & \cdots & a_{2n}\\
-\vdots & \vdots & \ddots & \vdots\\
-a_{n1} & a_{n2} & \cdots & a_{nn}
-\end{pmatrix}
-$
+$A=\begin{pmatrix}a_{11} & a_{12} & \cdots & a_{1n}\\a_{21} & a_{22} & \cdots & a_{2n}\\\vdots & \vdots & \ddots & \vdots\\a_{n1} & a_{n2} & \cdots & a_{nn}\end{pmatrix}$
+
 $\displaystyle{\mathrm{Tr}(A)=\sum_{i=1}^n a_{ii}=a_{11}+a_{22}+\cdots+a_{nn}}$
 
 **Exercice :** Écrire une fonction trace(A) qui calcule la trace d'une matrice carrée.
