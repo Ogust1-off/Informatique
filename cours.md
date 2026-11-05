@@ -1939,3 +1939,5 @@ print(tab.reshape(3,2))
 
 **Exercice :** Trace d'une matrice
 trace(A) $A\inMat(R)$
+Trace = somme coef diad
+**Faire explication shema LaTeX**
