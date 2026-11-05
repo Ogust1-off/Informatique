@@ -1832,7 +1832,7 @@ else:
 
 np.sqrt(x), np.exp(), np.log(), np.sin(), np.cos(), np.tan(), np.arccos(), np.arcsin(), np.arctan()
 
-Ces fonction par rapport a celle de la bibliothèqueque math son vectorialisable:
+Ces fonction par rapport a celle de la bibliothèque math sont vectorialisables:
 ```python
 import numpy as np
 X=[1,2,3]
@@ -1842,9 +1842,12 @@ print(L)
 ```
 
 **Exercice :** Méthodes des rectangles $\displaystyle{I=\int_{a}^{b}f(x)dx}$
-$\displaystyle{I_g=\sum_{I=1}^{n}f(x_i)h$
-$\displaystyle{I_d=\sum_{i=0}^{n-1}f(x_i)h$
+$\displaystyle{I_g=\sum_{I=1}^{n}f(x_i)h}$
+$\displaystyle{I_d=\sum_{i=0}^{n-1}f(x_i)h}$
+
 1) decoupage(a,b,n)
 2) rectangles(f,a,b,n)
+
 ```python
+
 ```
