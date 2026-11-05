@@ -1,7 +1,7 @@
 # Informatique
 Note de cours d'informatique Python ECAM A&M2
 
-### **Les fichiers de “par_sequence” sont créés à partir de cours.md. En cas de divergence entre les deux contenus, celui de cours.md prévaut.**
+### **Les fichiers de [par_sequence](https://github.com/Ogust1-off/Informatique/tree/main/par_sequence) sont créés à partir de cours.md. En cas de divergence entre les deux contenus, celui de cours.md prévaut.**
 
 *Dans un souci de transparence, voici les éléments réalisés ou modifiés à l’aide d’un LLM, à partir de mes instructions.*
 
