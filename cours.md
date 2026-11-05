@@ -1841,9 +1841,9 @@ print(L)
 # RETOURNE : [1.         1.41421356 1.73205081]
 ```
 
-**Exercice :** Méthodes des rectangles $I=\displaystyle{\int_{a}^{b}f(x)dx}$
-$I_g=\displaystyle{\sum_{i=1}^{n}f(x_i)h$
-$I_d=\displaystyle{\sum_{i=0}^{n-1}f(x_i)h$
+**Exercice :** Méthodes des rectangles $\displaystyle{I=\int_{a}^{b}f(x)dx}$
+$\displaystyle{I_g=\sum_{I=1}^{n}f(x_i)h$
+$\displaystyle{I_d=\sum_{i=0}^{n-1}f(x_i)h$
 1) decoupage(a,b,n)
 2) rectangles(f,a,b,n)
 ```python
