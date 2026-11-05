@@ -1854,7 +1854,7 @@ Les fonctions usuelles de NumPy permettent d'effectuer des opérations mathémat
 | `np.arcsin(x)` | $\arcsin(x)$ | Arc sinus |
 | `np.arctan(x)` | $\arctan(x)$ | Arc tangente |
 
-> **Remarque :** Les fonctions trigonométriques donne par défaut les résultats en radians.
+> **Remarque :** Les fonctions trigonométriques donnent par défaut les résultats en radians.
 
 ```python
 import numpy as np
@@ -1863,35 +1863,43 @@ L=np.sqrt(X)
 print(L)
 # RETOURNE : [1.         1.41421356 1.73205081]
 ```
-Contrairement au fonction de la bibliothèque `math`, ces fonctions peuvent être appliquer a des tableau de valeur.
+Contrairement au fonction de la bibliothèque `math`, ces fonctions peuvent être appliquées à des tableaux de valeur.
 
 **Exercice :** Méthodes des rectangles.
-Soit: $\displaystyle{I=\int_{a}^{b}f(x)dx}$. On cherche a approcher le résultat de cette intégrale a l'aide de somme de rectangles.
-$\displaystyle{I_g=\sum_{I=1}^{n}f(x_i)dx}$ , 
-$\displaystyle{I_d=\sum_{i=0}^{n-1}f(x_i)dx}$
+
+Soit: $\displaystyle{I=\int_{a}^{b}f(x)dx}$. On cherche à approcher le résultat de cette intégrale à l'aide de la somme de rectangles.
+
+* $\displaystyle{I_g=\sum_{i=0}^{n-1}(f(x_i)\cdot h)dx}$ 
+* $\displaystyle{I_d=\sum_{i=1}^{n}(f(x_i)\cdot h)dx}$
 
 Écrire les fonctions suivantes :
 1) `decoupage(a, b, n)` : renvoie les points de subdivision de l'intervalle.
 2) `rectangles(f, a, b, n)` : calcule les approximations à gauche et à droite de l'intégrale.
 
-**A VERIFIER**
 ```python
 import numpy as np
 
-def decoupage(a,b,n):
-    h=(b-a)/n
-    l=[]
-    for i in range(n):
+def decoupage(a, b, n):
+    h = (b-a)/n
+    l = []
+    for i in range(n+1):
         l.append(a+h*i)
-    return l
+    return np.array(l)
 
-def rectangle(f,a,b,n):
-    Ig=np.sum(decoupage(a,b,n)[:1])
-    Id=np.sum(decoupage(a,b,n)[1:])
-    return
+def rectangles(f, a, b, n):
+    points = decoupage(a, b, n)
+    h = (b-a)/n
 
-arr = np.array([1, 2, 3,4])
-print(np.sum(arr-1))
+    Ig = np.sum(f(points[:-1]))*h
+    Id = np.sum(f(points[1:]))*h
+
+    return Ig, Id
+
+def f(x):
+    return x
+
+print(rectangles(f, 0, 1, 4))
+# RETOURNE : (np.float64(0.375), np.float64(0.625))
 ```
 
 <a id="seq5-1-3"></a>
@@ -1902,10 +1910,10 @@ NumPy permet également de manipuler les nombres complexes.
 | :- | :- | :- |
 | `z.real` | Partie réelle | `3.0` |
 | `z.imag` | Partie imaginaire | `4.0` |
-| `z.conjugate()` | Conjugué de $z$ | `5.0` |
+| `z.conjugate()` | Conjugué de $z$ | `(3-4j)` |
 | `np.angle(z)` | Argument de $z$ en radians | `0.9272952180016122` |
 | `np.angle(z, deg=True)` | Argument de $z$ en degrés | `53.13010235415598` |
-| np.abs(z) | Module de $z$ |
+| `np.abs(z)` | Module de $z$ | '5.0' |
 
 **Exercice :** Calculer une approximation de $\pi$ par la méthode d'Archimède.
 ```python
@@ -2025,17 +2033,18 @@ $$\displaystyle{\mathrm{Tr}(A)=\sum_{i=1}^n a_{ii}=a_{11}+a_{22}+\cdots+a_{nn}}$
 
 **Exercice :** Écrire une fonction trace(A) qui calcule la trace d'une matrice carrée.
 ```python
-import numpy as np 
+import numpy as np
 
 def trace(mat):
     mat = np.array(mat)
-    s=0
-    if mat.shape[0]==mat.shape[1]:
-        for i in range(len(mat)):
-            s+=mat[i][i]
-    return s
 
-print(trace([[1,1],[1,1]]))
+    if mat.shape[0] == mat.shape[1] or mat.ndim !=2: #mat.ndim !=2 verifie que la matrice est carée
+        s = 0
+        for i in range(mat.shape[0]):
+            s += mat[i][i]
+        return s
+
+print(trace([[1, 1], [1, 1]]))
 # RETOURNE : 2
 ```
 <a id="seq5-2-1-F"></a>
@@ -2053,7 +2062,7 @@ vec2=np.arange(2,10,2)
 
 | Fonction NumPy | Résultat |
 | :- | :- |
-| `np.zero(x)` | Tableau de $x$ zéros |
+| `np.zeros(x)` | Tableau de $x$ zéros |
 | `np.zeros([x,y])` | Matrice de zéros de dimension $x\times y$ |
 | `np.ones(x)` | Tableau de $x$ uns |
 | `np.ones([x,y])` | Matrice de uns de dimension $x\times y$ |
@@ -2062,36 +2071,36 @@ vec2=np.arange(2,10,2)
 
 Exemples : 
 ```python
-np.zero(x)
+np.zeros(2)
 # RETOURNE :
-# [0,0]
+# [0. 0.]
 ```
 
 ```python
 np.zeros([2,2])
 # RETOURNE :
-# [[0,0]
-#  [0,0]]
+# [[0. 0.]
+#  [0. 0.]]
 ```
 
 ```python
 np.ones(2)
 # RETOURNE : 
-# {1,1]
+# [1. 1.]
 ```
 
 ```python
 np.ones([2,2])
 # RETOURNE :
-# [[1,1]
-#  [1,1]]
+# [[1. 1.]
+#  [1. 1.]]
 ```
 
 ```python
 np.eye(2)
 # RETOURNE :
-# [[1,0]
-#  [0,1]]
+# [[1. 0.]
+#  [0. 1.]]
 ```
 
 ```python
