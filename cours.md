@@ -2011,7 +2011,17 @@ print(tab.reshape(3,2))
 
 La trace d'une matrice carrée $A\in\mathcal{M}_p(ℝ)$ est la somme des coefficients de sa diagonale principale :
 
-$A=\begin{pmatrix}a_{11} & a_{12} & \cdots & a_{1n}\\a_{21} & a_{22} & \cdots & a_{2n}\\\vdots & \vdots & \ddots & \vdots\\a_{n1} & a_{n2} & \cdots & a_{nn}\end{pmatrix}$
+$$A=\begin{pmatrix}a_{11} & a_{12} & \cdots & a_{1n}\\a_{21} & a_{22} & \cdots & a_{2n}\\\vdots & \vdots & \ddots & \vdots\\a_{n1} & a_{n2} & \cdots & a_{nn}\end{pmatrix}$$
+
+$$
+A =
+\begin{pmatrix}
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{n1} & a_{n2} & \cdots & a_{nn}
+\end{pmatrix}
+$$
 
 $\displaystyle{\mathrm{Tr}(A)=\sum_{i=1}^n a_{ii}=a_{11}+a_{22}+\cdots+a_{nn}}$
 
@@ -2052,7 +2062,7 @@ vec2=np.arange(2,10,2)
 | `np.eye(x)` | Matrice identité de dimension $x\times x$ |
 | `np.diag([a1, a2, ... , an])` | Matrice diagonale contenant: $a_1, a_2, ... , a_n$ ($n\in ℕ$) |
 
-Exemple: 
+Exemples : 
 ```python
 np.zero(x)
 # RETOURNE :
