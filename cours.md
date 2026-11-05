@@ -671,7 +671,7 @@ print(M1,M2)
 > - `M2 = L.copy()` : `M2` est une copie de `L`.
 > Ainsi, modifier `L` ultérieurement modifie également `M1`, mais pas `M2`.
 
-**Exercice :** Afficher les 20 premiers termes de la suite de Fibonacci, de $F_0$ à $F_{19}$, sachant que la suite est définie par $F_n = F_{n-1} + F_{n-2}, n \in \mathbb{N}^* \setminus \lbrace 1 \rbrace$, avec $F_0 = 0$ et $F_1 = 1$.
+**Exercice :** Afficher les 20 premiers termes de la suite de Fibonacci, de $F_0$ à $F_{19}$, sachant que la suite est définie par $F_n = F_{n-1} + F_{n-2}, n \in ℕ^* \setminus \lbrace 1 \rbrace$, avec $F_0 = 0$ et $F_1 = 1$.
 ```python
 liste=[0,1]
 
@@ -1585,7 +1585,7 @@ a1, ... , am = fonction(p1, ... , pn)
 > # Mais la fonction hello ne retourne rien (None).
 > ```
 
-**Exercice :** Soit un polynôme du second degré: $p(x)=ax^2+bx+c$, avec $(a,b,c)\in\mathbb{R}^3$.
+**Exercice :** Soit un polynôme du second degré: $p(x)=ax^2+bx+c$, avec $(a,b,c)\inℝ^3$.
 Déterminer les solutions de $p(x)=0$ pour $a=-1$, $b=-2$ et $c=5$.
 ```python
 def racines(a,b,c):
@@ -2009,7 +2009,7 @@ print(tab.reshape(3,2))
 <a id="seq5-2-1-E"></a>
 **E. Trace d'une matrice**
 
-La trace d'une matrice carrée $A\in\mathcal{M}_p(\mathbb{R})$ est la somme des coefficients de sa diagonale principale :
+La trace d'une matrice carrée $A\in\mathcal{M}_p(ℝ)$ est la somme des coefficients de sa diagonale principale :
 
 $A=\begin{pmatrix}a_{11} & a_{12} & \cdots & a_{1n}\\a_{21} & a_{22} & \cdots & a_{2n}\\\vdots & \vdots & \ddots & \vdots\\a_{n1} & a_{n2} & \cdots & a_{nn}\end{pmatrix}$
 
@@ -2127,7 +2127,7 @@ print(A**0.5)
 > A**2 élève chaque coefficient de A au carré.
 > `np.dot(A, B)` ou `A @ B` permet d'effectuer un produit matriciel.
 
-**Exercice :** Écrire un programme permettant de calculer le produit matriciel de deux matrices $A,B\in\mathcal{M}_n(\mathbb{R})$, sans utiliser np.dot(A, B).
+**Exercice :** Écrire un programme permettant de calculer le produit matriciel de deux matrices $A,B\in\mathcal{M}_n(ℝ)$, sans utiliser np.dot(A, B).
 ```python
 # À faire
 ```
