@@ -1832,6 +1832,7 @@ else:
 <a id="seq5-1-2"></a>
 ### 1.2 Fonctions usuelles
 
+**A METTRE EN TABLEAU**
 np.sqrt(x), np.exp(), np.log(), np.sin(), np.cos(), np.tan(), np.arccos(), np.arcsin(), np.arctan()
 
 Ces fonction par rapport a celle de la bibliothèque math sont vectorialisables:
@@ -1873,6 +1874,7 @@ print(np.sum(arr-1))
 <a id="seq5-1-3"></a>
 ### 1.3 Complexes
 
+**A METRE EN TABLEAU**
 z.real, z.imag, z.conjugate(), np.angle(z) (en rad), np.angle(z, deg=True) (en degre), np.abs(z)
 
 **Exercice :** Calcule approximation de pi par la méthode d'Archimede:
@@ -1903,3 +1905,19 @@ print(mat)
 # [[1 2]
 #  [3 4]]
 ```
+
+taille tableau -> shape
+```python
+import numpy as np 
+mat=np.array([[1,2,3],[4,5,6]])
+print(mat.shape)
+print(mat.shape[0])
+print(mat.shape[1])
+# RETOURNE : (2, 3)
+# 2
+# 3
+```
+**AJOUTER COMM DANS LE CODE**
+
+vec[i] et mat[i][j] (mat[i,j]) slicing, extraction sous-array cf listes
+**AJOUTER EXPLICATION**
