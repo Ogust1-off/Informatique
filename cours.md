@@ -1974,13 +1974,16 @@ print(mat.shape[1])
 
 Comme pour les listes Python, les éléments d'un tableau NumPy sont accessibles grâce à leurs indices.
 
-`vec[i]` : élément d'indice i du vecteur vec.
-`mat[i][j]` ou `mat[i, j]` : élément situé à la ligne i et à la colonne j.
-`mat[i, :]` : extraction de la ligne i.
-`mat[:, j]` : extraction de la colonne j.
-`mat[i:j, k:l]` : extraction d'un sous-tableau.
+| Syntaxe | Description |
+| :- | :- |
+| `vec[i]` | Accède à l'élément d'indice `i` du vecteur `vec`. |
+| `mat[i, j]` ou `mat[i][j]`| Accède à l'élément situé à la ligne `i` et à la colonne `j`. |
+| `mat[i, :]` | Extrait la ligne `i` de la matrice. |
+| `mat[:, j]` | Extrait la colonne `j` de la matrice. |
+| `mat[i:j, k:l]` | Extrait un sous-tableau : lignes de `i` à `j-1` et colonnes de `k` à `l-1`. |
+> **Attention :** dans un slicing `debut:fin`, l'indice de début est inclus, mais celui de fin est exclu.
 
-Exemple :**
+Exemple :
 ```python
 import numpy as np
 
@@ -2038,7 +2041,7 @@ import numpy as np
 def trace(mat):
     mat = np.array(mat)
 
-    if mat.shape[0] == mat.shape[1] or mat.ndim !=2: #mat.ndim !=2 verifie que la matrice est carée
+    if mat.shape[0] == mat.shape[1]:
         s = 0
         for i in range(mat.shape[0]):
             s += mat[i][i]
