@@ -2046,6 +2046,7 @@ def trace(mat):
         for i in range(mat.shape[0]):
             s += mat[i][i]
         return s
+    else return "La matrice n'est pas de dimension 2 ou n'est pas carée"
 
 print(trace([[1, 1], [1, 1]]))
 # RETOURNE : 2
