@@ -1937,6 +1937,9 @@ print(tab.reshape(3,2))
 > Par exemple ici:
 > `tab.reshape(1,8) non admissible
 
+`mat.shape[0]`nombre de ligne de la matrice `mat`
+`mat.shape[1]`nombre de colonne de la matrice `mat`
+
 **Exercice :** Trace d'une matrice
 trace(A) $A\in Mat_p(IR)$
 Trace = somme coef diad
@@ -1955,3 +1958,64 @@ def trace(mat):
 print(trace([[1,1],[1,1]]))
 # RETOURNE : 2
 ```
+
+`vec1=np.linspace(2,10,5)`
+`vec2=np.arange(2,10,2)`
+**Ajout explication**
+
+**Arrays particuliers :**
+`np.zero()` donne `[0,0]
+`np.zeros([2,2])`donne
+```python
+[[0,0]
+ [0,0]]
+```
+`np.ones(2)` donne `[1,1]`
+`np.ones([2,2])` donne
+```python
+[[1,1]
+ [1,1]]
+```
+`np.eye(2)` donne
+```python
+[[1,0]
+ [0,1]]
+```
+`np.diag([1,2,3,4])`donne
+```python
+[[1 0 0 0]
+ [0 2 0 0]
+ [0 0 3 0]
+ [0 0 0 4]]
+```
+
+<a id="seq5-2-2"></a>
+### 2.2 Opérations sur les tableaux
+```python
+import numpy as np 
+
+A=np.array([[1,2],[3,4]])
+print(A+A)
+print(5*A)
+print(5*A-A)
+print(A*A)
+print(A**0.5)
+
+# RETOURNE :
+# [[2 4]
+#  [6 8]]
+# [[ 5 10]
+#  [15 20]]
+# [[ 4  8]
+#  [12 16]]
+# [[ 1  4]
+#  [ 9 16]]
+# [[1.         1.41421356]
+# [1.73205081 2.        ]]
+```
+
+> **Attention :**
+> A*B n'est pas un produit matriciel
+> `np.dot(A,B)`
+
+**Exercice :** Produit matriciel sans `np.dot(A,B)` $A,B \in Mat_n(IR)^2$
