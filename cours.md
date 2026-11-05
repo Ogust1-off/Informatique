@@ -68,6 +68,8 @@
 		- [2.2 Opérations sur les tableaux](#seq5-2-2)
 
 
+<a id="top"></a>
+[Allez au bas de la page](#bottom)
 
 <a id="seq1"></a>
 # Séquence 1 — Premiers pas en Python
@@ -2153,3 +2155,8 @@ print(A**0.5)
 ```python
 # À faire
 ```
+
+
+
+<a id="bottom"></a>
+[Allez au haut de la page](#top)
