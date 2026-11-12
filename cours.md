@@ -2153,9 +2153,47 @@ print(A**0.5)
 
 **Exercice :** Écrire un programme permettant de calculer le produit matriciel de deux matrices $A,B\in\mathcal{M}_n(ℝ)$, sans utiliser np.dot(A, B).
 ```python
-# À faire
+import numpy as np
+
+def produit_matriciel(A,B):
+    n=A.shape[0]
+    C=np.zeros([n,n])
+    for i in range(n):
+        for j in range(n):
+            for k in range(n):
+                C[i,j]+=A[i,k]*B[k,j]
+    print(C)
+
+
+A=np.array([[1,2],[3,4]])
+B=np.array([[1,0],[0,1]]) # ou np.eye(2)
+produit_matriciel(A,B)
+# RETOURNE :
+# [[1. 2.]
+#  [3. 4.]]
 ```
 
+**Comparaison de tableaux :**
+```python
+import numpy as np
+
+A=np.array([[1,2],[3,4]])
+B=np.array([[1,3],[2,4]])
+print(A==B)
+
+# RETOURNE :
+# [[ True False]
+#  [False  True]]
+```
+
+```python
+if np.any(A==B):
+    print("A et B ont des éléments en communs")
+if np.all(A==B):
+    print("A et B sont égales")
+```
+
+**Fonctions NumPy pour matrices :**
 
 
 <a id="bottom"></a>
