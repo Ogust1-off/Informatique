@@ -68,6 +68,9 @@
 			- [F. Création de tableaux régulièrement espacés](#seq5-2-1-F)
 			- [G. Tableaux particuliers](#seq5-2-1-G)
 		- [2.2 Opérations sur les tableaux](#seq5-2-2)
+	- [3. Module random](#seq5-3)
+- [Séquence 6 — Bibliothèque `matplotlib.pyplot`](#seq6)
+	- [1. Figures et graphiques](#seq6-1)
 
 
 
@@ -2245,6 +2248,20 @@ y=a+(b-a)*x
 `rd.normal(mean, std, N)`
 `rd.uniform(a,b,N)`
 **AJOUTER EXPLICATON USAGE, RETOUR, CE QUE L'ONT MET**
+
+<a id="seq6"></a>
+#Séquence 6 — Bibliothèque `matplotlib.pyplot`
+Par convention, on l'importe sous le nom `plt` :
+```python
+import matplotlib.pyplot as plt
+```
+
+<a id="seq6-1"></a>
+## 1. Figures et graphiques
+Pour crée une fenêtre de figure: `plt.figure()`
+`plt.plot(x,y)`: cree une liste de points. Il faut que x,y soit de meme taille
+A la fin pour afficher le graphique on fait: `plt.show()`
+
 
 
 
