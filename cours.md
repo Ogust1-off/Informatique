@@ -71,6 +71,7 @@
 	- [3. Module random](#seq5-3)
 - [Séquence 6 — Bibliothèque `matplotlib.pyplot`](#seq6)
 	- [1. Figures et graphiques](#seq6-1)
+	- [2. Customisation](#seq6-2)
 
 
 
@@ -2261,6 +2262,66 @@ import matplotlib.pyplot as plt
 Pour crée une fenêtre de figure: `plt.figure()`
 `plt.plot(x,y)`: cree une liste de points. Il faut que x,y soit de meme taille
 A la fin pour afficher le graphique on fait: `plt.show()`
+
+Exemple :
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+x=np.linspace(0,2*np.pi, 500)
+y=np.cos(x)
+plt.figure()
+plt.plot(x,y)
+plt.show()
+```
+
+**Exercice :** $f(x)=\cos(\frac{\sin(x)}{x^2})$
+1) Faire $f(x)$
+2) Tracé de la courbe représentative sur $[-2.5,2.5] avec 5000points
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+x=np.linspace(-2.5,2.5, 5000)
+y=np.cos((np.sin(x)/x**2))
+plt.figure()
+plt.plot(x,y)
+plt.show()
+```
+
+<a id="seq6-2"></a>
+## 2. Customisation
+
+<a id="seq6-2-1"></a>
+## 2.1 Titres et axes
+`plt.title("Mon titre")`
+`plt.xlabel("titre d'abscisses")`
+`plt.ylabel("titre d'ordonnées")`
+`plt.xlim([a,b])
+`plt.ylim([c,d])
+`plt.grid()` Trace la grille automatiquement
+
+<a id="seq6-2-2"></a>
+## 2.2 Traits, police, courbes et couleurs
+
+**Traits et marqueurs :**
+
+`plt.plot(x,y, '--')`
+`plt.plot(x,y, 'x')`
+`plt.plot(x,y, '--x')`
+**AJOUTER LES AUTRES (TABLEAUX)**
+
+**Couleurs :**
+
+`plt.plot(x,y, color='r')`
+`plt.plot(x,y, color='orange')`
+
+**Taille du trait :**
+`plt.plot(x,y, linewidth=5, markersize=10)`
+
+
+
+
 
 
 
