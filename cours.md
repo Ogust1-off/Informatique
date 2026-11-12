@@ -2317,7 +2317,40 @@ plt.show()
 `plt.plot(x,y, color='orange')`
 
 **Taille du trait :**
+
 `plt.plot(x,y, linewidth=5, markersize=10)`
+
+**Taille de police :**
+`plt.title("title", fontsize=8)`
+`plt.xticks(fontsize=12)`
+`plt.yticks(fontsize=14)`
+
+
+<a id="seq6-3"></a>
+## 3. Multi-affichage
+<a id="seq6-3-1"></a>
+## 3.1 Plusieurs courbes
+Il faut juste rajouter une ligne `plt.plot`
+Par exemple:
+```python
+plt.plot(x,y1)
+plt.plot(x,y2)
+```
+
+Ajout de légende:
+```python
+plt.plot(x,y1, label='courbe1')
+plt.plot(x,y2, label='courbe2')
+plt.legend()
+```
+Ou alors:
+```python
+plt.legend(['courbe1','courbe2']
+```
+<a id="seq6-3-2"></a>
+## 3.2 Subplots
+Utile pour ajouter plusieurs graphiques dans une seul figure.
+
 
 
 
