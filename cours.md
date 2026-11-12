@@ -2228,10 +2228,9 @@ import numpy.random as rd
 ```
 
 **Génération de liste d'entiers aléatoires :**
-```python
-rd.randint(a,b,N)
-rd.randint(a,b,[N,N])
-```
+`rd.randint(a,b,N)`
+`rd.randint(a,b,[N,N])`
+**AJOUTER EXPLICATON USAGE, RETOUR, CE QUE L'ONT MET**
 
 **Génération de liste de réels aléatoires :**
 `rd.rand(N)`
@@ -2239,8 +2238,14 @@ rd.randint(a,b,[N,N])
 x=rd.rand(N)
 y=a+(b-a)*x
 ```
+**AJOUTER EXPLICATON USAGE, RETOUR, CE QUE L'ONT MET**
+
 
 **Génération de lois de probabilité :**
+`rd.normal(mean, std, N)`
+`rd.uniform(a,b,N)`
+**AJOUTER EXPLICATON USAGE, RETOUR, CE QUE L'ONT MET**
+
 
 
 
