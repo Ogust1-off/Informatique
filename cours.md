@@ -2349,9 +2349,15 @@ plt.legend(['courbe1','courbe2']
 ```
 <a id="seq6-3-2"></a>
 ## 3.2 Subplots
-Utile pour ajouter plusieurs graphiques dans une seul figure.
+Utile pour ajouter plusieurs graphiques dans une seule figure.
 
-
+```python
+plt.subplot(abc)
+# a: nombre de fenêtres en ligne
+# b: nombre de fenêtres en colonne
+# c: position de la fenetre
+```
+Pour des nombres supérieurs a 9 il faut séparer a, b et c par des virgules (on peut bien sur aussi pour les nombres inférieurs a 9.
 
 
 
