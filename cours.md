@@ -2195,6 +2195,54 @@ if np.all(A==B):
 
 **Fonctions NumPy pour matrices :**
 
+| Fonction NumPy | Signification |
+| :- | :- |
+mat.sum()
+mat.sum(axis=0)
+mat.sum(axis=1)
+mat.max()
+mat.min()
+mat.prod()
+mat.transpose()
+
+> **Attention :**
+> ```python
+> def f(x)
+>     return 2*x+1
+> ```
+> ```python
+> A=np.array([[1,2],[3,4]])
+> print(np.vectorize(f)(A))
+> ```
+**AJOUTER EXPLICATION**
+
+** Exercice :** Produit vectoriel
+```python
+# A FAIRE
+```
+
+<a id="seq5-3"></a>
+## 3. Module random
+```python
+import numpy.random as rd
+```
+
+**Génération de liste d'entiers aléatoires :**
+```python
+rd.randint(a,b,N)
+rd.randint(a,b,[N,N])
+```
+
+**Génération de liste de réels aléatoires :**
+`rd.rand(N)`
+```python
+x=rd.rand(N)
+y=a+(b-a)*x
+```
+
+**Génération de lois de probabilité :**
+
+
 
 <a id="bottom"></a>
 [Allez au haut de la page](#top)
