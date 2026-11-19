@@ -2201,13 +2201,13 @@ if np.all(A==B):
 
 | Fonction NumPy | Signification |
 | :- | :- |
-mat.sum()
-mat.sum(axis=0)
-mat.sum(axis=1)
-mat.max()
-mat.min()
-mat.prod()
-mat.transpose()
+`mat.sum()`
+`mat.sum(axis=0)`
+`mat.sum(axis=1)`
+`mat.max()`
+`mat.min()`
+`mat.prod()`
+`mat.transpose()`
 
 > **Attention :**
 > ```python
@@ -2220,7 +2220,7 @@ mat.transpose()
 > ```
 **AJOUTER EXPLICATION**
 
-** Exercice :** Produit vectoriel
+**Exercice :** Produit vectoriel
 ```python
 # A FAIRE
 ```
@@ -2355,7 +2355,7 @@ Utile pour ajouter plusieurs graphiques dans une seule figure.
 plt.subplot(abc)
 # a: nombre de fenêtres en ligne
 # b: nombre de fenêtres en colonne
-# c: position de la fenetre
+# c: position de la fenêtre
 ```
 Pour des nombres supérieurs a 9 il faut séparer a, b et c par des virgules (on peut bien sur aussi pour les nombres inférieurs a 9.
 
