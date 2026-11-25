@@ -2446,6 +2446,7 @@ Lorsque l'un des paramètres est supérieur ou égal à 10, il faut utiliser la 
 
 
 
+Copyright © 2026 Ogust'1. All rights reserved.
 
 <a id="bottom"></a>
 [Allez au haut de la page](#top)
