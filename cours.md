@@ -2402,9 +2402,10 @@ plt.show()
 `plt.plot(x,y, linewidth=5, marker='o', markersize=10)`
 
 **Taille de police :**
-`plt.title("title", fontsize=8)`
-`plt.xticks(fontsize=12)`
-`plt.yticks(fontsize=14)`
+
+- `plt.title("title", fontsize=8)`
+- `plt.xticks(fontsize=12)`
+- `plt.yticks(fontsize=14)`
 
 
 <a id="seq6-3"></a>
