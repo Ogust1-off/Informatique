@@ -2267,7 +2267,7 @@ import matplotlib.pyplot as plt
 <a id="seq6-1"></a>
 ## 1. Figures et graphiques
 Pour créer une fenêtre de figure: `plt.figure()`
-`plt.plot(x,y)`: crée une liste de points. Il faut que x,y soit de meme taille
+`plt.plot(x,y)` : trace une courbe reliant les points de coordonnées `(x[i], y[i])`. Les tableaux `x` et `y` doivent avoir la même taille.
 A la fin pour afficher le graphique on fait: `plt.show()`
 
 Exemple :
@@ -2295,12 +2295,13 @@ plt.figure()
 plt.plot(x,y)
 plt.show()
 ```
+> **Remarque :** a $x=0$ la fonction n'est pas définit.
 
 <a id="seq6-2"></a>
 ## 2. Customisation
 
 <a id="seq6-2-1"></a>
-## 2.1 Titres et axes
+### 2.1 Titres et axes
 `plt.title("Mon titre")`
 `plt.xlabel("titre d'abscisses")`
 `plt.ylabel("titre d'ordonnées")`
@@ -2309,7 +2310,7 @@ plt.show()
 `plt.grid()` Trace la grille automatiquement
 
 <a id="seq6-2-2"></a>
-## 2.2 Traits, police, courbes et couleurs
+### 2.2 Traits, police, courbes et couleurs
 
 **Traits et marqueurs :**
 
@@ -2336,7 +2337,7 @@ plt.show()
 <a id="seq6-3"></a>
 ## 3. Multi-affichage
 <a id="seq6-3-1"></a>
-## 3.1 Plusieurs courbes
+### 3.1 Plusieurs courbes
 Il faut juste rajouter une ligne `plt.plot`
 Par exemple:
 ```python
@@ -2355,14 +2356,14 @@ Ou alors:
 plt.legend(['courbe1','courbe2'])
 ```
 <a id="seq6-3-2"></a>
-## 3.2 Subplots
+### 3.2 Subplots
 Utile pour ajouter plusieurs graphiques dans une seule figure.
 
 ```python
 plt.subplot(abc)
-# a: nombre de fenêtres en ligne
-# b: nombre de fenêtres en colonne
-# c: position de la fenêtre
+# a : nombre de lignes de graphiques ;
+# b : nombre de colonnes de graphiques ;
+# c : position du graphique, en commençant à 1.
 ```
 Pour des nombres supérieurs a 9 il faut séparer a, b et c par des virgules (on peut bien sur aussi pour les nombres inférieurs a 9.
 
