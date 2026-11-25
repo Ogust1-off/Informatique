@@ -18,6 +18,8 @@
 			- [F. Création de tableaux régulièrement espacés](#seq5-2-1-F)
 			- [G. Tableaux particuliers](#seq5-2-1-G)
 		- [2.2 Opérations sur les tableaux](#seq5-2-2)
+	- [3. Module random](#seq5-3)
+
 
 
 <a id="seq5"></a>
@@ -181,11 +183,28 @@ NumPy permet également de manipuler les nombres complexes.
 
 **Exercice :** Calculer une approximation de $\pi$ par la méthode d'Archimède.
 ```python
-# A Faire
+# A Faire - J'ai la flemme donc c'est de l'IA (pour l'instant
+import numpy as np
+
+def archimede(epsilon):
+    n = 6
+
+    pi_min = n*np.sin(np.pi/n)
+    pi_max = n*np.tan(np.pi/n)
+
+    while pi_max-pi_min >= epsilon:
+        n = n*2
+        pi_min = n*np.sin(np.pi/n)
+        pi_max = n*np.tan(np.pi/n)
+
+    return (pi_min+pi_max)/2
+
+print(archimede(0.000001))
+# RETOURNE : environ 3.14159265
 ```
 
 <a id="seq5-2"></a>
-### 2. Tableaux NumPy
+## 2. Tableaux NumPy
 NumPy permet de convertir des listes Python en tableaux numériques appelés ndarray *(N-dimensional array)*.
 
 ```python
@@ -415,6 +434,116 @@ print(A**0.5)
 
 **Exercice :** Écrire un programme permettant de calculer le produit matriciel de deux matrices $A,B\in\mathcal{M}_n(ℝ)$, sans utiliser np.dot(A, B).
 ```python
-# À faire
+import numpy as np
+
+def produit_matriciel(A,B):
+    n=A.shape[0]
+    C=np.zeros([n,n])
+    for i in range(n):
+        for j in range(n):
+            for k in range(n):
+                C[i,j]+=A[i,k]*B[k,j]
+    print(C)
+
+
+A=np.array([[1,2],[3,4]])
+B=np.array([[1,0],[0,1]]) # ou np.eye(2)
+produit_matriciel(A,B)
+# RETOURNE :
+# [[1. 2.]
+#  [3. 4.]]
 ```
 
+**Comparaison de tableaux :**
+```python
+import numpy as np
+
+A=np.array([[1,2],[3,4]])
+B=np.array([[1,3],[2,4]])
+print(A==B)
+
+# RETOURNE :
+# [[ True False]
+#  [False  True]]
+```
+
+```python
+if np.any(A==B):
+    print("A et B ont au moins un coefficient égal à la même position")
+if np.all(A==B):
+    print("A et B sont égales")
+```
+
+**Fonctions NumPy pour matrices :**
+
+| Fonction NumPy | Signification |
+| :- | :- |
+| `mat.sum()` | Somme de tous les coefficients |
+| `mat.sum(axis=0)` | Somme des coefficients de chaque colonne |
+| `mat.sum(axis=1)` | Somme des coefficients de chaque ligne |
+| `mat.max()` | Plus grand coefficient |
+| `mat.min()` | Plus petit coefficient |
+| `mat.prod()` | Produit de tous les coefficients |
+| `mat.transpose()` | Transposée de la matrice |
+
+> **Attention :**
+> ```python
+> def f(x):
+>     return 2*x+1
+> ```
+> ```python
+> A=np.array([[1,2],[3,4]])
+> print(np.vectorize(f)(A))
+> ```
+`np.vectorize(f)(A)` permet d'appliquer la fonction `f` à chaque élément du tableau `A`.
+
+**Exercice :** Produit vectoriel
+```python
+# A FAIRE - J'ai la flemme donc c'est de l'IA pour l'instant
+import numpy as np
+
+def produit_vectoriel(u, v):
+    if len(u) != 3 or len(v) != 3:
+        print("Les vecteurs doivent être de dimension 3.")
+        return None
+
+    x = u[1]*v[2]-u[2]*v[1]
+    y = u[2]*v[0]-u[0]*v[2]
+    z = u[0]*v[1]-u[1]*v[0]
+
+    return np.array([x, y, z])
+
+
+u = np.array([1, 0, 0])
+v = np.array([0, 1, 0])
+
+print(produit_vectoriel(u, v))
+# RETOURNE : [0 0 1]
+```
+
+<a id="seq5-3"></a>
+## 3. Module random
+```python
+import numpy.random as rd
+```
+
+**Génération de tableaux d'entiers aléatoires :**
+`rd.randint(a,b,N)`
+`rd.randint(a,b,[N,N])`
+`a` : borne inférieure incluse.
+`b` : borne supérieure exclue.
+`N` : nombre d'entiers générés.
+`[N,N]` : dimensions du tableau généré.
+
+**Génération de tableaux de réels aléatoires :**
+`rd.rand(N)`
+Génère un tableau de N nombres réels aléatoires compris entre 0 inclus et 1 exclu.
+```python
+x=rd.rand(N)
+y=a+(b-a)*x
+```
+Permet de transformer ces valeurs pour obtenir des nombres compris entre `a` inclus et `b` exclu.
+
+**Génération de lois de probabilité :**
+- `rd.normal(mean, std, N)` : génère N valeurs suivant une loi normale de moyenne `mean` et d'écart-type `std`.
+- `rd.uniform(a,b,N)` : génère `N` valeurs suivant une loi uniforme entre `a` inclus et `b` exclu.
