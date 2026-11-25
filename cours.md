@@ -2373,7 +2373,7 @@ plt.show()
 | `'v'` | Triangle pointant vers le bas |
 | `'<'` | Triangle pointant vers la gauche |
 | `'>'` | Triangle pointant vers la droite |
-| `'|'` | Trait vertical |
+| `'\|'` | Trait vertical |
 | `'_'` | Trait horizontal |
 
 **Couleurs :**
