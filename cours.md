@@ -1928,7 +1928,24 @@ NumPy permet également de manipuler les nombres complexes.
 
 **Exercice :** Calculer une approximation de $\pi$ par la méthode d'Archimède.
 ```python
-# A Faire
+# A Faire - J'ai la flemme donc c'est de l'IA (pour l'instant
+import numpy as np
+
+def archimede(epsilon):
+    n = 6
+
+    pi_min = n*np.sin(np.pi/n)
+    pi_max = n*np.tan(np.pi/n)
+
+    while pi_max-pi_min >= epsilon:
+        n = n*2
+        pi_min = n*np.sin(np.pi/n)
+        pi_max = n*np.tan(np.pi/n)
+
+    return (pi_min+pi_max)/2
+
+print(archimede(0.000001))
+# RETOURNE : environ 3.14159265
 ```
 
 <a id="seq5-2"></a>
@@ -2227,7 +2244,26 @@ if np.all(A==B):
 
 **Exercice :** Produit vectoriel
 ```python
-# A FAIRE
+# A FAIRE - J'ai la flemme donc c'est de l'IA pour l'instant
+import numpy as np
+
+def produit_vectoriel(u, v):
+    if len(u) != 3 or len(v) != 3:
+        print("Les vecteurs doivent être de dimension 3.")
+        return None
+
+    x = u[1]*v[2]-u[2]*v[1]
+    y = u[2]*v[0]-u[0]*v[2]
+    z = u[0]*v[1]-u[1]*v[0]
+
+    return np.array([x, y, z])
+
+
+u = np.array([1, 0, 0])
+v = np.array([0, 1, 0])
+
+print(produit_vectoriel(u, v))
+# RETOURNE : [0 0 1]
 ```
 
 <a id="seq5-3"></a>
@@ -2236,7 +2272,7 @@ if np.all(A==B):
 import numpy.random as rd
 ```
 
-**Génération de liste d'entiers aléatoires :**
+**Génération de tableaux d'entiers aléatoires :**
 `rd.randint(a,b,N)`
 `rd.randint(a,b,[N,N])`
 `a` : borne inférieure incluse.
@@ -2244,7 +2280,7 @@ import numpy.random as rd
 `N` : nombre d'entiers générés.
 `[N,N]` : dimensions du tableau généré.
 
-**Génération de liste de réels aléatoires :**
+**Génération de tableaux de réels aléatoires :**
 `rd.rand(N)`
 Génère un tableau de N nombres réels aléatoires compris entre 0 inclus et 1 exclu.
 ```python
@@ -2268,7 +2304,7 @@ import matplotlib.pyplot as plt
 ## 1. Figures et graphiques
 Pour créer une fenêtre de figure: `plt.figure()`
 `plt.plot(x,y)` : trace une courbe reliant les points de coordonnées `(x[i], y[i])`. Les tableaux `x` et `y` doivent avoir la même taille.
-A la fin pour afficher le graphique on fait: `plt.show()`
+À la fin pour afficher le graphique on fait: `plt.show()`
 
 Exemple :
 ```python
@@ -2363,7 +2399,7 @@ plt.show()
 
 **Taille du trait :**
 
-`plt.plot(x,y, linewidth=5, markersize=10)`
+`plt.plot(x,y, linewidth=5, marker='o', markersize=10)`
 
 **Taille de police :**
 `plt.title("title", fontsize=8)`
@@ -2376,7 +2412,7 @@ plt.show()
 <a id="seq6-3-1"></a>
 ### 3.1 Plusieurs courbes
 Il faut juste rajouter une ligne `plt.plot`
-Par exemple:
+Par exemple :
 ```python
 plt.plot(x,y1)
 plt.plot(x,y2)
