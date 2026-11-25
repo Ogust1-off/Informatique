@@ -2258,7 +2258,7 @@ Permet de transformer ces valeurs pour obtenir des nombres compris entre `a` inc
 - `rd.uniform(a,b,N)` : génère `N` valeurs suivant une loi uniforme entre `a` inclus et `b` exclu.
 
 <a id="seq6"></a>
-#Séquence 6 — Bibliothèque `matplotlib.pyplot`
+# Séquence 6 — Bibliothèque `matplotlib.pyplot`
 Par convention, on l'importe sous le nom `plt` :
 ```python
 import matplotlib.pyplot as plt
