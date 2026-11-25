@@ -1716,9 +1716,9 @@ print(f"L'angle entre vos deux vecteurs est de {angle_entre_2vecteurs([0,1,0],[1
 
 Exemple :
 ```python
-n=5 # Variable global
+n=5 # Variable globale
 def afficheur():
-    for i in range(n): # Variable local
+    for i in range(n): # Variable locale
         print("i=", i)
     print("ici i vaut", i)
 afficheur()
@@ -2192,7 +2192,7 @@ print(A==B)
 
 ```python
 if np.any(A==B):
-    print("A et B ont des éléments en communs")
+    print("A et B ont au moins un coefficient égal à la même position")
 if np.all(A==B):
     print("A et B sont égales")
 ```
@@ -2201,24 +2201,24 @@ if np.all(A==B):
 
 | Fonction NumPy | Signification |
 | :- | :- |
-`mat.sum()`
-`mat.sum(axis=0)`
-`mat.sum(axis=1)`
-`mat.max()`
-`mat.min()`
-`mat.prod()`
-`mat.transpose()`
+| `mat.sum()` | Somme de tous les coefficients |
+| `mat.sum(axis=0)` | Somme des coefficients de chaque colonne |
+| `mat.sum(axis=1)` | Somme des coefficients de chaque ligne |
+| `mat.max()` | Plus grand coefficient |
+| `mat.min()` | Plus petit coefficient |
+| `mat.prod()` | Produit de tous les coefficients |
+| `mat.transpose()` | Transposée de la matrice |
 
 > **Attention :**
 > ```python
-> def f(x)
+> def f(x):
 >     return 2*x+1
 > ```
 > ```python
 > A=np.array([[1,2],[3,4]])
 > print(np.vectorize(f)(A))
 > ```
-**AJOUTER EXPLICATION**
+`np.vectorize(f)(A)` permet d'appliquer la fonction `f` à chaque élément du tableau `A`.
 
 **Exercice :** Produit vectoriel
 ```python
@@ -2234,21 +2234,23 @@ import numpy.random as rd
 **Génération de liste d'entiers aléatoires :**
 `rd.randint(a,b,N)`
 `rd.randint(a,b,[N,N])`
-**AJOUTER EXPLICATON USAGE, RETOUR, CE QUE L'ONT MET**
+`a` : borne inférieure incluse.
+`b` : borne supérieure exclue.
+`N` : nombre d'entiers générés.
+`[N,N]` : dimensions du tableau généré.
 
 **Génération de liste de réels aléatoires :**
 `rd.rand(N)`
+Génère un tableau de N nombres réels aléatoires compris entre 0 inclus et 1 exclu.
 ```python
 x=rd.rand(N)
 y=a+(b-a)*x
 ```
-**AJOUTER EXPLICATON USAGE, RETOUR, CE QUE L'ONT MET**
-
+Permet de transformer ces valeurs pour obtenir des nombres compris entre `a` inclus et `b` exclu.
 
 **Génération de lois de probabilité :**
-`rd.normal(mean, std, N)`
-`rd.uniform(a,b,N)`
-**AJOUTER EXPLICATON USAGE, RETOUR, CE QUE L'ONT MET**
+- `rd.normal(mean, std, N)` : génère N valeurs suivant une loi normale de moyenne `mean` et d'écart-type `std`.
+- `rd.uniform(a,b,N)` : génère `N` valeurs suivant une loi uniforme entre `a` inclus et `b` exclu.
 
 <a id="seq6"></a>
 #Séquence 6 — Bibliothèque `matplotlib.pyplot`
