@@ -1932,7 +1932,7 @@ NumPy permet également de manipuler les nombres complexes.
 ```
 
 <a id="seq5-2"></a>
-### 2. Tableaux NumPy
+## 2. Tableaux NumPy
 NumPy permet de convertir des listes Python en tableaux numériques appelés ndarray *(N-dimensional array)*.
 
 ```python
@@ -2295,7 +2295,7 @@ plt.figure()
 plt.plot(x,y)
 plt.show()
 ```
-> **Remarque :** a $x=0$ la fonction n'est pas définit.
+> **Remarque :** en $x=0$ la fonction n'est pas définie.
 
 <a id="seq6-2"></a>
 ## 2. Customisation
@@ -2314,15 +2314,52 @@ plt.show()
 
 **Traits et marqueurs :**
 
-`plt.plot(x,y, '--')`
-`plt.plot(x,y, 'x')`
-`plt.plot(x,y, '--x')`
-**AJOUTER LES AUTRES (TABLEAUX)**
+| Option | Style de trait |
+| :-: | :- |
+| `'-'` | Trait continu (par défaut) |
+| `'--'` | Tirets |
+| `'-.'` | Tirets et points alternés |
+| `':'` | Pointillés |
+
+| Option | Marqueur |
+| :-: | :- |
+| `'.'` | Point |
+| `'o'` | Cercle |
+| `'x'` | Croix |
+| `'+'` | Plus |
+| `'*'` | Étoile |
+| `'s'` | Carré |
+| `'D'` | Losange |
+| `'d'` | Losange fin |
+| `'p'` | Pentagone |
+| `'h'` | Hexagone |
+| `'^'` | Triangle pointant vers le haut |
+| `'v'` | Triangle pointant vers le bas |
+| `'<'` | Triangle pointant vers la gauche |
+| `'>'` | Triangle pointant vers la droite |
+| `'|'` | Trait vertical |
+| `'_'` | Trait horizontal |
 
 **Couleurs :**
 
 `plt.plot(x,y, color='r')`
 `plt.plot(x,y, color='orange')`
+
+| Code court | Nom complet | Couleur |
+| :-: | :-: | :-: |
+| `'b'` | `'blue'` | Bleu |
+| `'g'` | `'green'` | Vert |
+| `'r'` | `'red'` | Rouge |
+| `'c'` | `'cyan'` | Cyan |
+| `'m'` | `'magenta'` | Magenta |
+| `'y'` | `'yellow'` | Jaune |
+| `'k'` | `'black'` | Noir |
+| `'w'` | `'white'` | Blanc |
+| — | `'orange'` | Orange |
+| — | `'purple'` | Violet |
+| — | `'brown'` | Marron |
+| — | `'pink'` | Rose |
+| — | `'gray'` | Gris |
 
 **Taille du trait :**
 
@@ -2365,7 +2402,7 @@ plt.subplot(abc)
 # b : nombre de colonnes de graphiques ;
 # c : position du graphique, en commençant à 1.
 ```
-Pour des nombres supérieurs a 9 il faut séparer a, b et c par des virgules (on peut bien sur aussi pour les nombres inférieurs a 9.
+Lorsque l'un des paramètres est supérieur ou égal à 10, il faut utiliser la syntaxe avec trois arguments séparés par des virgules. Cette syntaxe fonctionne également pour les nombres inférieurs à 10.
 
 
 
