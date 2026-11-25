@@ -76,6 +76,7 @@
 		- [2.2 Traits, police, courbes et couleurs](#seq6-2-2)
 	- [3. Multi-affichage](#seq6-3)
 		- [3.1 Plusieurs courbes](#seq6-3-1)
+		- [3.2 Subplots](#seq6-3-2)
 
 
 
@@ -2351,7 +2352,7 @@ plt.legend()
 ```
 Ou alors:
 ```python
-plt.legend(['courbe1','courbe2']
+plt.legend(['courbe1','courbe2'])
 ```
 <a id="seq6-3-2"></a>
 ## 3.2 Subplots
