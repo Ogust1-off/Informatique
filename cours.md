@@ -2338,12 +2338,12 @@ plt.show()
 
 <a id="seq6-2-1"></a>
 ### 2.1 Titres et axes
-`plt.title("Mon titre")`
-`plt.xlabel("titre d'abscisses")`
-`plt.ylabel("titre d'ordonnées")`
-`plt.xlim([a,b])`
-`plt.ylim([c,d])`
-`plt.grid()` Trace la grille automatiquement
+- `plt.title("Mon titre")`
+- `plt.xlabel("titre d'abscisses")`
+- `plt.ylabel("titre d'ordonnées")`
+- `plt.xlim([a,b])`
+- `plt.ylim([c,d])`
+- `plt.grid()` Trace la grille automatiquement
 
 <a id="seq6-2-2"></a>
 ### 2.2 Traits, police, courbes et couleurs
@@ -2378,8 +2378,9 @@ plt.show()
 
 **Couleurs :**
 
-`plt.plot(x,y, color='r')`
-`plt.plot(x,y, color='orange')`
+- `plt.plot(x,y, color='r')`
+- `plt.plot(x,y, color='orange')`
+- … *voir tableau ci-dessous*
 
 | Code court | Nom complet | Couleur |
 | :-: | :-: | :-: |
@@ -2399,7 +2400,7 @@ plt.show()
 
 **Taille du trait :**
 
-`plt.plot(x,y, linewidth=5, marker='o', markersize=10)`
+- `plt.plot(x,y, linewidth=5, marker='o', markersize=10)`
 
 **Taille de police :**
 
